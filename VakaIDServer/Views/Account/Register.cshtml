@@ -1,0 +1,81 @@
+﻿@model VakaxaIDServer.Quickstart.Account.RegisterViewModel
+
+<div class="login-wrapper wd-480 wd-xs-350 pd-25 pd-xs-40 pd-t-20 rounded bd bd-white-2 bg-white p-rl mg-x-auto mw">
+
+    <div class="signin-logo tx-center tx-24 tx-bold tx-grey">Create Your Account</div>
+    <div class="form-group">
+        <div class="width-half mob">
+            <div class="tx-green tx-center mg-t-10 tx-20 tx-up"><i class="icon ion-ios-person"></i> Individual</div>
+        </div>
+        <div class="width-half mob">
+            <div class="tx-grey tx-center mg-t-10 tx-20 tx-up"><i class="icon ion-ios-contact-outline"></i> Business</div>
+        </div>
+    </div>
+    <form asp-controller="Account" asp-action="Register" id="form-register" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
+        <div class="form-group">
+            <div class="width-half mob">
+                <input asp-for="FirstName" type="text" class="form-control fc-outline-white" placeholder="First Name">
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="width-half pd-l-10 mob">
+                <input asp-for="LastName" type="text" class="form-control fc-outline-white" placeholder="Last Name">
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div><!-- form-group -->
+        <div class="form-group">
+            <input asp-for="Email" type="email" class="form-control fc-outline-white" placeholder="Email">
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div><!-- form-group -->
+        <div class="form-group">
+            <input asp-for="Password" type="password" class="form-control fc-outline-white" placeholder="Password">
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div><!-- form-group -->
+        <div class="form-group">
+            <input asp-for="ConfirmPassword" type="password" class="form-control fc-outline-white" placeholder="ConfirmPassword">
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+
+        </div><!-- form-group -->
+        <div class="form-group">
+            <div class="g-recaptcha" data-sitekey="@ViewData["ReCaptchaKey"]"></div>
+            <span class="text-danger">@Html.ValidationMessage("ErrorCaptcha")</span>
+        </div>
+        <h6 class="grey tx-12 form-group">
+            By clicking the Submit button below you agreed to our <a href="#">privacy policy</a> and <a href="#">terms</a>
+            of use of our website.
+        </h6>
+        <div class="form-group">
+            <button type="submit" class="btn btn-green btn-block" disabled="disabled" name="button" value="Register" id="register">
+                Submit
+                <i id="loading" class='fa fa-spinner fa-spin' style="display: none"></i>
+            </button>
+        </div>
+    </form>
+
+    <div class="mg-t-20 tx-center">Already have account? <a asp-action="Login" class="tx-info">Sign In</a></div>
+</div><!-- login-wrapper -->
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    
+    
+    <script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+        var $form = $("#form-register");
+        var $register = $("#register");
+        
+        $form.on("blur", "input", () => {
+            if ($form.valid()) {
+                $register.removeAttr("disabled");   
+            } else {
+                $register.attr("disabled", "disabled");
+            }
+        });
+        
+        $register.click(function() {
+            $(this).prop('disabled', true);
+            var x = document.getElementById("loading");
+            x.style.display = "inline-block";
+            $(this).closest("form").submit();
+        });
+    </script>
+}

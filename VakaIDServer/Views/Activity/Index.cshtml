@@ -1,0 +1,273 @@
+﻿@using VakaxaIDServer.Helpers
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="card m-b-20">
+                <div class="card-body">
+                    <h4 class="mt-0 m-b-30 header-title color1 tx20">
+                        <i class="mdi mdi-calendar-clock m-r-5"></i>Latest
+                        Activity
+                        <span class="fl-r">
+                            <i class="mdi mdi-reload tx30 m-r-5 grey"></i>
+                        </span>
+                    </h4>
+                    <div class="table-responsive">
+                        <table class="table table-vertical">
+                            <thead class="thead-default">
+                            <tr>
+                                <th>Action</th>
+                                <th>Source</th>
+                                <th>Ip</th>
+                                <th>Location</th>
+                                <th>When</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            @foreach (var log in Model.Pagination.Results)
+                            {
+                                <tr>
+
+                                    <td>@log.ActionName</td>
+
+                                    <td>
+                                        @if (string.IsNullOrEmpty(@log.Source) || @log.Source.Equals("Web"))
+                                        {
+                                            <span class="badge badge-pill badge-success">Web</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-pill badge-primary">@log.Source</span>
+                                        }
+                                    </td>
+                                    <td>@log.Ip</td>
+                                    <td>@log.Location</td>
+                                    <td>@UnixTimestamp.ConvertTime(@log.CreatedAt)</td>
+                                </tr>
+                            }
+                         
+                            </tbody>
+                        </table>
+                    </div>
+                    <nav aria-label="...">
+                        <ul class="pagination justify-content-end">
+                            @if (Model.Pagination.CurrentPage > 1)
+                            {
+                                <li class="page-item">
+                                    <a href="@Url.Action("Index", new {page = Model.Pagination.CurrentPage - 1})" class="page-link">Prev</a>
+                                </li>
+                            }
+
+                            @{
+                                var start = 1;
+                                var end = Model.Pagination.PageCount <=8 ? Model.Pagination.PageCount : 5;
+                            }
+                            @if (Model.Pagination.CurrentPage >= 5 && Model.Pagination.PageCount > 8)
+                            {
+                                start = Model.Pagination.CurrentPage - 2;
+                                end = Model.Pagination.CurrentPage + 2;
+                            }
+                            @for (var p = start; p <= end; p++)
+                            {
+                                if (p == Model.Pagination.CurrentPage)
+                                {
+                                    <li class="page-item active">
+                                        <a href="@Url.Action("Index", new {page = p})" class="page-link">@p</a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="page-item">
+                                        <a href="@Url.Action("Index", new {page = p})" class="page-link">@p</a>
+                                    </li>
+                                }
+                            }
+                            @if (Model.Pagination.CurrentPage < Model.Pagination.PageCount)
+                            {
+                                <li class="page-item">
+                                    <a href="@Url.Action("Index", new {page = Model.Pagination.CurrentPage + 1})" class="page-link">Next</a>
+                                </li>
+                            }
+
+                        </ul>
+                  
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+</div>
+<!-- end container-fluid -->
+@*<section class="page--header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="page--title h5"><i class="fa fa-tasks"></i> Activity</h2>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="main--content">
+    <div class="row gutter-20">
+        <div class="col-lg-12">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Account Activity</h3>
+                    <div class="dropdown">
+                        <button type="button" class="btn-link dropdown-toggle"
+                                data-toggle="dropdown">
+                            <i class="fa fa-ellipsis-v"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#"><i class="fa fa-sync"></i>Update Data</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-times"></i>Stop Data</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table style--2">
+                            <thead>
+                            <tr>
+                                <th>Stt</th>
+                                <th>Action</th>
+                                <th>IP ADDRESS</th>
+                                <th>LOCATION</th>
+                                <th>WHEN</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @{ var i = 1; }
+                            @foreach (var contact in Model.Pagination.Results)
+                            {
+                                var rowNo = (Model.Pagination.CurrentPage - 1) * Model.Pagination.PageSize + i;
+                                i++;
+                                <tr>
+                                    <td>@rowNo</td>
+                                    <td>@contact.ActionName</td>
+                                    <td>@contact.Ip</td>
+                                    <td>@contact.Location</td>
+                                    <td>@UnixTimestamp.ConvertTime(@contact.CreatedAt)</td>
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <ul class="pagination justify-content-center pd-b-20 pd-t-10">
+                    @if (Model.Pagination.CurrentPage > 1)
+                    {
+                        <li class="page-item">
+                            <a href="@Url.Action("Index", new {page = Model.Pagination.CurrentPage - 1})" class="page-link">Prev</a>
+                        </li>
+                    }
+
+                    @{
+                        var start = 1;
+                        var end = Model.Pagination.PageCount <=8 ? Model.Pagination.PageCount : 5;
+                    }
+                    @if (Model.Pagination.CurrentPage >= 5 && Model.Pagination.PageCount > 8)
+                    {
+                        start = Model.Pagination.CurrentPage - 2;
+                        end = Model.Pagination.CurrentPage + 2;
+                    }
+                    @for (var p = start; p <= end; p++)
+                    {
+                        if (p == Model.Pagination.CurrentPage)
+                        {
+                            <li class="page-item active">
+                                <a href="@Url.Action("Index", new {page = p})" class="page-link">@p</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="page-item">
+                                <a href="@Url.Action("Index", new {page = p})" class="page-link">@p</a>
+                            </li>
+                        }
+                    }
+                    @if (Model.Pagination.CurrentPage < Model.Pagination.PageCount)
+                    {
+                        <li class="page-item">
+                            <a href="@Url.Action("Index", new {page = Model.Pagination.CurrentPage + 1})" class="page-link">Next</a>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Web Sessions</h3>
+                    <div class="dropdown">
+                        <button type="button" class="btn-link dropdown-toggle"
+                                data-toggle="dropdown">
+                            <i class="fa fa-ellipsis-v"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#"><i class="fa fa-sync"></i>Update Data</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-times"></i>Stop Data</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table style--2">
+                            <thead>
+                            <tr>
+                                <th>Stt</th>
+                                <th>SIGNED IN</th>
+                                <th>BROWSER</th>
+                                <th>IP ADDRESS</th>
+                                <th>LOCATION</th>
+                                <th>CURRENT</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @{ var j = 0; }
+                            @foreach (var contact in Model.WebSessionModels)
+                            {
+                                j++;
+                                <tr>
+                                    <td>@j</td>
+                                    <td>@UnixTimestamp.ConvertTime(@contact.SignedIn)</td>
+                                    <td>@contact.Browser</td>
+                                    <td>@contact.Ip</td>
+                                    <td>@contact.Location</td>
+                                    <td>
+                                        @if (@contact.Current)
+                                        {
+                                            <i class="fa fa-check"></i>
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (!@contact.Current)
+                                        {
+                                            <a asp-controller="Activity" asp-action="Remove" asp-route-id="@contact.Id">
+                                                <i class="fa fa-times"></i>
+                                            </a>
+                                        }
+
+                                    </td>
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>*@

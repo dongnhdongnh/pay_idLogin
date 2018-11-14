@@ -1,0 +1,86 @@
+﻿@using IdentityServer4.Extensions
+@using Microsoft.AspNetCore.Html;
+@{
+    string name = null;
+    if (!true.Equals(ViewData["signed-out"]))
+    {
+        name = Context.User?.GetDisplayName();
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="VakaxaID">
+    <meta name="author" content="VakaxaCompany">
+    <title>Member</title>
+    
+    <link rel="icon" href="../wwwroot/assets/icon/favicon.ico" type="image/png">
+    <link href="../lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../lib/Ionicons/css/ionicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bracket.css">
+    <link rel="stylesheet" href="../css/new.css">
+</head>
+<body>
+<div class="d-flex align-items-center justify-content-center ht-100v bg-home">
+    <div class="overlay-body d-flex align-items-center justify-content-center">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a id="main_nav_btn" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a href="#" class="brand" onclick="">
+                        <img src="../assets/logo/logo-white.svg" alt="">
+                    </a>
+                    <div class="nav-collapse" id="application_menu">
+                        <ul class="nav clearfix">
+
+                            <li>
+                                <a href="#" target="_blank">Home</a>
+                            </li>
+
+                            @if (!string.IsNullOrWhiteSpace(name))
+                            {
+                                <li class="dropdown dropdown-hover" id="resources_menu">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                                        <i class="fa fa-user"></i> @name<b class="caret"></b>
+                                    </a>
+                                    <ul class="dropdown-menu fadeIn animated-fast" role="menu" aria-labelledby="dLabel">
+                                        <li class="#">
+                                            <a asp-action="Index" asp-controller="Profile">My Profile</a>
+                                        </li>
+                                        <li class="#">
+                                            <a asp-action="Logout" asp-controller="Account">Log Out</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a asp-action="Login" asp-controller="Account">Sign In</a>
+                                </li>
+                                <li class="active">
+                                    <a asp-action="Register" asp-controller="Account">Sign Up</a>
+                                </li>
+                            }
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @RenderBody()
+    </div>
+</div>
+
+
+<script src="~/lib/jquery/jquery.js"></script>
+<script src="~/lib/bootstrap/js/bootstrap.js"></script>
+@RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿@using VakaxaIDServer.Constants
+@model VakaxaIDServer.Quickstart.Account.EmailViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="login-wrapper wd-480 wd-xs-350 pd-25 pd-xs-40 pd-t-20 rounded bd bd-white-2 bg-white p-rl mg-x-auto mw">
+    <form asp-controller="Account" asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
+        <div class="signin-logo tx-center tx-24 tx-bold tx-grey">Verify your email</div>
+        <div class="lds-roller">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        @if (Model.TypeVerify == Const.TypeVerifyEmailUnlockAccount)
+        {
+            <h5 class="check tx-14 tx-green">We sent an email which contains activation information of your account to email <b>@Model.Email</b>. Please click the link inside to activate your account.</h5>
+        }
+        else
+        {
+            <h5 class="check tx-14 tx-green">We sent a verification email to <b>@Model.Email</b>. Click the link inside to get started!</h5>
+        }
+        
+        <hr/>
+        <div class="mg-t-20 tx-center">Email didn't arrive? <a href="#" onclick="resendEmail('@Model.Email','@Model.TypeVerify');"class="tx-info">Re-send now!</a></div>
+    </form>
+
+</div><!-- login-wrapper -->
+
+@section Scripts {
+    <script src="~/js/account.js">
+    </script>
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

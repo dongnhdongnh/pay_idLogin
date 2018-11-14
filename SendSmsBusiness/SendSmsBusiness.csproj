@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\VakaxaIDServer.Models\VakaxaIDServer.Models.csproj" />
+      <ProjectReference Include="..\VakaxaIDServer.Repositories\VakaxaIDServer.Repositories.csproj" />
+    </ItemGroup>
+
+</Project>

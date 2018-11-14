@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\VakaxaIDServer.Models\VakaxaIDServer.Models.csproj" />
+      <ProjectReference Include="..\VakaxaIDServer.Repositories\VakaxaIDServer.Repositories.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MimeKit" Version="2.0.7" />
+      <PackageReference Include="NLog" Version="4.5.10" />
+      <PackageReference Include="NLog.Config" Version="4.5.10" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="MimeKit, Version=2.0.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814">
+        <HintPath>..\..\..\..\..\.nuget\packages\mimekit\2.0.6\lib\netstandard2.0\MimeKit.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>

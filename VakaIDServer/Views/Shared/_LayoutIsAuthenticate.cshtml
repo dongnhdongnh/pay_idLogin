@@ -1,0 +1,337 @@
+﻿@using IdentityServer4.Extensions
+@using Microsoft.AspNetCore.Identity
+@using VakaxaIDServer.Models
+@inject UserManager<ApplicationUser> UserManager
+@{
+    var avatar = "assets/avatars/ava.png";
+    string fullName = null;
+    ApplicationUser user = null;
+    if (!true.Equals(ViewData["signed-out"]))
+    {
+        fullName = Context.User?.GetDisplayName();
+        user = await UserManager.GetUserAsync(Context.User);
+        if (user != null)
+        {
+            fullName = user.FullName;
+            if (user.Avatar != null)
+            {
+                avatar = user.Avatar;
+            }
+        }
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
+    <meta name="description" content="VakaxaID">
+    <meta name="author" content="VakaxaCompany">
+    <title>Member</title>
+
+    <link rel="icon" href="assets/icon/favicon.ico" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CMontserrat:400,500">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/flatpickr.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/icons.css" rel="stylesheet" type="text/css">
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <link href="../lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+</head>
+<body>
+
+<header id="topnav">
+<div class="topbar-main">
+<div class="container-fluid">
+    <!-- Logo container-->
+    <div class="logo">
+        <a asp-controller="Activity" asp-action="Index" class="logo">
+            <img src="../assets/logo/logo-sm.png" alt="" class="logo-small">
+            <img src="../assets/logo/logo.png" alt="" class="logo-large">
+        </a>
+    </div>
+    <!-- End Logo container-->
+    <div class="menu-extras topbar-custom">
+        <ul class="float-right list-unstyled mb-0">
+            <li class="dropdown notification-list">
+                <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#"
+                   role="button" aria-haspopup="false" aria-expanded="false">
+                    <img src="assets/flags/us.svg"
+                         alt="" class="m-r-5 m-topbar__language-img"><span class="hidden-mob">English<i class="mdi mdi-menu-down"></i></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <div class="m-dropdown__header m--align-center m-language">
+                        <span class="m-dropdown__header-subtitle">Select your language</span>
+                    </div>
+                    <div class="m-dropdown__body">
+                        <div class="m-dropdown__content">
+                            <ul class="m-nav m-nav--skin-light">
+                                <li class="m-nav__item m-nav__item--active">
+                                    <a href="#" class="m-nav__link m-nav__link--active">
+                                        <span class="m-nav__link-icon">
+                                            <img class="m-topbar__language-img"
+                                                 src="assets/flags/us.svg">
+                                        </span>
+                                        <span class="m-nav__link-title m-topbar__language-text m-nav__link-text">USA</span>
+                                    </a>
+                                </li>
+                                <li class="m-nav__item">
+                                    <a href="#" class="m-nav__link">
+                                        <span class="m-nav__link-icon">
+                                            <img class="m-topbar__language-img"
+                                                 src="assets/flags/cn.svg">
+                                        </span>
+                                        <span class="m-nav__link-title m-topbar__language-text m-nav__link-text">China</span>
+                                    </a>
+                                </li>
+                                <li class="m-nav__item">
+                                    <a href="#" class="m-nav__link">
+                                        <span class="m-nav__link-icon">
+                                            <img class="m-topbar__language-img"
+                                                 src="assets/flags/vi.svg">
+                                        </span>
+                                        <span class="m-nav__link-title m-topbar__language-text m-nav__link-text">Vietnam</span>
+                                    </a>
+                                </li>
+                                <li class="m-nav__item">
+                                    <a href="#" class="m-nav__link">
+                                        <span class="m-nav__link-icon">
+                                            <img class="m-topbar__language-img"
+                                                 src="assets/flags/jp.svg">
+                                        </span>
+                                        <span class="m-nav__link-title m-topbar__language-text m-nav__link-text">Japan</span>
+                                    </a>
+                                </li>
+                                <li class="m-nav__item">
+                                    <a href="#" class="m-nav__link">
+                                        <span class="m-nav__link-icon">
+                                            <img class="m-topbar__language-img"
+                                                 src="assets/flags/ge.svg">
+                                        </span>
+                                        <span class="m-nav__link-title m-topbar__language-text m-nav__link-text">Germany</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="dropdown notification-list">
+                <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#"
+                   role="button" aria-haspopup="false" aria-expanded="false">
+                    <i class="ti-bell noti-icon"></i>
+                    <span class="badge badge-pill badge-danger noti-icon-badge">5</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg">
+                    <!-- item-->
+                    <div class="m-dropdown__header m--align-center m-noti">
+                        <span class="m-dropdown__header-title">5 New</span>
+                        <span class="m-dropdown__header-subtitle">User Notifications</span>
+                    </div>
+                    <div class="slimscroll notification-item-list">
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <div class="notify-icon bg-success">
+                                <i class="mdi mdi-cellphone-android"></i>
+                            </div>
+                            <p class="notify-details">Added phone number</p>
+                        </a>
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <div class="notify-icon bg-warning">
+                                <i class="mdi mdi-lock"></i>
+                            </div>
+                            <p class="notify-details">Enable Two-Factor Authen</p>
+                        </a>
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <div class="notify-icon bg-info">
+                                <i class="mdi mdi-account-circle"></i>
+                            </div>
+                            <p class="notify-details">Update your profile information</p>
+                        </a>
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <div class="notify-icon bg-primary">
+                                <i class="mdi mdi-settings"></i>
+                            </div>
+                            <p class="notify-details">Change security setting</p>
+                        </a>
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <div class="notify-icon bg-danger">
+                                <i class="mdi mdi-login"></i>
+                            </div>
+                            <p class="notify-details">Set lock-screen password</p>
+                        </a>
+                    </div>
+                    <!-- All-->
+                    <a href="javascript:void(0);" class="dropdown-item text-center text-primary">
+                        View
+                        all <i class="fi-arrow-right"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="dropdown notification-list">
+                <div class="dropdown notification-list nav-pro-img">
+                    <a class="dropdown-toggle nav-link arrow-none waves-effect nav-user" data-toggle="dropdown"
+                       href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <img src="@avatar"
+                             alt="user" class="rounded-circle">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right profile-dropdown">
+                        <div class="m-dropdown__header m--align-center">
+                            <div class="m-card-user m-card-user--skin-dark">
+                                <div class="m-card-user__pic">
+                                    <img src="@avatar" class="m--img-rounded m--marginless"
+                                         alt="">
+                                </div>
+                                <div class="m-card-user__details">
+                                    <span class="m-card-user__name m--font-weight-500">@fullName</span>
+                                    <span class="m-card-user__email m--font-weight-300 m-link">@user.Email</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m-dropdown-body">
+                            <a class="dropdown-item" asp-controller="Profile" asp-action="Index">
+                                <i class="mdi mdi-account-circle m-r-5"></i>
+                                Profile
+                            </a>
+                            <a class="dropdown-item" asp-controller="Activity" asp-action="Index">
+                                <!-- <span class="badge badge-success float-right">11</span> -->
+                                <i class="ti-bell m-r-5"></i>
+                                Activities
+                                <span class="m-nav__link-badge">
+                                    <span class="m-badge m-badge--success">2</span>
+                                </span>
+                            </a>
+                            <a class="dropdown-item" asp-controller="Security" asp-action="Index">
+                                <i class="mdi mdi-security m-r-5"></i>
+                                Security
+                            </a>
+
+                            <span class="m-nav__separator"></span>
+                            <a class="dropdown-item" href="#">
+                                <i class="mdi mdi-facebook-messenger m-r-5"></i>
+                                Support
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="mdi mdi-lock-open-outline m-r-5"></i>
+                                Lock screen
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" asp-action="Logout" asp-controller="Account">
+                                <i class="mdi mdi-power text-danger">
+                                </i>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="menu-item">
+                <!-- Mobile menu toggle-->
+                <a class="navbar-toggle nav-link" id="mobileToggle">
+                    <div class="lines">
+                        <span></span> <span></span> <span></span>
+                    </div>
+                </a>
+                <!-- End mobile menu toggle-->
+            </li>
+        </ul>
+    </div>
+    <!-- end menu-extras -->
+    <div class="clearfix"></div>
+</div>
+<!-- end container -->
+</div>
+<!-- end topbar-main -->
+<div class="container-fluid">
+    <!-- Page-Title -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-title-box">
+                <h4 class="page-title"><i class="ti-bell m-r-5"></i>Activities</h4>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active">You can control your activities</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MENU Start -->
+<div class="navbar-custom">
+    <div class="container-fluid">
+        <div id="navigation">
+            <!-- Navigation Menu-->
+            <ul class="navigation-menu">
+                <li class="has-submenu">
+                    <a asp-controller="Dashboard" asp-action="Index">
+                        <i class="mdi mdi-home"></i> <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="has-submenu">
+                    <a href="security.html"><i class="mdi mdi-security"></i>Security</a>
+                </li>
+                <li class="has-submenu">
+                    <a ><i class="ti-bell"></i>Activities</a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="activity.html"><i class="mdi mdi-account-box"></i> Account Activity</a>
+                        </li>
+                        <li>
+                            <a href="websession.html" ><i class="mdi mdi-web"></i> Web Sessions</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="profile.html"><i class="ti-user"></i>Profile</a>
+                </li>
+            </ul>
+            <!-- End navigation menu -->
+        </div>
+        <!-- end navigation -->
+    </div>
+    <!-- end container-fluid -->
+</div>
+<!-- end navbar-custom -->
+</header>
+
+<div class="wrapper">
+    @RenderBody()
+</div>
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                © 2018 <a href="#" class="link-bottom">VakaID</a>
+                <span class="d-none d-sm-inline-block">
+                    - All
+                    Rights Reserved.
+                </span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="~/js/jquery.min.js"></script>
+<script src="~/js/flatpickr.min.js"></script>
+<script src="~/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/jquery.slimscroll.js"></script>
+<script src="~/js/waves.min.js"></script>
+<script src="~/js/app.js"></script>
+
+<script src="~/js/jquery-ui.min.js"></script>
+<script src="~/js/perfect-scrollbar.min.js"></script>
+<script src="~/js/select2.min.js"></script>
+<script src="~/js/jquery-jvectormap.min.js"></script>
+<script src="~/js/jquery-jvectormap-world-mill.min.js"></script>
+<script src="~/js/main.js"></script>
+<script>
+    var example = flatpickr('#flatpickr');
+    $("li#@(ViewContext.RouteData.Values["Controller"])").addClass("active");
+</script>
+
+@RenderSection("scripts", required: false)
+</body>
+</html>

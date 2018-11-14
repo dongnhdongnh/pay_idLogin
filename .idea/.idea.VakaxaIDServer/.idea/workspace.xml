@@ -1,0 +1,2339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fcc2ad4a-dc22-4f94-80ad-f103455f7ec3" name="Default Changelist" comment="merger master">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.VakaxaIDServer/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.VakaxaIDServer/riderModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VakaIDServer/Config.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VakaIDServer/Config.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VakaIDServer/Quickstart/Account/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VakaIDServer/Quickstart/Account/AccountController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VakaIDServer/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VakaIDServer/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VakaIDServer/Views/Account/Login.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/VakaIDServer/Views/Account/Login.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VakaIDServer/logger.txt" beforeDir="false" afterPath="$PROJECT_DIR$/VakaIDServer/logger.txt" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="vakaxaId@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="vakaxaId@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="vakaxaId@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="vakaxaId: schema" type="c314c289:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="338162108">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="45" />
+          <entry key="project.open.time.0" value="11" />
+          <entry key="project.open.time.1" value="9" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.4" value="10" />
+          <entry key="project.open.time.5" value="15" />
+          <entry key="project.open.time.6" value="5" />
+          <entry key="project.opened" value="52" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="AspNetUsers" value="2" />
+          <entry key="cs" value="841" />
+          <entry key="cshtml" value="143" />
+          <entry key="csproj" value="1" />
+          <entry key="css" value="8" />
+          <entry key="html" value="1" />
+          <entry key="ico" value="1" />
+          <entry key="js" value="8" />
+          <entry key="json" value="43" />
+          <entry key="md" value="1" />
+          <entry key="rsa" value="2" />
+          <entry key="sql" value="2" />
+          <entry key="targets" value="1" />
+          <entry key="txt" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="C#" value="841" />
+          <entry key="CSS" value="8" />
+          <entry key="Csproj" value="1" />
+          <entry key="Database Element" value="2" />
+          <entry key="HTML" value="1" />
+          <entry key="Image" value="1" />
+          <entry key="JSON" value="43" />
+          <entry key="JavaScript" value="8" />
+          <entry key="MsBuild targets file" value="1" />
+          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="Razor" value="143" />
+          <entry key="Scratch" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="cell" value="7" />
+          <entry key="cs" value="11348" />
+          <entry key="cshtml" value="1806" />
+          <entry key="css" value="37" />
+          <entry key="json" value="108" />
+          <entry key="sql" value="5" />
+          <entry key="txt" value="1553" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="C#" value="11348" />
+          <entry key="CSS" value="37" />
+          <entry key="JSON" value="108" />
+          <entry key="PLAIN_TEXT" value="1553" />
+          <entry key="Razor" value="1806" />
+          <entry key="SQL" value="5" />
+          <entry key="Scratch" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.checkout.local" value="19" />
+          <entry key="git.branch.create.new" value="3" />
+          <entry key="git.branch.delete.local" value="1" />
+          <entry key="git.branch.merge" value="32" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts" />
+    </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="VakaxaIDServer" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/Account/AccountController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1605">
+              <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+              <folding>
+                <marker date="1542188293631" expanded="false" signature="6:996" ph="..." />
+                <marker date="1542188293631" expanded="true" signature="1041:58660" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="1113:58658" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="2178:2542" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="2673:3591" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="2699:3395" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="3043:3194" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="3427:3581" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="3601:3665" ph="/// Show login page ... " />
+                <marker date="1542188293631" expanded="true" signature="3821:4921" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="3847:4689" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="4001:4080" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="4332:4543" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="4721:4911" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="4931:5024" ph="/// Handle postBack from username/password login ... " />
+                <marker date="1542188293631" expanded="true" signature="5165:13620" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="5191:13387" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="5206:6164" ph="/* if (button != &quot;login&quot;) ... */" />
+                <marker date="1542188293631" expanded="true" signature="6528:6829" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="6870:13213" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="7010:7288" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="7387:7635" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="7714:8268" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="7819:8246" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="7962:8218" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="8314:8943" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="8573:8726" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="9146:11182" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="9492:10601" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="9927:10318" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="10628:10887" ph="/* make sure the returnUrl is still valid, and if so redirect back to authorize endpoint or a local page ... */" />
+                <marker date="1542188293631" expanded="true" signature="10998:11112" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="11233:12331" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="11311:11697" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="11472:11669" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="11829:12215" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="11990:12187" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="12380:12896" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="12639:12792" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="12921:13195" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="13419:13610" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="13694:14711" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="13720:14523" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="14235:14336" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="14555:14701" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="14826:17109" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="14852:16914" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="15242:16558" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="15328:15727" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="15791:15860" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="15885:16540" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="16077:16355" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="16653:16870" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="16738:16851" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="16946:17099" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="17206:18166" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="17312:17930" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="17560:17916" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="17770:17898" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="17962:18082" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="18261:19149" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="18375:18909" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="18623:18895" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="18749:18877" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="18941:19065" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="19276:20465" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="19412:20175" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="19531:20161" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="19882:20143" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="20023:20121" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="20207:20273" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="20302:20418" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="20637:22032" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="20663:21811" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="20718:20794" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="20907:21797" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="21084:21638" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="21392:21527" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="21664:21779" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="21843:21989" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="22224:22893" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="22250:22794" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="22598:22778" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="22824:22883" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="23052:26537" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="23078:26406" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="23133:23209" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="23227:23486" ph="/* The following code protects for brute force attacks against the two factor codes. ... */" />
+                <marker date="1542188293631" expanded="true" signature="23598:26292" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="23709:23907" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="23932:24492" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="24109:24320" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="24349:24470" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="24536:25959" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="25205:25568" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="26004:26090" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="26115:26274" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="26438:26527" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="26547:26614" ph="/// Show register page ... " />
+                <marker date="1542188293631" expanded="true" signature="26695:26883" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="26893:26930" ph="/* POST: /Account/Register ... */" />
+                <marker date="1542188293631" expanded="true" signature="27109:29586" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="27434:27650" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="27771:29306" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="27849:28275" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="28397:29103" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="28865:29002" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="29124:29292" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="29338:29440" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="29454:29544" ph="/* AddErrors(result); ... */" />
+                <marker date="1542188293631" expanded="true" signature="29694:30179" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="29879:30014" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="30031:30169" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="30271:30318" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="30485:32337" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="30568:32193" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="30693:30874" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="30944:31120" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="31380:31476" ph="/* var resultSendEmail = SendEmail(emailModel); ... */" />
+                <marker date="1542188293631" expanded="true" signature="31831:31978" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="32225:32327" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="32436:32483" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="32622:32927" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="32713:32833" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="33045:33447" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="33282:33390" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="33563:33903" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="34043:34918" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="34444:34751" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="35009:35056" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="35198:36039" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="35563:35650" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="36110:36157" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="36167:36270" ph="/// initiate roundtrip to external authentication provider ... " />
+                <marker date="1542188293631" expanded="true" signature="36378:37132" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="36464:36623" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="36640:37122" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="36799:37056" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="36920:37038" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="37142:37233" ph="/// Post processing of external authentication ... " />
+                <marker date="1542188293631" expanded="true" signature="37316:40043" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="37529:37627" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="37824:38198" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="37855:38097" ph="/* this might be where you might initiate a custom workflow for user registration ... */" />
+                <marker date="1542188293631" expanded="true" signature="38212:38450" ph="/* this allows us to collect any add claims or properties ... */" />
+                <marker date="1542188293631" expanded="true" signature="38852:39072" ph="/* issue authentication cookie for user ... */" />
+                <marker date="1542188293631" expanded="true" signature="39925:39997" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="40053:40118" ph="/// Show logout page ... " />
+                <marker date="1542188293631" expanded="true" signature="40201:40743" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="40383:40733" ph="/* if (vm.ShowLogoutPrompt == false) ... */" />
+                <marker date="1542188293631" expanded="true" signature="40753:40829" ph="/// Handle logout page postBack ... " />
+                <marker date="1542188293631" expanded="true" signature="40955:43785" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="40981:43586" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="41210:41526" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="41671:42410" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="42103:42218" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="42547:43104" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="42586:42798" ph="/* build a return URL so the upstream provider will redirect back ... */" />
+                <marker date="1542188293631" expanded="true" signature="43174:43283" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="43405:43570" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="43618:43775" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="44028:46205" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="44162:44633" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="44330:44618" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="45036:45154" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="45243:45832" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="45387:45818" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="45577:45800" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="45884:46194" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="46297:46504" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="46592:47429" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="46774:46958" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="47090:47245" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="47259:47396" ph="/* show the logout prompt. this prevents attacks where the user ... */" />
+                <marker date="1542188293631" expanded="true" signature="47523:49030" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="47779:48166" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="48593:48944" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="48624:48853" ph="/* if there's no current logout context, we need to create one ... */" />
+                <marker date="1542188293631" expanded="true" signature="49116:51066" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="49468:49602" ph="/* we will issue the external cookie and then redirect the ... */" />
+                <marker date="1542188293631" expanded="true" signature="49668:49936" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="49777:49922" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="50322:50683" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="50500:50669" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="50904:51056" ph="/* trigger windows auth ... */" />
+                <marker date="1542188293631" expanded="true" signature="51258:52333" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="51331:51589" ph="/* try to determine the unique id of the external user (issued by the provider) ... */" />
+                <marker date="1542188293631" expanded="true" signature="52480:55098" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="52910:53005" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="53022:53919" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="53490:53611" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="53651:53759" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="53798:53905" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="54159:54256" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="54313:54381" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="54592:54815" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="55259:55998" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="55282:55397" ph="/* if the external system sent a session id claim, copy it over ... */" />
+                <marker date="1542188293631" expanded="true" signature="55536:55644" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="55844:55988" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="56128:56148" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="56314:56334" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="56407:56794" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="56433:56605" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="56501:56591" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="56637:56760" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="56913:57717" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="56969:57547" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="57128:57531" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="57579:57707" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="57791:58320" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="57817:58160" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="57895:58084" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="58192:58310" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="58366:58652" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="58392:58466" ph="{...}" />
+                <marker date="1542188293631" expanded="true" signature="58498:58642" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VakaIDServer/Views/Shared/Error.cshtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="271">
+              <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+              <folding>
+                <marker date="1541582163467" expanded="true" signature="123:299" ph="@..." />
+                <marker date="1541582163467" expanded="true" signature="301:1094" ph="&lt;div.../&gt;" />
+                <marker date="1541582163467" expanded="true" signature="330:389" ph="&lt;div.../&gt;" />
+                <marker date="1541582163467" expanded="true" signature="395:1087" ph="&lt;div.../&gt;" />
+                <marker date="1541582163467" expanded="true" signature="421:1076" ph="&lt;div.../&gt;" />
+                <marker date="1541582163467" expanded="true" signature="456:925" ph="&lt;div.../&gt;" />
+                <marker date="1541582163467" expanded="true" signature="548:906" ph="@..." />
+                <marker date="1541582163467" expanded="true" signature="567:906" ph="{...}" />
+                <marker date="1541582163467" expanded="true" signature="606:740" ph="&lt;strong.../&gt;" />
+                <marker date="1541582163467" expanded="true" signature="639:710" ph="&lt;em.../&gt;" />
+                <marker date="1541582163467" expanded="true" signature="791:888" ph="{...}" />
+                <marker date="1541582163467" expanded="true" signature="939:1061" ph="@..." />
+                <marker date="1541582163467" expanded="true" signature="963:1061" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VakaIDServer/Views/Account/Login.cshtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="7" selection-start-column="7" selection-end-column="7" />
+              <folding>
+                <marker date="1542184848089" expanded="true" signature="58:2313" ph="&lt;div.../&gt;" />
+                <marker date="1542184848089" expanded="true" signature="251:2014" ph="&lt;form.../&gt;" />
+                <marker date="1542184848089" expanded="true" signature="376:2002" ph="&lt;fieldset.../&gt;" />
+                <marker date="1542184848089" expanded="true" signature="399:616" ph="&lt;div.../&gt;" />
+                <marker date="1542184848089" expanded="true" signature="629:874" ph="&lt;div.../&gt;" />
+                <marker date="1542184848089" expanded="true" signature="887:1108" ph="&lt;div.../&gt;" />
+                <marker date="1542184848089" expanded="true" signature="1121:1691" ph="&lt;div.../&gt;" />
+                <marker date="1542184848089" expanded="true" signature="1166:1550" ph="@..." />
+                <marker date="1542184848089" expanded="true" signature="1196:1550" ph="{...}" />
+                <marker date="1542184848089" expanded="true" signature="1235:1532" ph="&lt;div.../&gt;" />
+                <marker date="1542184848089" expanded="true" signature="1294:1505" ph="&lt;label.../&gt;" />
+                <marker date="1542184848089" expanded="true" signature="1705:1982" ph="&lt;div.../&gt;" />
+                <marker date="1542184848089" expanded="true" signature="1746:1963" ph="&lt;button.../&gt;" />
+                <marker date="1542184848089" expanded="true" signature="2150:2306" ph="@..." />
+                <marker date="1542184848089" expanded="true" signature="2201:2306" ph="{...}" />
+                <marker date="1542184848089" expanded="true" signature="2315:2812" ph="@{...}" />
+                <marker date="1542184848089" expanded="true" signature="2430:2695" ph="&lt;script.../&gt;" />
+                <marker date="1542184848089" expanded="true" signature="2476:2679" ph="{...}" />
+                <marker date="1542184848089" expanded="true" signature="2700:2810" ph="@..." />
+                <marker date="1542184848089" expanded="true" signature="2741:2810" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VakaIDServer/Config.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-536">
+              <caret line="93" column="20" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="20" />
+              <folding>
+                <marker date="1542182665352" expanded="true" signature="0:175" ph="/* Copyright (c) Brock Allen &amp; Dominick Baier. All rights reserved. ... */" />
+                <marker date="1542182665352" expanded="false" signature="183:263" ph="..." />
+                <marker date="1542182665352" expanded="true" signature="289:6069" ph="{...}" />
+                <marker date="1542182665352" expanded="true" signature="315:6067" ph="{...}" />
+                <marker date="1542182665352" expanded="true" signature="450:688" ph="{...}" />
+                <marker date="1542182665352" expanded="true" signature="519:677" ph="{...}" />
+                <marker date="1542182665352" expanded="true" signature="754:894" ph="{...}" />
+                <marker date="1542182665352" expanded="true" signature="818:883" ph="{...}" />
+                <marker date="1542182665352" expanded="true" signature="1007:6061" ph="{...}" />
+                <marker date="1542182665352" expanded="true" signature="1107:6050" ph="{...}" />
+                <marker date="1542182665352" expanded="true" signature="1152:1463" ph="{...}" />
+                <marker date="1542182665352" expanded="true" signature="1322:1399" ph="{...}" />
+                <marker date="1542182665352" expanded="true" signature="1565:1883" ph="{...}" />
+                <marker date="1542182665352" expanded="true" signature="1742:1819" ph="{...}" />
+                <marker date="1542182665352" expanded="true" signature="2011:2853" ph="{...}" />
+                <marker date="1542182665352" expanded="true" signature="2279:2363" ph="{...}" />
+                <marker date="1542182665352" expanded="true" signature="2591:2788" ph="{...}" />
+                <marker date="1542182665352" expanded="true" signature="2980:3720" ph="{...}" />
+                <marker date="1542182665352" expanded="true" signature="3314:3406" ph="{...}" />
+                <marker date="1542182665352" expanded="true" signature="3765:4477" ph="{...}" />
+                <marker date="1542182665352" expanded="true" signature="4079:4171" ph="{...}" />
+                <marker date="1542182665352" expanded="true" signature="4522:5384" ph="{...}" />
+                <marker date="1542182665352" expanded="true" signature="5429:6036" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VakaIDServer/Startup.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1260">
+              <caret line="95" column="39" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
+              <folding>
+                <marker date="1542186928444" expanded="false" signature="6:404" ph="..." />
+                <marker date="1542186928444" expanded="true" signature="430:4462" ph="{...}" />
+                <marker date="1542186928444" expanded="true" signature="457:4460" ph="{...}" />
+                <marker date="1542186928444" expanded="true" signature="660:762" ph="{...}" />
+                <marker date="1542186928444" expanded="true" signature="830:2811" ph="{...}" />
+                <marker date="1542186928444" expanded="true" signature="1284:1441" ph="{...}" />
+                <marker date="1542186928444" expanded="true" signature="1508:1881" ph="{...}" />
+                <marker date="1542186928444" expanded="true" signature="2306:2391" ph="{...}" />
+                <marker date="1542186928444" expanded="true" signature="2408:2507" ph="{...}" />
+                <marker date="1542186928444" expanded="true" signature="2585:2799" ph="{...}" />
+                <marker date="1542186928444" expanded="true" signature="2892:4454" ph="{...}" />
+                <marker date="1542186928444" expanded="true" signature="3046:3227" ph="{...}" />
+                <marker date="1542186928444" expanded="true" signature="3253:3503" ph="/* if (env.IsDevelopment()) ... */" />
+                <marker date="1542186928444" expanded="true" signature="4001:4147" ph="{...}" />
+                <marker date="1542186928444" expanded="true" signature="4266:4442" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VakaIDServer/SeedData.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-805">
+              <folding>
+                <marker date="1541582163451" expanded="true" signature="0:175" ph="/* Copyright (c) Brock Allen &amp; Dominick Baier. All rights reserved. ... */" />
+                <marker date="1541582163451" expanded="false" signature="184:439" ph="..." />
+                <marker date="1541582163451" expanded="true" signature="465:4328" ph="{...}" />
+                <marker date="1541582163451" expanded="true" signature="493:4326" ph="{...}" />
+                <marker date="1541582163451" expanded="true" signature="575:4320" ph="{...}" />
+                <marker date="1541582163451" expanded="true" signature="690:4310" ph="{...}" />
+                <marker date="1541582163451" expanded="true" signature="1045:2481" ph="{...}" />
+                <marker date="1541582163451" expanded="true" signature="1132:1198" ph="{...}" />
+                <marker date="1541582163451" expanded="true" signature="1322:1446" ph="{...}" />
+                <marker date="1541582163451" expanded="true" signature="1512:2231" ph="{...}" />
+                <marker date="1541582163451" expanded="true" signature="2283:2407" ph="{...}" />
+                <marker date="1541582163451" expanded="true" signature="2502:2601" ph="{...}" />
+                <marker date="1541582163451" expanded="true" signature="2700:4178" ph="{...}" />
+                <marker date="1541582163451" expanded="true" signature="2785:2849" ph="{...}" />
+                <marker date="1541582163451" expanded="true" signature="2971:3095" ph="{...}" />
+                <marker date="1541582163451" expanded="true" signature="3159:3930" ph="{...}" />
+                <marker date="1541582163451" expanded="true" signature="3982:4106" ph="{...}" />
+                <marker date="1541582163451" expanded="true" signature="4199:4296" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VakaIDServer/appsettings.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VakaIDServer/appsettings.Development.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/VakaIDServer/Program.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
+              <folding>
+                <marker date="1542188354622" expanded="false" signature="6:211" ph="..." />
+                <marker date="1542188354622" expanded="true" signature="237:1809" ph="{...}" />
+                <marker date="1542188354622" expanded="true" signature="264:1807" ph="{...}" />
+                <marker date="1542188354622" expanded="true" signature="317:707" ph="{...}" />
+                <marker date="1542188354622" expanded="true" signature="564:672" ph="{...}" />
+                <marker date="1542188354622" expanded="true" signature="767:1801" ph="{...}" />
+                <marker date="1542188354622" expanded="true" signature="1620:1760" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VakaIDServer/tempkey.rsa">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>name</find>
+      <find>active</find>
+      <find>web</find>
+      <find>GetWebSessionsAsync</find>
+      <find>Context.Rem</find>
+      <find>#flatpickr</find>
+      <find>.flatpickr-wrapper</find>
+      <find>latpickr-calendar</find>
+      <find>latpickr-calendar {</find>
+      <find>flatpickr</find>
+      <find>GenerateSMSCode</find>
+      <find>AddNewPhone</find>
+      <find>VerifyOldPhone</find>
+      <find>gender</find>
+      <find>ListSecretKeySms</find>
+      <find>ProfileUser</find>
+      <find>Avatar</find>
+      <find>CreateDataError</find>
+      <find>EnableTwoFactor</find>
+      <find>twoFaSuccess</find>
+      <find>atpickr-wrapper</find>
+      <find>AccessFailedCount</find>
+      <find>FileUpload1</find>
+      <find>ForgotPassword</find>
+      <find>RedirectResult</find>
+      <find>AuthenticationProperties</find>
+      <find>https://ex.vakacod</find>
+      <find>main-frame-error</find>
+      <find>main-message</find>
+      <find>main-content</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Ngô Ngọc Huấn &lt;huannn@vakaxa.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RESET_MODE" value="HARD" />
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/26253E62-F175-49F5-BAB2-BDC919011F56/33/6a92d91f/IdentityUser.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5C069570-324E-4624-8FE9-69E9573B1627/10/ddc66738/DateTime.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9E583682-5CC6-412D-8360-C4C6ADFE4941/ab/2433ad9d/IResponseCookies.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/49E2DE0C-44CF-4534-B4D3-5D56520970B9/96/Client.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/04EC73D0-41FD-4801-9FE7-035A45A8D015/90/01f238f1/Queryable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/27D6392B-5CD8-4746-8794-049607456DE9/4/TimeAuthenticator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/283EC7A1-E0DC-44AE-802F-2A38BD868DC7/e6/62b78806/AuthorizeAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/804D404C-3A3E-4837-8520-654FA957E807/ee/926b8e5d/ActionExecutingContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/283EC7A1-E0DC-44AE-802F-2A38BD868DC7/65/b7fcb25b/IAuthorizationRequirement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/560D56F8-376D-4258-A59A-D5478913C777/af/bbd392cb/HttpContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2BD385E8-968B-48D6-B65B-62AA7D7035AB/37/72569ca1/ICollection`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/49E2DE0C-44CF-4534-B4D3-5D56520970B9/94/ApiResource.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/49E2DE0C-44CF-4534-B4D3-5D56520970B9/9B/GrantTypes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/398FFC85-F043-4882-8DB1-98F1D9A058A5/06/8ff0a16c/JsonHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5C069570-324E-4624-8FE9-69E9573B1627/69/e9181539/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5C069570-324E-4624-8FE9-69E9573B1627/bc/5ae16a56/ICollection`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/283EC7A1-E0DC-44AE-802F-2A38BD868DC7/fe/9f923f3a/AssertionRequirement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FDD8AE31-DD7C-42E2-AFBA-26935FE9427C/30/ec19f5ec/Environment.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/283EC7A1-E0DC-44AE-802F-2A38BD868DC7/f8/f6bd262b/AuthorizationOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49E2DE0C-44CF-4534-B4D3-5D56520970B9/38/393ef90e/AccessTokenType.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2801DC05-E37A-4434-B1FB-157C366FBC78/cc/0d87b2c8/CookieAuthenticationDefaults.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3A32D5ED-179F-41A7-AC28-5A496B4F9104/ab/689cafbf/ConfigurationExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/49E2DE0C-44CF-4534-B4D3-5D56520970B9/DB/AuthenticationOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/49E2DE0C-44CF-4534-B4D3-5D56520970B9/EA/Additional.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7B30BDEB-DEEB-44DC-B874-D17AB786450E/df/053cba6d/Parser.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/49E2DE0C-44CF-4534-B4D3-5D56520970B9/EB/Core.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Models/ActivityModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/49E2DE0C-44CF-4534-B4D3-5D56520970B9/ED/InMemory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2801DC05-E37A-4434-B1FB-157C366FBC78/07/b4edbf1e/CookieAuthenticationOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Models/UserModelClaim.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Models/WebSessionModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ED07561A-F00F-4966-8EBC-547EA3E7CE17/3c/0e5c0a8f/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Models/LogAction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ED07561A-F00F-4966-8EBC-547EA3E7CE17/54/71d7c951/RedirectResult.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Models/ApplicationUser.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/49E2DE0C-44CF-4534-B4D3-5D56520970B9/8C/PrincipalExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A1BD07F9-5922-439E-9AD6-B155FBF604B1/33/9973fccb/IHttpHeadersHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2BD385E8-968B-48D6-B65B-62AA7D7035AB/b6/ccb4b33f/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Models/LogActionModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C7CF6354-FDBD-4D4A-8E1F-5A0D0DEB310C/fe/8feeab23/ConfigurationExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Constants/Constants.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07DE3E67-FFD1-4268-B6BE-81C34E676267/f0/20560781/IUserTwoFactorTokenProvider`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ED07561A-F00F-4966-8EBC-547EA3E7CE17/b1/d07cc91a/MvcApplicationBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/00AD712C-49A2-4CD0-AEBF-621079C6EED3/172/Option`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07DE3E67-FFD1-4268-B6BE-81C34E676267/cb/7c6375ee/UserManager`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0C4AED80-D533-49AA-B59D-38FF83BA08F0/65/dfde024a/Route.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EEBDD9AB-C4D0-4490-AD75-660EDAB9AF18/ea/3965cc5c/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Views/_ViewStart.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/540A30D0-A031-4084-807D-B058D5033896/dc/0d782e65/ArgumentNullException.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0C4AED80-D533-49AA-B59D-38FF83BA08F0/16/d5add50c/RouteHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CE358CB-F799-4870-AB28-094F18916D92/1f/aa11921a/IdentityBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Views/Shared/_ValidationScriptsPartial.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0C4AED80-D533-49AA-B59D-38FF83BA08F0/0d/cb241b20/IRouteBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/49E2DE0C-44CF-4534-B4D3-5D56520970B9/A3/LogoutRequest.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Views/Shared/Error.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/27D6392B-5CD8-4746-8794-049607456DE9/1/Authenticator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/.nuget/packages/nlog.config/4.5.10/contentFiles/any/any/NLog.config" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7AC2DC14-E0F0-4B65-8F43-8F69A0E88462/b7/38bc071f/IRouter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Views/Account/Login.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/283EC7A1-E0DC-44AE-802F-2A38BD868DC7/93/7b99fd63/AuthorizationHandler`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5C069570-324E-4624-8FE9-69E9573B1627/38/ba67a3b5/AsyncMethodBuilderCore.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ED07561A-F00F-4966-8EBC-547EA3E7CE17/e1/b822a1b6/MvcRouteHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Views/Account/Register.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/398FFC85-F043-4882-8DB1-98F1D9A058A5/2e/64d5df61/Controller.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Views/Profile/Index.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Views/Activity/Index.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CE358CB-F799-4870-AB28-094F18916D92/be/cdc11138/SignInManager`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Views/Setting/Index.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Views/Security/Index.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/Security/SecurityViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/Security/SecurityController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/Account/AccountController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07DE3E67-FFD1-4268-B6BE-81C34E676267/8e/eacc158d/IUserStore`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/Setting/SettingShowActivityModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/159BF287-7966-4AC6-914C-3CAF595E15C9/39/9b07c5d6/EntityFrameworkServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07DE3E67-FFD1-4268-B6BE-81C34E676267/ea/7600a915/IUserPasswordStore`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/Profile/SocialNetwork.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/Profile/PersonalDetails.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/Profile/ProfileController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/Profile/ProfileModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07DE3E67-FFD1-4268-B6BE-81C34E676267/12/575149aa/IdentityResult.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/Dashboard/DashboardController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/398FFC85-F043-4882-8DB1-98F1D9A058A5/dd/9ed404b4/HtmlHelperPartialExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Views/Dashboard/Index.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5C069570-324E-4624-8FE9-69E9573B1627/60/125084c2/IEnumerable`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5C069570-324E-4624-8FE9-69E9573B1627/7e/4871b723/DateTimeOffset.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07DE3E67-FFD1-4268-B6BE-81C34E676267/2f/9437fb60/IUserTwoFactorStore`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8F0FCEB5-1486-436D-8C72-D78A3C3C07AB/86/127a823b/JwtClaimTypes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49E2DE0C-44CF-4534-B4D3-5D56520970B9/c7/241327ce/TokenExpiration.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/398FFC85-F043-4882-8DB1-98F1D9A058A5/8e/e236f702/IHtmlHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Config.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5E843C9C-0300-488E-907A-7645E5C7F2AC/c7/00bae98f/IDbConnection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/47379F27-0595-4EDD-8D81-32F15C8F25B2/21/5fa7503f/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49E2DE0C-44CF-4534-B4D3-5D56520970B9/9a/49848c3e/TokenUsage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/159BF287-7966-4AC6-914C-3CAF595E15C9/d5/3b104340/DatabaseFacade.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/SeedData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07DE3E67-FFD1-4268-B6BE-81C34E676267/9f/02996c65/IUserPhoneNumberStore`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/159BF287-7966-4AC6-914C-3CAF595E15C9/be/1f8f6e74/IDatabaseCreator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/159BF287-7966-4AC6-914C-3CAF595E15C9/ca/ca9ad5ce/EntityFrameworkQueryableExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C004AB56-452B-4412-BE06-16015D4D4203/7c/7362d065/Directory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/772DBF3F-FF97-4BA1-8AF6-D091D2F0B1D3/26/826a4e52/MySqlDbContextOptionsExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/CustomController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F87AB8DF-203C-4900-869F-EE5EDFC1FC21/8/MySqlConnectionStringBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/SecurityHeadersAttribute.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/159BF287-7966-4AC6-914C-3CAF595E15C9/0e/e069cc3b/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2BD385E8-968B-48D6-B65B-62AA7D7035AB/42/93daa2c8/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Services/LogUserAction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FDFDE55E-2BFD-4153-BACD-07CCD41AE5E6/3f/e3b40200/ClaimTypes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Services/SendEmail.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Services/ProfileService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Services/WebSession.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/159BF287-7966-4AC6-914C-3CAF595E15C9/db/b0ac7e05/DbSet`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Views/Account/LoggedOut.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/Dashboard/DashboardModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Views/Shared/_LayoutIsAuthenticate.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5C069570-324E-4624-8FE9-69E9573B1627/1e/e8457ad1/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Data/Migrations/ApplicationDbContextModelSnapshot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49560F70-ED88-49EF-809B-FC7FF84E968C/74/eaa3a973/FileConfigurationExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Data/ApplicationDbContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Data/Migrations/20180109192453_CreateIdentitySchema.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaxaIDServer.Commons/Helpers/AppSettingHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/Activity/ActivityController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/59D3A202-2913-4AF7-A40A-B032C1B323FE/28/43ddf85f/IdentityDbContext`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5C069570-324E-4624-8FE9-69E9573B1627/c7/2e2446db/Array.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2BD385E8-968B-48D6-B65B-62AA7D7035AB/10/287876aa/Int32.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/804D404C-3A3E-4837-8520-654FA957E807/db/2fc2c274/ModelStateDictionary.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ED07561A-F00F-4966-8EBC-547EA3E7CE17/9c/0defaabc/HttpPostAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/398FFC85-F043-4882-8DB1-98F1D9A058A5/c6/03513254/HtmlHelperValidationExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CB6D12D6-572D-4834-8C9C-516BB75543E5/ec/8f748393/ConfigurationBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VakaIDServer/Helpers/CommonHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9F72D5AE-8B1A-4E92-B627-A8ACF8936BA6/95/337d8daa/RewriteRule.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9E583682-5CC6-412D-8360-C4C6ADFE4941/82/c3d5bfa5/CookieOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9F72D5AE-8B1A-4E92-B627-A8ACF8936BA6/3f/658a01d8/RewriteOptionsExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/VakaxaIDServer.Repositories/Mysql/Base/MultiThreadUpdateEntityRepository.cs" />
+        <option value="$PROJECT_DIR$/VakaxaIDServer.Commons/Helpers/SqlHelper.cs" />
+        <option value="$PROJECT_DIR$/VakaxaIDServer.Repositories/Mysql/SendEmailRepository.cs" />
+        <option value="$PROJECT_DIR$/VakaxaIDServer.Repositories/Mysql/SendSmsRepository.cs" />
+        <option value="$PROJECT_DIR$/VakaxaIDServer.Commons/appsettings.json" />
+        <option value="$PROJECT_DIR$/SendEmail/Program.cs" />
+        <option value="$PROJECT_DIR$/SendEmail/appsettings.json" />
+        <option value="$PROJECT_DIR$/SendSmsBusiness/Class1.cs" />
+        <option value="$PROJECT_DIR$/SendSms/Program.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Data/ApplicationDbContext.cs" />
+        <option value="$PROJECT_DIR$/SendSmsBusiness/SendSmsBusiness.cs" />
+        <option value="$PROJECT_DIR$/SendEmailBusiness/SendMailBusiness.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Services/ISettingActivity.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Services/EmailContext.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Services/ProfileService.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Quickstart/CustomController.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/wwwroot/css/style.css" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Models/LogActionModel.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Quickstart/Dashboard/DashboardModel.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Quickstart/Dashboard/DashboardController.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Models/ActivityModel.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Services/LogUserAction.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Views/Activity/Index.cshtml" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Views/Dashboard/Index.cshtml" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Quickstart/WebSession/ActivityController.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Quickstart/Activity/ActivityController.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Quickstart/WebSession/WebsessionPage.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Quickstart/WebSession/WebSessionController.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Services/WebSession.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Views/WebSession/Index.cshtml" />
+        <option value="$PROJECT_DIR$/VakaIDServer/wwwroot/js/flatpickr.min.js" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Data/Migrations/20180109192453_CreateIdentitySchema.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Models/ApplicationUser.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Data/Migrations/ApplicationDbContextModelSnapshot.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Quickstart/Profile/PersonalDetails.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Quickstart/Profile/ProfileModel.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/logger.txt" />
+        <option value="$PROJECT_DIR$/VakaxaIDServer.Commons/Helpers/AppSettingHelper.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/appsettings.json" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Quickstart/Profile/ProfileController.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Quickstart/SecurityHeadersAttribute.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/wwwroot/css/flatpickr.min.css" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Views/Profile/Index.cshtml" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Views/Shared/_LayoutIsAuthenticate.cshtml" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Helpers/CommonHelper.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Views/Account/Register.cshtml" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Config.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Views/Account/Login.cshtml" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Startup.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Quickstart/Account/AccountController.cs" />
+        <option value="$PROJECT_DIR$/VakaIDServer/Program.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/VakaIDServer/wwwroot/lib/jquery-validation/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1920" />
+    <option name="y" value="-2" />
+    <option name="width" value="1920" />
+    <option name="height" value="1082" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="FileSystemExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
+              <item name="server" type="34e6ba20:FileSystemExplorerNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="VakaxaIDServer" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="VakaxaIDServer" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="ServiceProject" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="VakaxaIDServer" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="VakaxaIDServer" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="VakaxaIDServer" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="VakaxaIDServer" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Quickstart" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="VakaxaIDServer" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="VakaxaIDServer" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Quickstart" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Account" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="VakaxaIDServer" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="VakaxaIDServer" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Views" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="VakaxaIDServer" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="VakaxaIDServer" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Views" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Account" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="VakaxaIDServer" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="VakaxaIDServer" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Views" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Shared" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-all-files" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../vakaE/exchange/EbcExchange.sln" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected=".NET Project.Default">
+    <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/VakaIDServer/bin/Debug/netcoreapp2.1/VakaxaIDServer.dll" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/VakaIDServer" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <envs>
+        <env name="ASPNETCORE_ENVIRONMENT" value="Development" />
+      </envs>
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/VakaIDServer/VakaxaIDServer.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value=".NETCoreApp,Version=v2.1" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceProject\SendEmail" type="DotNetProject" factoryName=".NET Project" temporary="true">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/SendEmail/bin/Debug/netcoreapp2.1/SendEmail.dll" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SendEmail" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/SendEmail/SendEmail.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value=".NETCoreApp,Version=v2.1" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceProject\SendSms" type="DotNetProject" factoryName=".NET Project" temporary="true">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/SendSms/bin/Debug/netcoreapp2.1/SendSms.dll" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SendSms" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/SendSms/SendSms.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value=".NETCoreApp,Version=v2.1" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue=".NET Project.Default" />
+      <item itemvalue=".NET Project.ServiceProject\SendEmail" />
+      <item itemvalue=".NET Project.ServiceProject\SendSms" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue=".NET Project.ServiceProject\SendSms" />
+        <item itemvalue=".NET Project.ServiceProject\SendEmail" />
+        <item itemvalue=".NET Project.ServiceProject\SendSms" />
+        <item itemvalue=".NET Project.ServiceProject\SendEmail" />
+        <item itemvalue=".NET Project.ServiceProject\SendSms" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fcc2ad4a-dc22-4f94-80ad-f103455f7ec3" name="Default Changelist" comment="" />
+      <created>1537776210980</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1537776210980</updated>
+      <workItem from="1537776212224" duration="6603000" />
+      <workItem from="1537844932170" duration="2780000" />
+      <workItem from="1537857502580" duration="9705000" />
+      <workItem from="1537922501817" duration="7105000" />
+      <workItem from="1537931598535" duration="9406000" />
+      <workItem from="1537949854123" duration="5117000" />
+      <workItem from="1537956576156" duration="3774000" />
+      <workItem from="1538011629895" duration="9477000" />
+      <workItem from="1538021323032" duration="12171000" />
+      <workItem from="1538385905611" duration="3166000" />
+      <workItem from="1538448113848" duration="468000" />
+      <workItem from="1538449592939" duration="3760000" />
+      <workItem from="1538467141408" duration="78000" />
+      <workItem from="1538468417611" duration="3900000" />
+      <workItem from="1538528519482" duration="14881000" />
+      <workItem from="1538566359674" duration="15774000" />
+      <workItem from="1538657000960" duration="15337000" />
+      <workItem from="1538744079690" duration="640000" />
+      <workItem from="1538795207704" duration="639000" />
+      <workItem from="1538812736138" duration="85440000" />
+      <workItem from="1539260112218" duration="18659000" />
+      <workItem from="1539346661338" duration="12468000" />
+      <workItem from="1539603047659" duration="5954000" />
+      <workItem from="1539658874320" duration="23743000" />
+      <workItem from="1539748428037" duration="30590000" />
+      <workItem from="1539856105398" duration="1764000" />
+      <workItem from="1539916017009" duration="2492000" />
+      <workItem from="1539944262050" duration="617000" />
+      <workItem from="1539951074806" duration="789000" />
+      <workItem from="1540025099502" duration="17664000" />
+      <workItem from="1540297716215" duration="8267000" />
+      <workItem from="1540441210375" duration="5187000" />
+      <workItem from="1540473517963" duration="29395000" />
+      <workItem from="1540723314570" duration="17086000" />
+      <workItem from="1540954568327" duration="55000" />
+      <workItem from="1540954643493" duration="1709000" />
+      <workItem from="1540967367579" duration="10024000" />
+      <workItem from="1541077634892" duration="2192000" />
+      <workItem from="1541125214269" duration="648000" />
+      <workItem from="1541133120824" duration="1900000" />
+      <workItem from="1541241987772" duration="52482000" />
+      <workItem from="1541300657715" duration="862000" />
+      <workItem from="1541322192253" duration="4176000" />
+      <workItem from="1541392066289" duration="6073000" />
+      <workItem from="1541497867488" duration="3437000" />
+      <workItem from="1541503430538" duration="1838000" />
+      <workItem from="1541579185154" duration="6006000" />
+      <workItem from="1541726611738" duration="7040000" />
+      <workItem from="1541733667638" duration="20485000" />
+      <workItem from="1541984202074" duration="18459000" />
+      <workItem from="1542077390632" duration="6952000" />
+      <workItem from="1542163602170" duration="7171000" />
+    </task>
+    <task id="LOCAL-00023" summary="pagination user action log">
+      <created>1538997305844</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1538997305844</updated>
+    </task>
+    <task id="LOCAL-00024" summary="repair logic gagination log user">
+      <created>1538997707798</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1538997707798</updated>
+    </task>
+    <task id="LOCAL-00025" summary="page setting user">
+      <created>1539056539982</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1539056539982</updated>
+    </task>
+    <task id="LOCAL-00026" summary="repair register for client">
+      <created>1539065601779</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1539065601779</updated>
+    </task>
+    <task id="LOCAL-00027" summary="page Profile">
+      <created>1539072661891</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1539072661891</updated>
+    </task>
+    <task id="LOCAL-00028" summary="logic SocialNetWork and active meni right">
+      <created>1539081984665</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1539081984665</updated>
+    </task>
+    <task id="LOCAL-00029" summary="repair link social network user">
+      <created>1539082272483</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1539082272483</updated>
+    </task>
+    <task id="LOCAL-00030" summary="format date and UApair">
+      <created>1539083265153</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1539083265153</updated>
+    </task>
+    <task id="LOCAL-00031" summary="repair logic save activity and notify">
+      <created>1539140345441</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1539140345441</updated>
+    </task>
+    <task id="LOCAL-00032" summary="fix bug show error theo field">
+      <created>1539328643774</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1539328643774</updated>
+    </task>
+    <task id="LOCAL-00033" summary="limit fiest name, last name, email max 50 char">
+      <created>1539329257157</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1539329257157</updated>
+    </task>
+    <task id="LOCAL-00034" summary="merger code master">
+      <created>1539330471325</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1539330471325</updated>
+    </task>
+    <task id="LOCAL-00035" summary="MERGER code master">
+      <created>1539330889959</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1539330889959</updated>
+    </task>
+    <task id="LOCAL-00036" summary="error logout and login location">
+      <created>1539602507185</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1539602507185</updated>
+    </task>
+    <task id="LOCAL-00037" summary="fix bug show error theo field">
+      <created>1539602533756</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1539602533756</updated>
+    </task>
+    <task id="LOCAL-00038" summary="loi save log session">
+      <created>1539662338684</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1539662338684</updated>
+    </task>
+    <task id="LOCAL-00039" summary="show error when email not exit forgot pass">
+      <created>1539748514853</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1539748514853</updated>
+    </task>
+    <task id="LOCAL-00040" summary="repair RegularExpression password">
+      <created>1539749650135</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1539749650135</updated>
+    </task>
+    <task id="LOCAL-00041" summary="khoa link confirm sms khi het han">
+      <created>1539758309269</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1539758309269</updated>
+    </task>
+    <task id="LOCAL-00042" summary="logout vakaid when change pass">
+      <created>1539834166308</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1539834166308</updated>
+    </task>
+    <task id="LOCAL-00043" summary="clear websession when  reset passs">
+      <created>1539835543742</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1539835543742</updated>
+    </task>
+    <task id="LOCAL-00044" summary="seciruty">
+      <created>1539858133140</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1539858133140</updated>
+    </task>
+    <task id="LOCAL-00045" summary="repair logic websession&#10;save cookie idwebsession">
+      <created>1540197188990</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1540197188990</updated>
+    </task>
+    <task id="LOCAL-00046" summary="convert time">
+      <created>1540199263837</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1540199263837</updated>
+    </task>
+    <task id="LOCAL-00047" summary="save log when error">
+      <created>1540362131091</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1540362131091</updated>
+    </task>
+    <task id="LOCAL-00048" summary="seciruty">
+      <created>1540464166926</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1540464166926</updated>
+    </task>
+    <task id="LOCAL-00049" summary="seciruty">
+      <created>1540464510221</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1540464510221</updated>
+    </task>
+    <task id="LOCAL-00050" summary="seciruty">
+      <created>1540546469733</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1540546469733</updated>
+    </task>
+    <task id="LOCAL-00051" summary="seciruty">
+      <created>1540548254882</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1540548254882</updated>
+    </task>
+    <task id="LOCAL-00052" summary="seciruty">
+      <created>1540548743062</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1540548743062</updated>
+    </task>
+    <task id="LOCAL-00053" summary="seciruty">
+      <created>1540555074548</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1540555074548</updated>
+    </task>
+    <task id="LOCAL-00054" summary="seciruty">
+      <created>1540555199644</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1540555199644</updated>
+    </task>
+    <task id="LOCAL-00055" summary="seciruty">
+      <created>1540555239524</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1540555239524</updated>
+    </task>
+    <task id="LOCAL-00056" summary="seciruty">
+      <created>1540631602064</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1540631602064</updated>
+    </task>
+    <task id="LOCAL-00057" summary="seciruty">
+      <created>1540691179164</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1540691179164</updated>
+    </task>
+    <task id="LOCAL-00058" summary="seciruty">
+      <created>1540691200308</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1540691200308</updated>
+    </task>
+    <task id="LOCAL-00059" summary="seciruty">
+      <created>1540693218891</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1540693218891</updated>
+    </task>
+    <task id="LOCAL-00060" summary="merger master">
+      <created>1540886522918</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1540886522918</updated>
+    </task>
+    <task id="LOCAL-00061" summary="merger master">
+      <created>1541383605174</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1541383605174</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Dashboard vakaId">
+      <created>1541729955302</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1541729955302</updated>
+    </task>
+    <task id="LOCAL-00063" summary="page activity vakaid">
+      <created>1541731079477</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1541731079477</updated>
+    </task>
+    <task id="LOCAL-00064" summary="page websession vakaID">
+      <created>1541733842480</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1541733842480</updated>
+    </task>
+    <task id="LOCAL-00065" summary="prifile vakaId">
+      <created>1541744838610</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1541744838610</updated>
+    </task>
+    <task id="LOCAL-00066" summary="page Profile">
+      <created>1541746769880</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1541746769880</updated>
+    </task>
+    <task id="LOCAL-00067" summary="update avatar">
+      <created>1541750893486</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1541750893486</updated>
+    </task>
+    <task id="LOCAL-00068" summary="style page profile">
+      <created>1541751093960</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1541751093960</updated>
+    </task>
+    <task id="LOCAL-00069" summary="xoa code khong dung">
+      <created>1541757018065</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1541757018065</updated>
+    </task>
+    <task id="LOCAL-00070" summary="rewrite url">
+      <created>1541758908029</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1541758908029</updated>
+    </task>
+    <task id="LOCAL-00071" summary="validate form register">
+      <created>1541994344226</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1541994344226</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="536405000" />
+  </component>
+  <component name="TodoView" selected-index="3">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1920" y="-2" width="1920" height="1082" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6117103" visible="true" weight="0.27214515" />
+      <window_info id="Structure" order="1" sideWeight="0.3882897" side_tool="true" visible="true" weight="0.27214515" />
+      <window_info id="Favorites" order="2" sideWeight="0.36050156" side_tool="true" weight="0.3089648" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893278" weight="0.24159664" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49893278" weight="0.3802521" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32983193" />
+      <window_info anchor="bottom" id="NuGet" order="7" sideWeight="0.4994664" weight="0.32983193" />
+      <window_info anchor="bottom" id="Database Console" order="8" weight="0.32983193" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49252936" weight="0.35189074" />
+      <window_info anchor="bottom" id="Database Changes" order="11" sideWeight="0.4994664" weight="0.32983193" />
+      <window_info anchor="bottom" id="Unit Tests" order="12" weight="0.32983193" />
+      <window_info anchor="bottom" id="REST Client" order="13" weight="0.32983193" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="14" sideWeight="0.7065101" visible="true" weight="0.3182773" />
+      <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.29348987" side_tool="true" weight="0.32668066" />
+      <window_info anchor="bottom" id="Messages" order="16" />
+      <window_info anchor="bottom" id="Inspection Results" order="17" sideWeight="0.4994664" weight="0.32983193" />
+      <window_info anchor="bottom" id="Build" order="18" sideWeight="0.49573106" weight="0.32563025" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Errors In Solution" order="3" weight="0.32977587" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.2230523" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection>
+                  <UserGroup>
+                    <option name="users">
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </option>
+                  </UserGroup>
+                  <UserGroup>
+                    <option name="users">
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </option>
+                  </UserGroup>
+                </collection>
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="merger code master" />
+    <MESSAGE value="MERGER code master" />
+    <MESSAGE value="error logout and login location" />
+    <MESSAGE value="fix bug show error theo field" />
+    <MESSAGE value="loi save log session" />
+    <MESSAGE value="show error when email not exit forgot pass" />
+    <MESSAGE value="repair RegularExpression password" />
+    <MESSAGE value="khoa link confirm sms khi het han" />
+    <MESSAGE value="logout vakaid when change pass" />
+    <MESSAGE value="clear websession when  reset passs" />
+    <MESSAGE value="repair logic websession&#10;save cookie idwebsession" />
+    <MESSAGE value="convert time" />
+    <MESSAGE value="save log when error" />
+    <MESSAGE value="seciruty" />
+    <MESSAGE value="merger master" />
+    <MESSAGE value="Dashboard vakaId" />
+    <MESSAGE value="page activity vakaid" />
+    <MESSAGE value="page websession vakaID" />
+    <MESSAGE value="prifile vakaId" />
+    <MESSAGE value="page Profile" />
+    <MESSAGE value="update avatar" />
+    <MESSAGE value="style page profile" />
+    <MESSAGE value="xoa code khong dung" />
+    <MESSAGE value="rewrite url" />
+    <MESSAGE value="validate form register" />
+    <option name="LAST_COMMIT_MESSAGE" value="validate form register" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/VakaIDServer/Quickstart/Profile/ProfileController.cs</url>
+          <line>180</line>
+          <properties documentPath="$PROJECT_DIR$/VakaIDServer/Quickstart/Profile/ProfileController.cs" initialLine="176">
+            <startOffsets>
+              <option value="5713" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5728" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/VakaIDServer/Quickstart/Profile/ProfileController.cs</url>
+          <line>167</line>
+          <properties documentPath="$PROJECT_DIR$/VakaIDServer/Quickstart/Profile/ProfileController.cs" initialLine="163">
+            <startOffsets>
+              <option value="5142" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5168" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/VakaIDServer/Quickstart/CustomController.cs</url>
+          <line>66</line>
+          <properties documentPath="$PROJECT_DIR$/VakaIDServer/Quickstart/CustomController.cs" initialLine="66">
+            <startOffsets>
+              <option value="2456" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2520" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/WebSession/WebSessionController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="85" column="17" selection-start-line="85" selection-start-column="17" selection-end-line="85" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Views/WebSession/Index.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="74" selection-start-line="9" selection-start-column="74" selection-end-line="9" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/wwwroot/js/flatpickr.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="2141" column="39" selection-start-line="2141" selection-start-column="39" selection-end-line="2141" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/wwwroot/js/security.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="147" column="7" selection-start-line="124" selection-start-column="4" selection-end-line="147" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/26253E62-F175-49F5-BAB2-BDC919011F56/33/6a92d91f/IdentityUser.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="13" column="15" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Data/ApplicationDbContext.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="67" selection-start-line="7" selection-start-column="67" selection-end-line="7" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Data/Migrations/20180109192453_CreateIdentitySchema.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="25" column="37" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Data/Migrations/ApplicationDbContextModelSnapshot.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="26" column="49" lean-forward="true" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Models/ApplicationUser.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/00AD712C-49A2-4CD0-AEBF-621079C6EED3/172/Option`1.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/Profile/ProfileModel.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ED07561A-F00F-4966-8EBC-547EA3E7CE17/3c/0e5c0a8f/ControllerBase.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="542" column="96" selection-start-line="542" selection-start-column="85" selection-end-line="542" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/Profile/PersonalDetails.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Services/ProfileService.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="36" column="16" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/logger.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/Setting/SettingShowActivityModel.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaxaIDServer.Commons/Helpers/AppSettingHelper.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/398FFC85-F043-4882-8DB1-98F1D9A058A5/06/8ff0a16c/JsonHelper.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/Security/SecurityController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-39">
+          <caret line="164" column="49" selection-start-line="164" selection-start-column="49" selection-end-line="164" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Views/Security/Index.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="204" column="9" selection-start-line="204" selection-start-column="9" selection-end-line="204" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/Profile/ProfileController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="71" column="49" selection-start-line="71" selection-start-column="49" selection-end-line="71" selection-end-column="49" />
+          <folding>
+            <marker date="1541994369623" expanded="false" signature="6:27" ph="..." />
+            <marker date="1541994369623" expanded="true" signature="7364:7395" ph="{...}" />
+            <marker date="1541994369623" expanded="true" signature="1804:1824" ph="{...}" />
+            <marker date="1541994369623" expanded="true" signature="1835:1902" ph="/// Show activity page ... " />
+            <marker date="1541994369623" expanded="true" signature="1990:3244" ph="{...}" />
+            <marker date="1541994369623" expanded="true" signature="2016:3066" ph="{...}" />
+            <marker date="1541994369623" expanded="true" signature="2163:2259" ph="{...}" />
+            <marker date="1541994369623" expanded="true" signature="2463:2715" ph="{...}" />
+            <marker date="1541994369623" expanded="true" signature="2781:2906" ph="{...}" />
+            <marker date="1541994369623" expanded="true" signature="3098:3234" ph="{...}" />
+            <marker date="1541994369623" expanded="true" signature="3371:4170" ph="{...}" />
+            <marker date="1541994369623" expanded="true" signature="3397:3984" ph="{...}" />
+            <marker date="1541994369623" expanded="true" signature="3918:3968" ph="{...}" />
+            <marker date="1541994369623" expanded="true" signature="4016:4160" ph="{...}" />
+            <marker date="1541994369623" expanded="true" signature="4264:4886" ph="{...}" />
+            <marker date="1541994369623" expanded="true" signature="4290:4701" ph="{...}" />
+            <marker date="1541994369623" expanded="true" signature="4634:4685" ph="{...}" />
+            <marker date="1541994369623" expanded="true" signature="4733:4876" ph="{...}" />
+            <marker date="1541994369623" expanded="true" signature="7364:7389" ph="{...}" />
+            <marker date="1541994369623" expanded="true" signature="4982:7204" ph="{...}" />
+            <marker date="1541994369623" expanded="true" signature="5441:7190" ph="{...}" />
+            <marker date="1541994369623" expanded="true" signature="5577:7003" ph="{...}" />
+            <marker date="1541994369623" expanded="true" signature="5658:6981" ph="{...}" />
+            <marker date="1541994369623" expanded="true" signature="6011:6098" ph="{...}" />
+            <marker date="1541994369623" expanded="true" signature="7043:7172" ph="{...}" />
+            <marker date="1541994369623" expanded="true" signature="7364:7379" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/SecurityHeadersAttribute.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="34" column="52" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/wwwroot/css/flatpickr.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="116" column="39" lean-forward="true" selection-start-line="116" selection-start-column="39" selection-end-line="116" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Views/Profile/Index.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="299" column="35" selection-start-line="299" selection-start-column="35" selection-end-line="299" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9F72D5AE-8B1A-4E92-B627-A8ACF8936BA6/95/337d8daa/RewriteRule.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="76" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9F72D5AE-8B1A-4E92-B627-A8ACF8936BA6/3f/658a01d8/RewriteOptionsExtensions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="46" column="39" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/wwwroot/assets/icon/favicon.ico">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Views/Shared/_ValidationScriptsPartial.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="57" selection-start-line="1" selection-start-column="57" selection-end-line="1" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/Activity/ActivityController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="72" column="7" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Views/Dashboard/Index.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1217">
+          <caret line="189" column="59" selection-start-line="189" selection-start-column="59" selection-end-line="189" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/wwwroot/lib/jquery-validation/dist/jquery.validate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1215">
+          <caret line="88" column="30" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Views/Shared/_LayoutIsAuthenticate.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Services/SendEmail.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Views/Account/LoggedOut.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="85" selection-start-line="16" selection-start-column="64" selection-end-line="16" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ED07561A-F00F-4966-8EBC-547EA3E7CE17/54/71d7c951/RedirectResult.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="15" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/README.md">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/Dashboard/DashboardController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+          <folding>
+            <marker date="1541729826944" expanded="false" signature="6:689" ph="..." />
+            <marker date="1541729826944" expanded="true" signature="836:4033" ph="{...}" />
+            <marker date="1541729826944" expanded="true" signature="1564:1584" ph="{...}" />
+            <marker date="1541729826944" expanded="true" signature="1595:1662" ph="/// Show activity page ... " />
+            <marker date="1541729826944" expanded="true" signature="1741:3265" ph="{...}" />
+            <marker date="1541729826944" expanded="true" signature="1816:3024" ph="{...}" />
+            <marker date="1541729826944" expanded="true" signature="2302:2578" ph="{...}" />
+            <marker date="1541729826944" expanded="true" signature="2369:2560" ph="{...}" />
+            <marker date="1541729826944" expanded="true" signature="2826:2951" ph="{...}" />
+            <marker date="1541729826944" expanded="true" signature="3056:3219" ph="{...}" />
+            <marker date="1541729826944" expanded="true" signature="3275:3341" ph="/// Remove WebSession ... " />
+            <marker date="1541729826944" expanded="true" signature="3407:4027" ph="{...}" />
+            <marker date="1541729826944" expanded="true" signature="3433:3843" ph="{...}" />
+            <marker date="1541729826944" expanded="true" signature="3576:3780" ph="{...}" />
+            <marker date="1541729826944" expanded="true" signature="3875:4017" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Helpers/CommonHelper.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+          <folding>
+            <marker date="1541994308639" expanded="false" signature="6:81" ph="..." />
+            <marker date="1541994308639" expanded="true" signature="154:1902" ph="{...}" />
+            <marker date="1541994308639" expanded="true" signature="204:270" ph="{...}" />
+            <marker date="1541994308639" expanded="true" signature="317:404" ph="{...}" />
+            <marker date="1541994308639" expanded="true" signature="478:539" ph="{...}" />
+            <marker date="1541994308639" expanded="true" signature="596:1001" ph="{...}" />
+            <marker date="1541994308639" expanded="true" signature="622:864" ph="{...}" />
+            <marker date="1541994308639" expanded="true" signature="896:991" ph="{...}" />
+            <marker date="1541994308639" expanded="true" signature="1063:1896" ph="{...}" />
+            <marker date="1541994308639" expanded="true" signature="1089:1759" ph="{...}" />
+            <marker date="1541994308639" expanded="true" signature="1791:1886" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Views/Account/Register.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="56" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="56" />
+          <folding>
+            <marker date="1541994913380" expanded="true" signature="60:3067" ph="&lt;div.../&gt;" />
+            <marker date="1541994913380" expanded="true" signature="269:648" ph="&lt;div.../&gt;" />
+            <marker date="1541994913380" expanded="true" signature="302:462" ph="&lt;div.../&gt;" />
+            <marker date="1541994913380" expanded="true" signature="471:637" ph="&lt;div.../&gt;" />
+            <marker date="1541994913380" expanded="true" signature="653:2946" ph="&lt;form.../&gt;" />
+            <marker date="1541994913380" expanded="true" signature="817:1381" ph="&lt;div.../&gt;" />
+            <marker date="1541994913380" expanded="true" signature="854:1101" ph="&lt;div.../&gt;" />
+            <marker date="1541994913380" expanded="true" signature="1114:1366" ph="&lt;div.../&gt;" />
+            <marker date="1541994913380" expanded="true" signature="1409:1628" ph="&lt;div.../&gt;" />
+            <marker date="1541994913380" expanded="true" signature="1656:1887" ph="&lt;div.../&gt;" />
+            <marker date="1541994913380" expanded="true" signature="1915:2168" ph="&lt;div.../&gt;" />
+            <marker date="1541994913380" expanded="true" signature="2196:2405" ph="&lt;div.../&gt;" />
+            <marker date="1541994913380" expanded="true" signature="2414:2620" ph="&lt;h6.../&gt;" />
+            <marker date="1541994913380" expanded="true" signature="2629:2934" ph="&lt;div.../&gt;" />
+            <marker date="1541994913380" expanded="true" signature="2666:2919" ph="&lt;button.../&gt;" />
+            <marker date="1541994913380" expanded="true" signature="3091:3879" ph="@{...}" />
+            <marker date="1541994913380" expanded="true" signature="3284:3877" ph="&lt;script.../&gt;" />
+            <marker date="1541994913380" expanded="true" signature="3423:3611" ph="{...}" />
+            <marker date="1541994913380" expanded="true" signature="3658:3861" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/CustomController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="66" column="16" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="16" />
+          <folding>
+            <marker date="1541582163431" expanded="false" signature="6:554" ph="..." />
+            <marker date="1541582163431" expanded="true" signature="591:4022" ph="{...}" />
+            <marker date="1541582163431" expanded="true" signature="649:4020" ph="{...}" />
+            <marker date="1541582163431" expanded="true" signature="1840:2297" ph="{...}" />
+            <marker date="1541582163431" expanded="true" signature="2378:4014" ph="{...}" />
+            <marker date="1541582163431" expanded="true" signature="2404:3883" ph="{...}" />
+            <marker date="1541582163431" expanded="true" signature="2839:2910" ph="{...}" />
+            <marker date="1541582163431" expanded="true" signature="2931:3128" ph="{...}" />
+            <marker date="1541582163431" expanded="true" signature="3027:3110" ph="{...}" />
+            <marker date="1541582163431" expanded="true" signature="3273:3344" ph="{...}" />
+            <marker date="1541582163431" expanded="true" signature="3365:3600" ph="{...}" />
+            <marker date="1541582163431" expanded="true" signature="3499:3582" ph="{...}" />
+            <marker date="1541582163431" expanded="true" signature="3915:4004" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Views/Shared/Error.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+          <folding>
+            <marker date="1541582163467" expanded="true" signature="123:299" ph="@..." />
+            <marker date="1541582163467" expanded="true" signature="301:1094" ph="&lt;div.../&gt;" />
+            <marker date="1541582163467" expanded="true" signature="330:389" ph="&lt;div.../&gt;" />
+            <marker date="1541582163467" expanded="true" signature="395:1087" ph="&lt;div.../&gt;" />
+            <marker date="1541582163467" expanded="true" signature="421:1076" ph="&lt;div.../&gt;" />
+            <marker date="1541582163467" expanded="true" signature="456:925" ph="&lt;div.../&gt;" />
+            <marker date="1541582163467" expanded="true" signature="548:906" ph="@..." />
+            <marker date="1541582163467" expanded="true" signature="567:906" ph="{...}" />
+            <marker date="1541582163467" expanded="true" signature="606:740" ph="&lt;strong.../&gt;" />
+            <marker date="1541582163467" expanded="true" signature="639:710" ph="&lt;em.../&gt;" />
+            <marker date="1541582163467" expanded="true" signature="791:888" ph="{...}" />
+            <marker date="1541582163467" expanded="true" signature="939:1061" ph="@..." />
+            <marker date="1541582163467" expanded="true" signature="963:1061" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Views/Account/Login.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+          <folding>
+            <marker date="1542184848089" expanded="true" signature="58:2313" ph="&lt;div.../&gt;" />
+            <marker date="1542184848089" expanded="true" signature="251:2014" ph="&lt;form.../&gt;" />
+            <marker date="1542184848089" expanded="true" signature="376:2002" ph="&lt;fieldset.../&gt;" />
+            <marker date="1542184848089" expanded="true" signature="399:616" ph="&lt;div.../&gt;" />
+            <marker date="1542184848089" expanded="true" signature="629:874" ph="&lt;div.../&gt;" />
+            <marker date="1542184848089" expanded="true" signature="887:1108" ph="&lt;div.../&gt;" />
+            <marker date="1542184848089" expanded="true" signature="1121:1691" ph="&lt;div.../&gt;" />
+            <marker date="1542184848089" expanded="true" signature="1166:1550" ph="@..." />
+            <marker date="1542184848089" expanded="true" signature="1196:1550" ph="{...}" />
+            <marker date="1542184848089" expanded="true" signature="1235:1532" ph="&lt;div.../&gt;" />
+            <marker date="1542184848089" expanded="true" signature="1294:1505" ph="&lt;label.../&gt;" />
+            <marker date="1542184848089" expanded="true" signature="1705:1982" ph="&lt;div.../&gt;" />
+            <marker date="1542184848089" expanded="true" signature="1746:1963" ph="&lt;button.../&gt;" />
+            <marker date="1542184848089" expanded="true" signature="2150:2306" ph="@..." />
+            <marker date="1542184848089" expanded="true" signature="2201:2306" ph="{...}" />
+            <marker date="1542184848089" expanded="true" signature="2315:2812" ph="@{...}" />
+            <marker date="1542184848089" expanded="true" signature="2430:2695" ph="&lt;script.../&gt;" />
+            <marker date="1542184848089" expanded="true" signature="2476:2679" ph="{...}" />
+            <marker date="1542184848089" expanded="true" signature="2700:2810" ph="@..." />
+            <marker date="1542184848089" expanded="true" signature="2741:2810" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ED07561A-F00F-4966-8EBC-547EA3E7CE17/9c/0defaabc/HttpPostAttribute.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="13" column="67" lean-forward="true" selection-start-line="13" selection-start-column="67" selection-end-line="13" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/appsettings.Development.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Config.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-536">
+          <caret line="93" column="20" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="20" />
+          <folding>
+            <marker date="1542182665352" expanded="true" signature="0:175" ph="/* Copyright (c) Brock Allen &amp; Dominick Baier. All rights reserved. ... */" />
+            <marker date="1542182665352" expanded="false" signature="183:263" ph="..." />
+            <marker date="1542182665352" expanded="true" signature="289:6069" ph="{...}" />
+            <marker date="1542182665352" expanded="true" signature="315:6067" ph="{...}" />
+            <marker date="1542182665352" expanded="true" signature="450:688" ph="{...}" />
+            <marker date="1542182665352" expanded="true" signature="519:677" ph="{...}" />
+            <marker date="1542182665352" expanded="true" signature="754:894" ph="{...}" />
+            <marker date="1542182665352" expanded="true" signature="818:883" ph="{...}" />
+            <marker date="1542182665352" expanded="true" signature="1007:6061" ph="{...}" />
+            <marker date="1542182665352" expanded="true" signature="1107:6050" ph="{...}" />
+            <marker date="1542182665352" expanded="true" signature="1152:1463" ph="{...}" />
+            <marker date="1542182665352" expanded="true" signature="1322:1399" ph="{...}" />
+            <marker date="1542182665352" expanded="true" signature="1565:1883" ph="{...}" />
+            <marker date="1542182665352" expanded="true" signature="1742:1819" ph="{...}" />
+            <marker date="1542182665352" expanded="true" signature="2011:2853" ph="{...}" />
+            <marker date="1542182665352" expanded="true" signature="2279:2363" ph="{...}" />
+            <marker date="1542182665352" expanded="true" signature="2591:2788" ph="{...}" />
+            <marker date="1542182665352" expanded="true" signature="2980:3720" ph="{...}" />
+            <marker date="1542182665352" expanded="true" signature="3314:3406" ph="{...}" />
+            <marker date="1542182665352" expanded="true" signature="3765:4477" ph="{...}" />
+            <marker date="1542182665352" expanded="true" signature="4079:4171" ph="{...}" />
+            <marker date="1542182665352" expanded="true" signature="4522:5384" ph="{...}" />
+            <marker date="1542182665352" expanded="true" signature="5429:6036" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/tempkey.rsa">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/SeedData.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-805">
+          <folding>
+            <marker date="1541582163451" expanded="true" signature="0:175" ph="/* Copyright (c) Brock Allen &amp; Dominick Baier. All rights reserved. ... */" />
+            <marker date="1541582163451" expanded="false" signature="184:439" ph="..." />
+            <marker date="1541582163451" expanded="true" signature="465:4328" ph="{...}" />
+            <marker date="1541582163451" expanded="true" signature="493:4326" ph="{...}" />
+            <marker date="1541582163451" expanded="true" signature="575:4320" ph="{...}" />
+            <marker date="1541582163451" expanded="true" signature="690:4310" ph="{...}" />
+            <marker date="1541582163451" expanded="true" signature="1045:2481" ph="{...}" />
+            <marker date="1541582163451" expanded="true" signature="1132:1198" ph="{...}" />
+            <marker date="1541582163451" expanded="true" signature="1322:1446" ph="{...}" />
+            <marker date="1541582163451" expanded="true" signature="1512:2231" ph="{...}" />
+            <marker date="1541582163451" expanded="true" signature="2283:2407" ph="{...}" />
+            <marker date="1541582163451" expanded="true" signature="2502:2601" ph="{...}" />
+            <marker date="1541582163451" expanded="true" signature="2700:4178" ph="{...}" />
+            <marker date="1541582163451" expanded="true" signature="2785:2849" ph="{...}" />
+            <marker date="1541582163451" expanded="true" signature="2971:3095" ph="{...}" />
+            <marker date="1541582163451" expanded="true" signature="3159:3930" ph="{...}" />
+            <marker date="1541582163451" expanded="true" signature="3982:4106" ph="{...}" />
+            <marker date="1541582163451" expanded="true" signature="4199:4296" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/appsettings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Quickstart/Account/AccountController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1605">
+          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+          <folding>
+            <marker date="1542188293631" expanded="false" signature="6:996" ph="..." />
+            <marker date="1542188293631" expanded="true" signature="1041:58660" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="1113:58658" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="2178:2542" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="2673:3591" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="2699:3395" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="3043:3194" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="3427:3581" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="3601:3665" ph="/// Show login page ... " />
+            <marker date="1542188293631" expanded="true" signature="3821:4921" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="3847:4689" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="4001:4080" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="4332:4543" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="4721:4911" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="4931:5024" ph="/// Handle postBack from username/password login ... " />
+            <marker date="1542188293631" expanded="true" signature="5165:13620" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="5191:13387" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="5206:6164" ph="/* if (button != &quot;login&quot;) ... */" />
+            <marker date="1542188293631" expanded="true" signature="6528:6829" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="6870:13213" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="7010:7288" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="7387:7635" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="7714:8268" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="7819:8246" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="7962:8218" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="8314:8943" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="8573:8726" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="9146:11182" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="9492:10601" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="9927:10318" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="10628:10887" ph="/* make sure the returnUrl is still valid, and if so redirect back to authorize endpoint or a local page ... */" />
+            <marker date="1542188293631" expanded="true" signature="10998:11112" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="11233:12331" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="11311:11697" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="11472:11669" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="11829:12215" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="11990:12187" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="12380:12896" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="12639:12792" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="12921:13195" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="13419:13610" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="13694:14711" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="13720:14523" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="14235:14336" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="14555:14701" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="14826:17109" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="14852:16914" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="15242:16558" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="15328:15727" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="15791:15860" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="15885:16540" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="16077:16355" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="16653:16870" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="16738:16851" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="16946:17099" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="17206:18166" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="17312:17930" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="17560:17916" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="17770:17898" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="17962:18082" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="18261:19149" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="18375:18909" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="18623:18895" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="18749:18877" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="18941:19065" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="19276:20465" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="19412:20175" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="19531:20161" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="19882:20143" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="20023:20121" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="20207:20273" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="20302:20418" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="20637:22032" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="20663:21811" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="20718:20794" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="20907:21797" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="21084:21638" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="21392:21527" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="21664:21779" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="21843:21989" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="22224:22893" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="22250:22794" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="22598:22778" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="22824:22883" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="23052:26537" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="23078:26406" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="23133:23209" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="23227:23486" ph="/* The following code protects for brute force attacks against the two factor codes. ... */" />
+            <marker date="1542188293631" expanded="true" signature="23598:26292" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="23709:23907" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="23932:24492" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="24109:24320" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="24349:24470" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="24536:25959" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="25205:25568" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="26004:26090" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="26115:26274" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="26438:26527" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="26547:26614" ph="/// Show register page ... " />
+            <marker date="1542188293631" expanded="true" signature="26695:26883" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="26893:26930" ph="/* POST: /Account/Register ... */" />
+            <marker date="1542188293631" expanded="true" signature="27109:29586" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="27434:27650" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="27771:29306" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="27849:28275" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="28397:29103" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="28865:29002" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="29124:29292" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="29338:29440" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="29454:29544" ph="/* AddErrors(result); ... */" />
+            <marker date="1542188293631" expanded="true" signature="29694:30179" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="29879:30014" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="30031:30169" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="30271:30318" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="30485:32337" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="30568:32193" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="30693:30874" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="30944:31120" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="31380:31476" ph="/* var resultSendEmail = SendEmail(emailModel); ... */" />
+            <marker date="1542188293631" expanded="true" signature="31831:31978" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="32225:32327" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="32436:32483" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="32622:32927" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="32713:32833" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="33045:33447" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="33282:33390" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="33563:33903" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="34043:34918" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="34444:34751" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="35009:35056" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="35198:36039" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="35563:35650" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="36110:36157" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="36167:36270" ph="/// initiate roundtrip to external authentication provider ... " />
+            <marker date="1542188293631" expanded="true" signature="36378:37132" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="36464:36623" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="36640:37122" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="36799:37056" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="36920:37038" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="37142:37233" ph="/// Post processing of external authentication ... " />
+            <marker date="1542188293631" expanded="true" signature="37316:40043" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="37529:37627" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="37824:38198" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="37855:38097" ph="/* this might be where you might initiate a custom workflow for user registration ... */" />
+            <marker date="1542188293631" expanded="true" signature="38212:38450" ph="/* this allows us to collect any add claims or properties ... */" />
+            <marker date="1542188293631" expanded="true" signature="38852:39072" ph="/* issue authentication cookie for user ... */" />
+            <marker date="1542188293631" expanded="true" signature="39925:39997" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="40053:40118" ph="/// Show logout page ... " />
+            <marker date="1542188293631" expanded="true" signature="40201:40743" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="40383:40733" ph="/* if (vm.ShowLogoutPrompt == false) ... */" />
+            <marker date="1542188293631" expanded="true" signature="40753:40829" ph="/// Handle logout page postBack ... " />
+            <marker date="1542188293631" expanded="true" signature="40955:43785" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="40981:43586" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="41210:41526" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="41671:42410" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="42103:42218" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="42547:43104" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="42586:42798" ph="/* build a return URL so the upstream provider will redirect back ... */" />
+            <marker date="1542188293631" expanded="true" signature="43174:43283" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="43405:43570" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="43618:43775" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="44028:46205" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="44162:44633" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="44330:44618" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="45036:45154" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="45243:45832" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="45387:45818" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="45577:45800" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="45884:46194" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="46297:46504" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="46592:47429" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="46774:46958" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="47090:47245" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="47259:47396" ph="/* show the logout prompt. this prevents attacks where the user ... */" />
+            <marker date="1542188293631" expanded="true" signature="47523:49030" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="47779:48166" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="48593:48944" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="48624:48853" ph="/* if there's no current logout context, we need to create one ... */" />
+            <marker date="1542188293631" expanded="true" signature="49116:51066" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="49468:49602" ph="/* we will issue the external cookie and then redirect the ... */" />
+            <marker date="1542188293631" expanded="true" signature="49668:49936" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="49777:49922" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="50322:50683" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="50500:50669" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="50904:51056" ph="/* trigger windows auth ... */" />
+            <marker date="1542188293631" expanded="true" signature="51258:52333" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="51331:51589" ph="/* try to determine the unique id of the external user (issued by the provider) ... */" />
+            <marker date="1542188293631" expanded="true" signature="52480:55098" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="52910:53005" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="53022:53919" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="53490:53611" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="53651:53759" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="53798:53905" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="54159:54256" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="54313:54381" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="54592:54815" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="55259:55998" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="55282:55397" ph="/* if the external system sent a session id claim, copy it over ... */" />
+            <marker date="1542188293631" expanded="true" signature="55536:55644" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="55844:55988" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="56128:56148" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="56314:56334" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="56407:56794" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="56433:56605" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="56501:56591" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="56637:56760" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="56913:57717" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="56969:57547" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="57128:57531" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="57579:57707" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="57791:58320" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="57817:58160" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="57895:58084" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="58192:58310" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="58366:58652" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="58392:58466" ph="{...}" />
+            <marker date="1542188293631" expanded="true" signature="58498:58642" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="95" column="39" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
+          <folding>
+            <marker date="1542186928444" expanded="false" signature="6:404" ph="..." />
+            <marker date="1542186928444" expanded="true" signature="430:4462" ph="{...}" />
+            <marker date="1542186928444" expanded="true" signature="457:4460" ph="{...}" />
+            <marker date="1542186928444" expanded="true" signature="660:762" ph="{...}" />
+            <marker date="1542186928444" expanded="true" signature="830:2811" ph="{...}" />
+            <marker date="1542186928444" expanded="true" signature="1284:1441" ph="{...}" />
+            <marker date="1542186928444" expanded="true" signature="1508:1881" ph="{...}" />
+            <marker date="1542186928444" expanded="true" signature="2306:2391" ph="{...}" />
+            <marker date="1542186928444" expanded="true" signature="2408:2507" ph="{...}" />
+            <marker date="1542186928444" expanded="true" signature="2585:2799" ph="{...}" />
+            <marker date="1542186928444" expanded="true" signature="2892:4454" ph="{...}" />
+            <marker date="1542186928444" expanded="true" signature="3046:3227" ph="{...}" />
+            <marker date="1542186928444" expanded="true" signature="3253:3503" ph="/* if (env.IsDevelopment()) ... */" />
+            <marker date="1542186928444" expanded="true" signature="4001:4147" ph="{...}" />
+            <marker date="1542186928444" expanded="true" signature="4266:4442" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VakaIDServer/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
+          <folding>
+            <marker date="1542188354622" expanded="false" signature="6:211" ph="..." />
+            <marker date="1542188354622" expanded="true" signature="237:1809" ph="{...}" />
+            <marker date="1542188354622" expanded="true" signature="264:1807" ph="{...}" />
+            <marker date="1542188354622" expanded="true" signature="317:707" ph="{...}" />
+            <marker date="1542188354622" expanded="true" signature="564:672" ph="{...}" />
+            <marker date="1542188354622" expanded="true" signature="767:1801" ph="{...}" />
+            <marker date="1542188354622" expanded="true" signature="1620:1760" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,0 +1,134 @@
+﻿@model VakaxaIDServer.Quickstart.Setting.SettingActivity
+<section class="page--header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="page--title h5"><i class="fa fa-tasks"></i> CHANGE SETTING</h2>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="main--content">
+    <div class="row gutter-20">
+        <div class="col-lg-12">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title">PREFERENCES</h3>
+                </div>
+                <div class="panel-content">
+                    <form asp-controller="Setting" asp-action="UpdatePreferences" method="post" class="preference">
+                        <div class="form-group row">
+                            <span class="label-text col-lg-4 col-form-label">Show on your activity:</span>
+                            <div class="col-lg-8">
+
+                                <div class="col-lg-6 fl no-padding mg-t-10">
+                                    <label class="form-check">
+                                        <input asp-for="showActivity.UpdatePhone" type="checkbox" class="form-check-input">
+                                        <span class="form-check-label">Added new phone</span>
+                                    </label>
+                                    <label class="form-check">
+                                        <input asp-for="showActivity.Avatar" type="checkbox" class="form-check-input">
+                                        <span class="form-check-label">Update profile picture</span>
+                                    </label>
+                                    <label class="form-check">
+                                        <input asp-for="showActivity.TwoFactor" type="checkbox" class="form-check-input">
+                                        <span class="form-check-label">Two-Factor Authentication</span>
+                                    </label>
+                                    <label class="form-check">
+                                        <input asp-for="showActivity.UpdatePassword" type="checkbox" class="form-check-input">
+                                        <span class="form-check-label">Update new password</span>
+                                    </label>
+                                </div>
+                                <div class="col-lg-6 fl no-padding mg-t-10">
+
+                                    <label class="form-check">
+                                        <input asp-for="showActivity.DeactivateAccount" type="checkbox" class="form-check-input">
+                                        <span class="form-check-label">Diactive your account</span>
+                                    </label>
+                                    <label class="form-check">
+                                        <input asp-for="showActivity.Login" type="checkbox" class="form-check-input">
+                                        <span class="form-check-label">Login</span>
+                                    </label>
+                                    <label class="form-check">
+                                        <input asp-for="showActivity.Logout" type="checkbox" class="form-check-input">
+                                        <span class="form-check-label">Logout</span>
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group row mg-t-20">
+                            <div class="col-lg-8 offset-lg-4">
+                                <button type="submit" value="Submit" class="btn btn-sm btn-rounded btn-success"id="savePreference">
+                                    Save
+                                    <i id="loadingPreference" class='fa fa-spinner fa-spin' style="display: none"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-rounded btn-outline-secondary">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Notification</h3>
+                </div>
+                <div class="panel-content">
+                    <form asp-controller="Setting" asp-action="UpdateNotify" method="post" class="notification">
+                        <div class="form-group row">
+                            <span class="label-text col-lg-4 col-form-label">Email me when:</span>
+                            <div class="col-lg-8">
+                                <label class="form-check">
+                                    <input asp-for="notifyActivity.Action" type="checkbox" class="form-check-input">
+                                    <span class="form-check-label">There are recommended actions for my account</span>
+                                </label>
+                                <label class="form-check">
+                                    <input asp-for="notifyActivity.Login" type="checkbox" class="form-check-input">
+                                    <span class="form-check-label">My account logged in from other places</span>
+                                </label>
+                                <label class="form-check">
+                                    <input asp-for="notifyActivity.Info" type="checkbox" class="form-check-input">
+                                    <span class="form-check-label">Your information's account changes</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group row mg-t-20">
+                            <div class="col-lg-8 offset-lg-4">
+                                <button type="submit" value="Submit" class="btn btn-sm btn-rounded btn-success"id="saveNotification">
+                                    Save
+                                    <i id="loadingNotification" class='fa fa-spinner fa-spin' style="display: none"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-rounded btn-outline-secondary">Reset</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        $("#savePreference").click(function() {
+            $(this).prop('disabled', true);
+            var x = document.getElementById("loadingPreference");
+            if (x.style.display === "none") {
+                x.style.display = "inline-block";
+            }
+            $(this).closest("form.preference").submit();
+            return;
+        });
+        $("#saveNotification").click(function() {
+            $(this).prop('disabled', true);
+            var y = document.getElementById("loadingNotification");
+            if (y.style.display === "none") {
+                y.style.display = "inline-block";
+            }
+            $(this).closest("form.notification").submit();
+            return;
+        });
+    </script>
+}

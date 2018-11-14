@@ -1,0 +1,39 @@
+﻿﻿@using VakaxaIDServer.Constants
+@using VakaxaIDServer.Constants
+@model VakaxaIDServer.Quickstart.Account.VerifyCodeUnLockViewModel
+
+<div class="login-wrapper wd-480 wd-xs-350 pd-25 pd-xs-40 pd-t-20 rounded bd bd-white-2 bg-white p-rl mg-x-auto mw">
+    <div class="signin-logo tx-center tx-24 tx-bold tx-grey">Verify a Phone Number</div>
+    <form asp-controller="Account" asp-action="VerifyCodeUnLock" method="post">
+        <input type="hidden" asp-for="Email"/>
+        <h6 class="check mg-t-20">Please enter the six digit code we just sent to your number <b>@Model.PhoneHide</b></h6>
+        <div class="form-group">
+            <input asp-for="Code" type="text" class="form-control fc-outline-white half" maxlength="6" placeholder="000000">
+            <span asp-validation-for="Code" class="text-danger"></span>
+        </div>
+
+        <h6 class="grey tx-12">This will secure your account by texting a short confirmation code to your phone when logging in.</h6>
+        <div class="form-group">
+            <button type="submit" class="btn btn-green btn-block" name="button" value="login" id="sendCode">
+                Send Code
+                <i id="loading" class='fa fa-spinner fa-spin' style="display: none"></i>
+            </button>
+            <hr/>
+            <div class="mg-t-20 tx-center">Didn't receive the verification code? <a href="#" onclick="ResendSMS('@Model.Email', '@Const.TypeSendSmsUnLock');"class="tx-info">Re-send SMS!</a></div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script src="~/js/account.js">
+    </script>
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    <script>
+        $("#sendCode").click(function() {
+            $(this).prop('disabled', true);
+            var x = document.getElementById("loading");
+            x.style.display = "inline-block";
+            $(this).closest("form").submit();
+        });
+    </script>
+}

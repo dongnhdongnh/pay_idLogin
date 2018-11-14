@@ -1,0 +1,353 @@
+﻿@model VakaxaIDServer.Quickstart.Profile.ProfileModel
+@using VakaxaIDServer.Helpers
+@using IdentityServer4.Extensions
+@using VakaxaIDServer.Constants
+@{
+    string name = null;
+    if (!true.Equals(ViewData["signed-out"]))
+    {
+        name = Context.User?.GetDisplayName();
+    }
+    string DetailShow = "active show";
+    bool DetailBool = true;
+    string ProfileShow = "";
+    bool ProfileBool = false;
+    if (!Model.Tab)
+     {
+         DetailShow = "";
+         DetailBool = false;
+         ProfileShow = "active show";
+         ProfileBool = true;
+     }
+}
+<div class="container-fluid">
+<div class="row">
+<div class="col-12">
+<div class="card m-b-20">
+<div class="card-body">
+<h4 class="mt-0 m-b-10 header-title color1 tx20">
+    <i class="ti-user m-r-5"></i>Update your
+    profile
+</h4>
+<p class="text-muted m-b-20 ">Manage and update your personal information</p>
+<!-- Nav tabs -->
+<ul class="nav nav-tabs nav-tabs-custom" role="tablist">
+     <li class="nav-item">
+            <a class="nav-link @DetailShow" data-toggle="tab" href="#home2" role="tab"
+               aria-selected="@DetailBool">
+                <i class="mdi mdi-comment-account-outline"></i> Personal
+                Details
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link @ProfileShow" data-toggle="tab" href="#profile2" role="tab" aria-selected="@ProfileBool">
+                <i
+                    class="mdi mdi-account-location">
+                </i> User
+                Profile
+            </a>
+        </li>
+    
+
+</ul>
+<div class="col-lg-6 col-sm-12 m-t-10 fl">
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane p-3 @DetailShow" id="home2" role="tabpanel">
+            <form asp-controller="Profile" asp-action="UpdateDetails" method="post"class="personalDetail">
+                <div class="m-t-10">
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-xl-2 col-lg-3 col-form-label">Birthday:</label>
+                        <div class="col-xl-10 col-lg-9">
+                            <div class="flatpickr-wrapper">
+                                <input id="flatpickr" type="date" name="birthday" asp-for="PersonalDetails.Birthday" placeholder="MM/DD/YYYY"
+                                       class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-xl-2 col-lg-3 col-form-label">Address:</label>
+                        <div class="col-xl-10 col-lg-9">
+                            <input asp-for="PersonalDetails.StreetAddress" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-xl-2 col-lg-3 col-form-label">Occupation:</label>
+                        <div class="col-xl-10 col-lg-9">
+                            <input asp-for="PersonalDetails.Occupation" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-xl-2 col-lg-3 col-form-label">Gender:</label>
+                        <div class="col-xl-10 col-lg-9">
+                            <label class="form-radio mr3">
+                                <input asp-for="PersonalDetails.Gender" name="gender" value="1" class="form-radio-input"
+                                       checked="" type="radio">
+                                <span class="form-radio-label">Male</span>
+                            </label>
+                            <label class="form-radio mr3">
+                                <input asp-for="PersonalDetails.Gender" name="gender" value="2" class="form-radio-input" type="radio">
+                                <span class="form-radio-label">Female</span>
+                            </label>
+                            <label class="form-radio mr3">
+                                <input asp-for="PersonalDetails.Gender" name="gender" value="3" class="form-radio-input" type="radio">
+                                <span class="form-radio-label">Others</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-xl-2 col-lg-3 col-form-label">
+                            About
+                            me:
+                        </label>
+                        <div class="col-xl-10 col-lg-9">
+                            <textarea asp-for="PersonalDetails.About" required="" class="form-control" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-xl-10 col-lg-9 offset-xl-2 offset-lg-3">
+                            <button type="submit" value="Submit" class="btn btn-primary waves-effect waves-light" id="submitPersonalDetail"
+                                    data-toggle="modal" data-target=".modalfinal">
+                                Submit
+                                <i id="loadingPersonalDetail" class='fa fa-spinner fa-spin' style="display: none"></i>
+                            </button>
+                            <button type="reset" class="btn btn-secondary waves-effect m-l-5">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="tab-pane p-3 @ProfileShow" id="profile2" role="tabpanel">
+            <form asp-controller="Profile" asp-action="UpdateSocial" method="post" class="userProfile">
+                <div class="m-t-10">
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-xl-2 col-lg-4 col-form-label">Website:</label>
+                        <div class="col-xl-10 col-lg-8 input-group">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i
+                                        class="mdi mdi-web">
+                                    </i>
+                                </span>
+                            </div>
+                            <input asp-for="SocialNetwork.Website" type="text" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-xl-2 col-lg-4 col-form-label">Facebook:</label>
+                        <div class="col-xl-10 col-lg-8 input-group">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i
+                                        class="mdi mdi-facebook">
+                                    </i>
+                                </span>
+                            </div>
+                            <input asp-for="SocialNetwork.Facebook" type="text" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-xl-2 col-lg-4 col-form-label">Twitter:</label>
+                        <div class="col-xl-10 col-lg-8 input-group">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i
+                                        class="mdi mdi-twitter">
+                                    </i>
+                                </span>
+                            </div>
+                            <input asp-for="SocialNetwork.Twitter" type="text" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-xl-2 col-lg-4 col-form-label">Telegram:</label>
+                        <div class="col-xl-10 col-lg-8 input-group">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i
+                                        class="mdi mdi-telegram">
+                                    </i>
+                                </span>
+                            </div>
+                            <input asp-for="SocialNetwork.Telegram" type="text" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-xl-2 col-lg-4 col-form-label">Skype:</label>
+                        <div class="col-xl-10 col-lg-8 input-group">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i
+                                        class="mdi mdi-skype">
+                                    </i>
+                                </span>
+                            </div>
+                            <input asp-for="SocialNetwork.Skype" type="text" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-xl-2 col-lg-4 col-form-label">Linkedin:</label>
+                        <div class="col-xl-10 col-lg-8 input-group">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i
+                                        class="mdi mdi-linkedin">
+                                    </i>
+                                </span>
+                            </div>
+                            <input asp-for="SocialNetwork.LinkedIn" type="text" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <div class="form-group row m-t-20">
+                        <div class="col-xl-10 col-lg-8 offset-xl-2 offset-lg-4">
+                            <button type="submit" value="Submit" class="btn btn-primary waves-effect waves-light" id="submitUserProfile"
+                                    data-toggle="modal" data-target=".modalfinal">
+                                Submit
+                                <i id="loadingUserProfile" class='fa fa-spinner fa-spin' style="display: none"></i>
+                            </button>
+                            <button type="reset" class="btn btn-secondary waves-effect m-l-5">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<div class="col-lg-6 col-sm-12 m-t-10 fl">
+    <div>
+        <div class="directory-bg text-center">
+            <div class="directory-overlay">
+                <div style="width: 300px; margin: 0 auto; position: relative"  onclick="document.getElementById('txtUploadFile').click();" >
+                    <img class="img-thumbnail img-profile" src="@Model.ProfileUser.Avatar" id="imgFileUpload" alt="avatar">
+                    <span id="spnFilePath">Change Avatar</span>
+                    <input type="file" name="UploadFile" id="txtUploadFile" style="display: none">
+                </div>
+            </div>
+        </div>
+        <div class="directory-content text-center">
+            <p class="hidden" id="show-error-avatar"></p>
+            <p class="mt-2 mb-1">Creative Director</p>
+            <h5 class="font-16 mt-0">Katherine J. McAvoy</h5>
+            <span class="line2"></span>
+            <ul class="social-links list-inline mb-0 mt-4">
+                <li class="list-inline-item">
+                    <a title="" data-placement="top" class="btn-primary"
+                       data-toggle="tooltip" href="@Model.SocialNetwork.Facebook" data-original-title="Facebook">
+                        <i
+                            class="mdi mdi-facebook">
+                        </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a title="" data-placement="top" class="btn-info"
+                       data-toggle="tooltip" href="@Model.SocialNetwork.Twitter" data-original-title="Twitter">
+                        <i
+                            class="mdi mdi-twitter">
+                        </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a title="" data-placement="top" class="btn-danger"
+                       data-toggle="tooltip" href="@Model.SocialNetwork.Website" data-original-title="Website">
+                        <i
+                            class="mdi mdi-web">
+                        </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a title="" data-placement="top" class="btn-success"
+                       data-toggle="tooltip" href="@Model.SocialNetwork.Telegram" data-original-title="Telegramname">
+                        <i
+                            class="mdi mdi-telegram">
+                        </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a title="" data-placement="top" class="btn-secondary"
+                       data-toggle="tooltip" href="@Model.SocialNetwork.Skype" data-original-title="Skype">
+                        <i
+                            class="mdi mdi-skype">
+                        </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a title="" data-placement="top" class="btn-warning"
+                       data-toggle="tooltip" href="@Model.SocialNetwork.LinkedIn" data-original-title="Linkedin">
+                        <i
+                            class="mdi mdi-linkedin">
+                        </i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+@section Scripts {
+   
+    <script>
+        $('#txtUploadFile').on('change', function (e) {
+            var files = e.target.files;
+            //var myID = 3; //uncomment this to make sure the ajax URL works
+            if (files.length > 0) {
+                if (window.FormData !== undefined) {
+                    var data = new FormData();
+                    for (var x = 0; x < files.length; x++){
+                        data.append("file" + x, files[x]);
+                    }
+
+                    $.ajax({
+                        type: "POST",
+                        url: '/Profile/Avatar',
+                        contentType: false,
+                        processData: false,
+                        data: data,
+                        dataType: "json",
+                        success: function(result) {
+                            if (result && result.success) {
+                                $('.img-profile').attr('src', result.data);
+                                $('#show-error-avatar').text("").hide();
+                            } else {
+                                $('#show-error-avatar').text(result.responseText).show();
+                            }
+                        },
+                        error: function (xhr){
+                            $('#show-error-avatar')
+                                .text(xhr.responseText).show();
+                        }
+                    });
+                } else {
+                    alert("This browser doesn't support HTML5 file uploads!");
+                }
+            }
+        });
+        
+
+        $("#submitPersonalDetail").click(function() {
+            $(this).prop('disabled', true);
+            var x = document.getElementById("loadingPersonalDetail");
+            if (x.style.display === "none") {
+                x.style.display = "inline-block";
+            }
+            $(this).closest("form.personalDetail").submit();
+            return;
+        });
+        $("#submitUserProfile").click(function() {
+            $(this).prop('disabled', true);
+            var y = document.getElementById("loadingUserProfile");
+            if (y.style.display === "none") {
+                y.style.display = "inline-block";
+            }
+            $(this).closest("form.userProfile").submit();
+            return;
+        });
+    </script>
+}

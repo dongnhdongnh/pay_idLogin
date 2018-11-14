@@ -1,0 +1,48 @@
+@using VakaxaIDServer.Constants
+@model VakaxaIDServer.Quickstart.SendSMS.ConfirmPhoneViewModel
+
+<div class="login-wrapper wd-480 wd-xs-350 pd-25 pd-xs-40 pd-t-20 rounded bd bd-white-2 bg-white">
+    <div class="signin-logo tx-center tx-24 tx-bold tx-grey">Verify phone number</div>
+    <form asp-controller="SendSms" asp-action="ConfirmNewPhoneNumber" method="post">
+        <input type="hidden" asp-for="Username"/>
+        <input type="hidden" asp-for="PhoneNational"/>
+        <input type="hidden" asp-for="CallingCode"/>
+        <input type="hidden" asp-for="CountryIndex"/>
+        <input type="hidden" asp-for="ReturnUrl"/>
+        <h6 class="check mg-t-20 tx-14">Please enter the six digit code we just sent to your number <b>@Html.ViewBag.PhoneHide</b></h6>
+        <div class="form-group input-group sms">
+            <span class="input-group-addon">
+                <i class="fa fa-phone tx-16 lh-0 op-6"></i>
+            </span>
+            <input asp-for="Code" type="text" class="form-control fc-outline-white half" maxlength="6" placeholder="000000">
+        </div>
+        <div class="tx-center">
+            <span asp-validation-for="Code" class="text-danger"></span>
+        </div>
+        <span class="resend">Didn't receive the verification code? <br> <a href="#" onclick="ResendSMS('@ViewBag.Username', '@Const.TypeSendSmsRegister');"class="tx-info">Re-send SMS!</a></span>
+        <div class="form-group">
+            <button type="submit" class="btn btn-green btn-block" name="button" value="Verify" id="verifyPhone">
+                Verify
+                <i id="loading" class='fa fa-spinner fa-spin' style="display: none"></i>
+            </button>
+        </div>
+        <div class="mg-t-20 tx-center">No longer own the phone ending in @Html.ViewBag.PhoneHide? <a href="#" class="tx-info">Click here!</a></div>
+    </form>
+</div>
+
+@section Scripts {
+    <script src="~/js/account.js">
+    </script>
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    <script>
+        $("#verifyPhone").click(function() {
+            $(this).prop('disabled', true);
+            var x = document.getElementById("loading");
+            if (x.style.display === "none") {
+                x.style.display = "inline-block";
+            }
+            $(this).closest("form").submit();
+            return;
+        });
+    </script>
+}

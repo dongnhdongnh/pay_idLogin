@@ -1,0 +1,75 @@
+@using VakaxaIDServer.Constants
+@model VakaxaIDServer.Quickstart.SendSMS.AddPhoneViewModel
+
+<div class="login-wrapper wd-480 wd-xs-350 pd-25 pd-xs-40 pd-t-20 rounded bd bd-white-2 bg-white">
+    <div>Add a phone number</div>
+    <form asp-controller="SendSms" asp-action="AddNewPhoneNumber" method="post">
+        <input type="hidden" asp-for="Username"/>
+        <input type="hidden" asp-for="ReturnUrl"/>
+        <div class="form-group mg-md-l--1 bd-t-0-force mg-t-20">
+            <label class="form-control-label mg-b-0-force">Country:</label>
+            <select asp-for="CallingCode" id="select2-a" class="form-control" data-placeholder="Choose country" tabindex="-1" aria-hidden="true">
+                @foreach (var item in Const.ListCountryModels)
+                {
+                    if (item.Code.Equals(Model.CountryCode))
+                    {
+                        <option value="@item.CallingCode" selected="selected">@item.Name</option>
+                    }
+                    else
+                    {
+                        <option value="@item.CallingCode">@item.Name</option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label mg-b-0-force">Your Phone Number:</label>
+            <div class="input-number">
+                <div class="input-left" id="input_left">
+                    <span id="phoneCode" asp-for="CountryCode" class="Text__Font-QQBaL hEBfpz" color="slate">
+                        @foreach (var item in Const.ListCountryModels)
+                        {
+                            if (item.Code.Equals(Model.CountryCode))
+                            {
+                                @item.CallingCode
+                            }
+                        }
+                    </span>
+                </div>
+                <div class="input-right">
+                    <input asp-for="PhoneNational" type="number" class="form-control fc-outline-white" placeholder="" maxlength="15" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="">
+                </div>
+            </div>
+            <span asp-validation-for="PhoneNational" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input id="countryIndex" asp-for="CountryIndex" type="hidden"/>
+        </div>
+        <h6 class="grey tx-12">This will secure your account by texting a short confirmation code to your phone when logging in.</h6>
+        <div class="form-group">
+            <button type="submit" class="btn btn-green btn-block" name="button" value="addPhone" id="addPhone">
+                Send Code
+                <i id="loading" class='fa fa-spinner fa-spin' style="display: none"></i>
+            </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    <script>
+        $('#select2-a').change(function() {
+            $("#input_left #phoneCode").text(this.value);
+            $("#countryIndex").val($('#select2-a option:selected').index());
+        });
+        $("#addPhone").click(function() {
+            $(this).prop('disabled', true);
+            var x = document.getElementById("loading");
+            if (x.style.display === "none") {
+                x.style.display = "inline-block";
+            }
+            $(this).closest("form").submit();
+            return;
+        });
+    </script>
+}

@@ -1,0 +1,253 @@
+﻿@using VakaxaIDServer.Helpers
+<div class="container-fluid">
+<div class="row">
+    <div class="col-xl-8">
+        <div class="card directory-card m-b-20 fixh">
+            <div>
+                <div class="directory-bg text-center">
+                    <div class="directory-overlay">
+                        <img class="rounded-circle thumb-lg img-thumbnail" src="assets/avatars/user.jpg"
+                             alt="Generic placeholder image">
+                    </div>
+                </div>
+                <div class="directory-content text-center p-4">
+                    <p class="mt-4 mb-0">Nice to see you again,</p>
+                    <h5 class="font-16 mt-0">@Model.UserInfo.FullName</h5>
+                    <p class="text-muted oneline">
+                        Sed ut perspiciatis unde omnis iste natus error sit
+                        voluptatem
+                        accusantium doloremque laudantium totam rem aperiam
+                    </p>
+                    <ul class="social-links list-inline mb-0 mt-4">
+                        <li class="list-inline-item">
+                            <a title="" data-placement="top" class="btn-primary"
+                               data-toggle="tooltip" href="@Model.SocialNetwork.Facebook" data-original-title="Facebook">
+                                <i class="mdi mdi-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a title="" data-placement="top" class="btn-info"
+                               data-toggle="tooltip" href="@Model.SocialNetwork.Twitter" data-original-title="Twitter">
+                                <i class="mdi mdi-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a title="" data-placement="top" class="btn-danger"
+                               data-toggle="tooltip" href="@Model.SocialNetwork.Website" data-original-title="vakaxa.com">
+                                <i class="mdi mdi-web"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a title="" data-placement="top" class="btn-success"
+                               data-toggle="tooltip" href="@Model.SocialNetwork.Telegram" data-original-title="vakaxa.com">
+                                <i class="mdi mdi-telegram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="info">
+                <div class="col-lg-6 col-sm-12 m-t-10 fl">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <th><i class="fas fa-user"></i>Name</th>
+                            <td>@Model.UserInfo.FullName</td>
+                        </tr>
+                        <tr>
+                            <th><i class="fas fa-envelope"></i>Email</th>
+                            <td>@Model.UserInfo.Email</td>
+                        </tr>
+                        <tr>
+                            <th><i class="fas fa-mobile-alt"></i>Mobile No.</th>
+                            <td>
+                                <a href="tel:@Model.UserInfo.PhoneNumber" class="btn-link">@Model.UserInfo.PhoneNumber</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-lg-6 col-sm-12 fl m-t-10 fl">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <th><i class="fas fa-briefcase"></i>Occupation</th>
+                            <td>@Model.UserInfo.Occupation</td>
+                        </tr>
+                        <tr>
+                            <th><i class="fas fa-birthday-cake"></i>Date of Birth</th>
+                            <td>@UnixTimestamp.DateFromUnixTimestamp(@UnixTimestamp.ToUnixTimestamp(@Model.UserInfo.Birthday))</td>
+                        </tr>
+                        <tr>
+                            <th><i class="fas fa-map-marker-alt"></i>Locatoin</th>
+                            <td>@Model.UserInfo.Country</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-4">
+        <div class="card m-b-20 fixh">
+            <div class="card-body">
+                <h4 class="mt-0 header-title mb-4 color1">
+                    <i class="mdi mdi-calendar-clock m-r-5"></i>Recent
+                    Activity Feed
+                </h4>
+                <ol class="activity-feed mb-0">
+                    <li class="feed-item">
+                        <div class="feed-item-list">
+                            <span class="date">Jun 25</span>
+                            <span class="activity-text">
+                                Responded
+                                to need “Volunteer Activities”
+                            </span>
+                        </div>
+                    </li>
+                    <li class="feed-item">
+                        <div class="feed-item-list">
+                            <span class="date">Jun 24</span>
+                            <span class="activity-text">
+                                Added
+                                an interest “Volunteer Activities”
+                            </span>
+                        </div>
+                    </li>
+                    <li class="feed-item">
+                        <div class="feed-item-list">
+                            <span class="date">Jun 23</span>
+                            <span class="activity-text">
+                                Joined
+                                the group “Boardsmanship Forum”
+                            </span>
+                        </div>
+                    </li>
+                    <li class="feed-item">
+                        <div class="feed-item-list">
+                            <span class="date">Jun 21</span>
+                            <span class="activity-text">
+                                Responded
+                                to need “In-Kind Opportunity”
+                            </span>
+                        </div>
+                    </li>
+                    <li class="feed-item">
+                        <div class="feed-item-list">
+                            <span class="date">Jun 21</span>
+                            <span class="activity-text">
+                                Responded
+                                to need “In-Kind Opportunity”
+                            </span>
+                        </div>
+                    </li>
+                </ol>
+                <div class="text-center m-t-10">
+                    <a href="#" class="btn btn-sm btn-primary">Load More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end row -->
+<div class="row">
+    <div class="col-xl-6">
+        <div class="card m-b-20 fixh">
+            <div class="card-body">
+                <h4 class="mt-0 m-b-30 header-title color1">
+                    <i class="mdi mdi-web m-r-5"></i>Latest
+                    Web-Sessions
+                </h4>
+                <div class="table-responsive">
+                    <table class="table table-vertical">
+                        <thead class="thead-default">
+
+                        <tr>
+                            <th>Signed In</th>
+                            <th>Browser</th>
+                            <th>IP Address</th>
+                            <th>Location</th>
+                            <th>Current</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var session in Model.WebSessionModels)
+                        {
+                            <tr>
+                                <td>@UnixTimestamp.ConvertTime(@session.SignedIn)</td>
+                                <td>@session.Browser</td>
+                                <td>@session.Ip</td>
+                                <td>@session.Location</td>
+                                <td>
+
+                                    @if (@session.Current)
+                                    {
+                                        <i class="mdi mdi-checkbox-blank-circle text-success">Current</i>
+                                    }
+                                </td>
+                                <td>
+                                    @if (!@session.Current)
+                                    {
+                                        <a asp-controller="Dashboard" asp-action="Remove" asp-route-id="@session.Id">
+                                            <i class="mdi mdi-delete-forever font-16"></i>
+                                        </a>
+                                    }
+
+                                </td>
+                            </tr>
+                        }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-6">
+        <div class="card m-b-20 fixh">
+            <div class="card-body">
+                <h4 class="mt-0 m-b-30 header-title color1">
+                    <i class="mdi mdi-history m-r-5"></i>Latest
+                    Activity
+                </h4>
+                <div class="table-responsive">
+                    <table class="table table-vertical">
+                        <thead class="thead-default">
+                        <tr>
+                            <th>Action</th>
+                            <th>Source</th>
+                            <th>Location</th>
+                            <th>When</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var log in Model.LogActionModels)
+                        {
+                            <tr>
+                                <td>@log.ActionName</td>
+                                <td>
+                                    @if (string.IsNullOrEmpty(@log.Source) || @log.Source.Equals("Web"))
+                                    {
+                                        <span class="badge badge-pill badge-success">Web</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge badge-pill badge-primary">@log.Source</span>
+                                    }
+
+                                </td>
+                                <td>@log.Location</td>
+                                <td>@UnixTimestamp.ConvertTime(@log.CreatedAt)</td>
+                            </tr>
+                        }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end row -->
+</div>

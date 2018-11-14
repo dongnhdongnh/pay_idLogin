@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$APPLICATION_CONFIG_DIR$/consoles/db" t="IncludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/extensions" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2018.2/system/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2018.2/system/resharper-host/local/Transient/ReSharperHost/v182/SolutionCaches/_VakaxaIDServer.-275997301.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/.nuget/packages/nlog.config/4.5.10/contentFiles/any/any/NLog.config" t="Include" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="BussinessProject" t="Include" />
+      <e p="SendEmail" t="IncludeRecursive">
+        <e p="Program.cs" t="Include" />
+        <e p="SendEmail.csproj" t="IncludeRecursive" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="SendEmail.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="SendEmailBusiness" t="IncludeRecursive">
+        <e p="SendEmailBusiness.csproj" t="IncludeRecursive" />
+        <e p="SendMailBusiness.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="SendEmailBusiness.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="SendSms" t="IncludeRecursive">
+        <e p="Program.cs" t="Include" />
+        <e p="SendSms.csproj" t="IncludeRecursive" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="SendSms.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="SendSmsBusiness" t="IncludeRecursive">
+        <e p="SendSmsBusiness.cs" t="Include" />
+        <e p="SendSmsBusiness.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="SendSmsBusiness.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="ServiceProject" t="Include" />
+      <e p="ShareProject" t="Include" />
+      <e p="VakaIDServer" t="IncludeRecursive">
+        <e p="Config.cs" t="Include" />
+        <e p="Constants" t="Include">
+          <e p="Const.cs" t="Include" />
+          <e p="Constants.cs" t="Include" />
+        </e>
+        <e p="Data" t="Include">
+          <e p="ApplicationDbContext.cs" t="Include" />
+          <e p="Migrations" t="Include">
+            <e p="20180109192453_CreateIdentitySchema.Designer.cs" t="Include" />
+            <e p="20180109192453_CreateIdentitySchema.cs" t="Include" />
+            <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Helpers" t="Include">
+          <e p="CommonHelper.cs" t="Include" />
+          <e p="UnixTimeStamp.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="ActivityModel.cs" t="Include" />
+          <e p="ApplicationUser.cs" t="Include" />
+          <e p="CountryModel.cs" t="Include" />
+          <e p="EmailQueueModel.cs" t="Include" />
+          <e p="IPGeographicalLocation.cs" t="Include" />
+          <e p="LogAction.cs" t="Include" />
+          <e p="LogActionModel.cs" t="Include" />
+          <e p="PagedResult.cs" t="Include" />
+          <e p="SecretSmsKey.cs" t="Include" />
+          <e p="SmsQueueModel.cs" t="Include" />
+          <e p="UserModelClaim.cs" t="Include" />
+          <e p="WebSessionModel.cs" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Quickstart" t="Include">
+          <e p="Account" t="Include">
+            <e p="AccountController.cs" t="Include" />
+            <e p="AccountOptions.cs" t="Include" />
+            <e p="ChangePasswordViewModel.cs" t="Include" />
+            <e p="EmailViewModel.cs" t="Include" />
+            <e p="ExternalProvider.cs" t="Include" />
+            <e p="ForgotPasswordViewModel.cs" t="Include" />
+            <e p="LoggedOutViewModel.cs" t="Include" />
+            <e p="LoginInputModel.cs" t="Include" />
+            <e p="LoginViewModel.cs" t="Include" />
+            <e p="LogoutInputModel.cs" t="Include" />
+            <e p="LogoutViewModel.cs" t="Include" />
+            <e p="RegisterViewModel.cs" t="Include" />
+            <e p="ResetPasswordViewModel.cs" t="Include" />
+            <e p="UserProfileProfile.cs" t="Include" />
+            <e p="VerifyCodeUnLockViewModel.cs" t="Include" />
+            <e p="VerifyCodeViewModel.cs" t="Include" />
+          </e>
+          <e p="Activity" t="Include">
+            <e p="ActivityController.cs" t="Include" />
+          </e>
+          <e p="Consent" t="Include">
+            <e p="ConsentController.cs" t="Include" />
+            <e p="ConsentInputModel.cs" t="Include" />
+            <e p="ConsentOptions.cs" t="Include" />
+            <e p="ConsentViewModel.cs" t="Include" />
+            <e p="ProcessConsentResult.cs" t="Include" />
+            <e p="ScopeViewModel.cs" t="Include" />
+          </e>
+          <e p="CustomController.cs" t="Include" />
+          <e p="Dashboard" t="Include">
+            <e p="DashboardController.cs" t="Include" />
+            <e p="DashboardModel.cs" t="Include" />
+          </e>
+          <e p="Diagnostics" t="Include">
+            <e p="DiagnosticsController.cs" t="Include" />
+            <e p="DiagnosticsViewModel.cs" t="Include" />
+          </e>
+          <e p="Grants" t="Include">
+            <e p="GrantsController.cs" t="Include" />
+            <e p="GrantsViewModel.cs" t="Include" />
+          </e>
+          <e p="Home" t="Include">
+            <e p="ErrorViewModel.cs" t="Include" />
+            <e p="HomeController.cs" t="Include" />
+          </e>
+          <e p="Profile" t="Include">
+            <e p="PersonalDetails.cs" t="Include" />
+            <e p="ProfileController.cs" t="Include" />
+            <e p="ProfileModel.cs" t="Include" />
+            <e p="SocialNetwork.cs" t="Include" />
+          </e>
+          <e p="Security" t="Include">
+            <e p="EnableAuthenticatorViewModel.cs" t="Include" />
+            <e p="SecurityController.cs" t="Include" />
+            <e p="SecurityViewModel.cs" t="Include" />
+          </e>
+          <e p="SecurityHeadersAttribute.cs" t="Include" />
+          <e p="SendSMS" t="Include">
+            <e p="AddPhoneViewModel.cs" t="Include" />
+            <e p="ConfirmPhoneViewModel.cs" t="Include" />
+            <e p="SendSMSController.cs" t="Include" />
+          </e>
+          <e p="Setting" t="Include">
+            <e p="SettingActivity Model.cs" t="Include" />
+            <e p="SettingActivity.cs" t="Include" />
+            <e p="SettingController.cs" t="Include" />
+            <e p="SettingNotifyActivityModel .cs" t="Include" />
+            <e p="SettingShowActivityModel.cs" t="Include" />
+          </e>
+          <e p="WebSession" t="Include">
+            <e p="WebSessionController.cs" t="Include" />
+            <e p="WebsessionPage.cs" t="Include" />
+          </e>
+        </e>
+        <e p="README.md" t="Include" />
+        <e p="SeedData.cs" t="Include" />
+        <e p="Services" t="Include">
+          <e p="EmailContext.cs" t="Include" />
+          <e p="LogUserAction.cs" t="Include" />
+          <e p="ProfileService.cs" t="Include" />
+          <e p="SendEmail.cs" t="Include" />
+          <e p="SettingActivity.cs" t="Include" />
+          <e p="SmsContext.cs" t="Include" />
+          <e p="WebSession.cs" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="VakaxaIDServer.csproj" t="IncludeRecursive" />
+        <e p="Views" t="Include">
+          <e p="Account" t="Include">
+            <e p="ChangePassword.cshtml" t="Include" />
+            <e p="ForgotPassword.cshtml" t="Include" />
+            <e p="ForgotPasswordEmailSent.cshtml" t="Include" />
+            <e p="LoggedOut.cshtml" t="Include" />
+            <e p="Login.cshtml" t="Include" />
+            <e p="Logout.cshtml" t="Include" />
+            <e p="Register.cshtml" t="Include" />
+            <e p="ResetPassword.cshtml" t="Include" />
+            <e p="ResetPasswordConfirm.cshtml" t="Include" />
+            <e p="VerifyCode.cshtml" t="Include" />
+            <e p="VerifyCodeUnlock.cshtml" t="Include" />
+            <e p="VerifyEmail.cshtml" t="Include" />
+          </e>
+          <e p="Activity" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Consent" t="Include">
+            <e p="Index.cshtml" t="Include" />
+            <e p="_ScopeListItem.cshtml" t="Include" />
+          </e>
+          <e p="Dashboard" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Diagnostics" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Grants" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Home" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Profile" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Security" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="SendSMS" t="Include">
+            <e p="AddNewPhoneNumber.cshtml" t="Include" />
+            <e p="ConfirmNewPhoneNumber.cshtml" t="Include" />
+            <e p="SuccessSms.cshtml" t="Include" />
+          </e>
+          <e p="Setting" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Shared" t="Include">
+            <e p="Error.cshtml" t="Include" />
+            <e p="Success.cshtml" t="Include" />
+            <e p="_Layout.cshtml" t="Include" />
+            <e p="_LayoutError.cshtml" t="Include" />
+            <e p="_LayoutIsAuthenticate.cshtml" t="Include" />
+            <e p="_ValidationScriptsPartial.cshtml" t="Include" />
+            <e p="_ValidationSummary.cshtml" t="Include" />
+          </e>
+          <e p="WebSession" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="_ViewImports.cshtml" t="Include" />
+          <e p="_ViewStart.cshtml" t="Include" />
+        </e>
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="logger.txt" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="VakaxaIDServer.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="tempkey.rsa" t="Include" />
+        <e p="vakaxa.pgsql" t="Include" />
+        <e p="wwwroot" t="Include">
+          <e p="Template" t="Include">
+            <e p="images" t="Include">
+              <e p="hr.png" t="Include" />
+              <e p="logo.svg" t="Include" />
+              <e p="mail.svg" t="Include" />
+            </e>
+          </e>
+          <e p="assets" t="Include">
+            <e p="avatars" t="Include">
+              <e p="ava.png" t="Include" />
+              <e p="user.jpg" t="Include" />
+              <e p="user2.jpg" t="Include" />
+            </e>
+            <e p="background" t="Include">
+              <e p="bg-signin.jpg" t="Include" />
+              <e p="bg.jpg" t="Include" />
+              <e p="directory-bg.jpg" t="Include" />
+              <e p="p1.jpg" t="Include" />
+              <e p="p2.jpg" t="Include" />
+              <e p="p3.jpg" t="Include" />
+              <e p="p4.jpg" t="Include" />
+            </e>
+            <e p="covers" t="Include">
+              <e p="01_800x150.jpg" t="Include" />
+            </e>
+            <e p="flags" t="Include">
+              <e p="cn.svg" t="Include" />
+              <e p="de.png" t="Include" />
+              <e p="fr.png" t="Include" />
+              <e p="ge.svg" t="Include" />
+              <e p="jp.svg" t="Include" />
+              <e p="us.png" t="Include" />
+              <e p="us.svg" t="Include" />
+              <e p="vi.svg" t="Include" />
+            </e>
+            <e p="icon" t="Include">
+              <e p="cd-arrow.svg" t="Include" />
+              <e p="favicon.ico" t="Include" />
+              <e p="mail.svg" t="Include" />
+              <e p="qr.png" t="Include" />
+              <e p="smartphone.svg" t="Include" />
+              <e p="success.svg" t="Include" />
+            </e>
+            <e p="logo" t="Include">
+              <e p="logo-sm.png" t="Include" />
+              <e p="logo-white.svg" t="Include" />
+              <e p="logo.png" t="Include" />
+              <e p="logo.svg" t="Include" />
+            </e>
+          </e>
+          <e p="css" t="Include">
+            <e p="bootstrap.min.css" t="Include" />
+            <e p="bracket.css" t="Include" />
+            <e p="flatpickr.min.css" t="Include" />
+            <e p="font" t="Include">
+              <e p="materialdesignicons-webfont6c9c.ttf" t="Include" />
+              <e p="materialdesignicons-webfontd41d.eot" t="Include" />
+              <e p="summernote9d3d.eot" t="Include" />
+              <e p="summernote9d3d.ttf" t="Include" />
+              <e p="summernote9d3d.woff" t="Include" />
+              <e p="summernoted41d.eot" t="Include" />
+              <e p="themify9f24.eot" t="Include" />
+              <e p="themify9f24.ttf" t="Include" />
+              <e p="themifyd41d.eot" t="Include" />
+            </e>
+            <e p="fontawesome-all.min.css" t="Include" />
+            <e p="icons.css" t="Include" />
+            <e p="images" t="Include">
+              <e p="sort_asc.png" t="Include" />
+              <e p="sort_asc_disabled.png" t="Include" />
+              <e p="sort_both.png" t="Include" />
+              <e p="sort_desc.png" t="Include" />
+              <e p="sort_desc_disabled.png" t="Include" />
+              <e p="ui-icons_444444_256x240.png" t="Include" />
+              <e p="ui-icons_555555_256x240.png" t="Include" />
+              <e p="ui-icons_777620_256x240.png" t="Include" />
+              <e p="ui-icons_777777_256x240.png" t="Include" />
+              <e p="ui-icons_cc0000_256x240.png" t="Include" />
+              <e p="ui-icons_ffffff_256x240.png" t="Include" />
+            </e>
+            <e p="jquery-jvectormap.min.css" t="Include" />
+            <e p="jquery-ui.min.css" t="Include" />
+            <e p="new.css" t="Include" />
+            <e p="select2.min.css" t="Include" />
+            <e p="style.css" t="Include" />
+            <e p="style.txt" t="Include" />
+          </e>
+          <e p="favicon.ico" t="Include" />
+          <e p="icon.jpg" t="Include" />
+          <e p="icon.png" t="Include" />
+          <e p="js" t="Include">
+            <e p="account.js" t="Include" />
+            <e p="app.js" t="Include" />
+            <e p="bootstrap-filestyle" t="Include">
+              <e p="js" t="Include">
+                <e p="bootstrap-filestyle.min.js" t="Include" />
+              </e>
+            </e>
+            <e p="bootstrap.bundle.min.js" t="Include" />
+            <e p="bracket.js" t="Include" />
+            <e p="flatpickr.min.js" t="Include" />
+            <e p="jquery-jvectormap-world-mill.min.js" t="Include" />
+            <e p="jquery-jvectormap.min.js" t="Include" />
+            <e p="jquery-ui" t="Include">
+              <e p="jquery-ui.min.js" t="Include" />
+            </e>
+            <e p="jquery-ui.min.js" t="Include" />
+            <e p="jquery.min.js" t="Include" />
+            <e p="jquery.slimscroll.js" t="Include" />
+            <e p="main.js" t="Include" />
+            <e p="new.js" t="Include" />
+            <e p="perfect-scrollbar.min.js" t="Include" />
+            <e p="security.js" t="Include" />
+            <e p="select2" t="Include">
+              <e p="css" t="Include">
+                <e p="select2.min.css" t="Include" />
+              </e>
+              <e p="js" t="Include">
+                <e p="select2.min.js" t="Include" />
+              </e>
+            </e>
+            <e p="select2.min.js" t="Include" />
+            <e p="signout-redirect.js" t="Include" />
+            <e p="waves.min.js" t="Include" />
+          </e>
+          <e p="lib" t="Include">
+            <e p="Ionicons" t="Include">
+              <e p="css" t="Include">
+                <e p="ionicons.css" t="Include" />
+                <e p="ionicons.eot" t="Include" />
+                <e p="ionicons.svg" t="Include" />
+                <e p="ionicons.ttf" t="Include" />
+                <e p="ionicons.woff" t="Include" />
+              </e>
+            </e>
+            <e p="bootstrap" t="Include">
+              <e p="js" t="Include">
+                <e p="bootstrap.js" t="Include" />
+              </e>
+            </e>
+            <e p="font-awesome" t="Include">
+              <e p="css" t="Include">
+                <e p="font-awesome.css" t="Include" />
+                <e p="fontawesome-webfont-regular.otf" t="Include" />
+                <e p="fontawesome-webfont-solid.otf" t="Include" />
+                <e p="fontawesome-webfont.eot" t="Include" />
+                <e p="fontawesome-webfont.svg" t="Include" />
+                <e p="fontawesome-webfont.ttf" t="Include" />
+                <e p="fontawesome-webfont.woff" t="Include" />
+                <e p="fontawesome-webfont.woff2" t="Include" />
+              </e>
+            </e>
+            <e p="ion.rangeSlider" t="Include">
+              <e p="css" t="Include">
+                <e p="ion.rangeSlider.css" t="Include" />
+                <e p="ion.rangeSlider.skinFlat.css" t="Include" />
+              </e>
+              <e p="img" t="Include">
+                <e p="sprite-skin-flat.png" t="Include" />
+              </e>
+              <e p="js" t="Include">
+                <e p="ion.rangeSlider.min.js" t="Include" />
+              </e>
+            </e>
+            <e p="jquery" t="Include">
+              <e p="jquery.js" t="Include" />
+            </e>
+            <e p="jquery-ui" t="Include">
+              <e p="jquery-ui.js" t="Include" />
+            </e>
+            <e p="jquery-validation" t="Include">
+              <e p=".bower.json" t="Include" />
+              <e p="CONTRIBUTING.md" t="Include" />
+              <e p="Gruntfile.js" t="Include" />
+              <e p="LICENSE.md" t="Include" />
+              <e p="README.md" t="Include" />
+              <e p="bower.json" t="Include" />
+              <e p="changelog.md" t="Include" />
+              <e p="dist" t="Include">
+                <e p="additional-methods.js" t="Include" />
+                <e p="additional-methods.min.js" t="Include" />
+                <e p="jquery.validate.js" t="Include" />
+                <e p="jquery.validate.min.js" t="Include" />
+              </e>
+              <e p="package.json" t="Include" />
+              <e p="src" t="Include">
+                <e p="additional" t="Include">
+                  <e p="accept.js" t="Include" />
+                  <e p="additional.js" t="Include" />
+                  <e p="alphanumeric.js" t="Include" />
+                  <e p="bankaccountNL.js" t="Include" />
+                  <e p="bankorgiroaccountNL.js" t="Include" />
+                  <e p="bic.js" t="Include" />
+                  <e p="cifES.js" t="Include" />
+                  <e p="cpfBR.js" t="Include" />
+                  <e p="creditcardtypes.js" t="Include" />
+                  <e p="currency.js" t="Include" />
+                  <e p="dateFA.js" t="Include" />
+                  <e p="dateITA.js" t="Include" />
+                  <e p="dateNL.js" t="Include" />
+                  <e p="extension.js" t="Include" />
+                  <e p="giroaccountNL.js" t="Include" />
+                  <e p="iban.js" t="Include" />
+                  <e p="integer.js" t="Include" />
+                  <e p="ipv4.js" t="Include" />
+                  <e p="ipv6.js" t="Include" />
+                  <e p="lettersonly.js" t="Include" />
+                  <e p="letterswithbasicpunc.js" t="Include" />
+                  <e p="mobileNL.js" t="Include" />
+                  <e p="mobileUK.js" t="Include" />
+                  <e p="nieES.js" t="Include" />
+                  <e p="nifES.js" t="Include" />
+                  <e p="notEqualTo.js" t="Include" />
+                  <e p="nowhitespace.js" t="Include" />
+                  <e p="pattern.js" t="Include" />
+                  <e p="phoneNL.js" t="Include" />
+                  <e p="phoneUK.js" t="Include" />
+                  <e p="phoneUS.js" t="Include" />
+                  <e p="phonesUK.js" t="Include" />
+                  <e p="postalCodeCA.js" t="Include" />
+                  <e p="postalcodeBR.js" t="Include" />
+                  <e p="postalcodeIT.js" t="Include" />
+                  <e p="postalcodeNL.js" t="Include" />
+                  <e p="postcodeUK.js" t="Include" />
+                  <e p="require_from_group.js" t="Include" />
+                  <e p="skip_or_fill_minimum.js" t="Include" />
+                  <e p="statesUS.js" t="Include" />
+                  <e p="strippedminlength.js" t="Include" />
+                  <e p="time.js" t="Include" />
+                  <e p="time12h.js" t="Include" />
+                  <e p="url2.js" t="Include" />
+                  <e p="vinUS.js" t="Include" />
+                  <e p="zipcodeUS.js" t="Include" />
+                  <e p="ziprange.js" t="Include" />
+                </e>
+                <e p="ajax.js" t="Include" />
+                <e p="core.js" t="Include" />
+                <e p="localization" t="Include">
+                  <e p="messages_ar.js" t="Include" />
+                  <e p="messages_bg.js" t="Include" />
+                  <e p="messages_bn_BD.js" t="Include" />
+                  <e p="messages_ca.js" t="Include" />
+                  <e p="messages_cs.js" t="Include" />
+                  <e p="messages_da.js" t="Include" />
+                  <e p="messages_de.js" t="Include" />
+                  <e p="messages_el.js" t="Include" />
+                  <e p="messages_es.js" t="Include" />
+                  <e p="messages_es_AR.js" t="Include" />
+                  <e p="messages_es_PE.js" t="Include" />
+                  <e p="messages_et.js" t="Include" />
+                  <e p="messages_eu.js" t="Include" />
+                  <e p="messages_fa.js" t="Include" />
+                  <e p="messages_fi.js" t="Include" />
+                  <e p="messages_fr.js" t="Include" />
+                  <e p="messages_ge.js" t="Include" />
+                  <e p="messages_gl.js" t="Include" />
+                  <e p="messages_he.js" t="Include" />
+                  <e p="messages_hr.js" t="Include" />
+                  <e p="messages_hu.js" t="Include" />
+                  <e p="messages_hy_AM.js" t="Include" />
+                  <e p="messages_id.js" t="Include" />
+                  <e p="messages_is.js" t="Include" />
+                  <e p="messages_it.js" t="Include" />
+                  <e p="messages_ja.js" t="Include" />
+                  <e p="messages_ka.js" t="Include" />
+                  <e p="messages_kk.js" t="Include" />
+                  <e p="messages_ko.js" t="Include" />
+                  <e p="messages_lt.js" t="Include" />
+                  <e p="messages_lv.js" t="Include" />
+                  <e p="messages_my.js" t="Include" />
+                  <e p="messages_nl.js" t="Include" />
+                  <e p="messages_no.js" t="Include" />
+                  <e p="messages_pl.js" t="Include" />
+                  <e p="messages_pt_BR.js" t="Include" />
+                  <e p="messages_pt_PT.js" t="Include" />
+                  <e p="messages_ro.js" t="Include" />
+                  <e p="messages_ru.js" t="Include" />
+                  <e p="messages_si.js" t="Include" />
+                  <e p="messages_sk.js" t="Include" />
+                  <e p="messages_sl.js" t="Include" />
+                  <e p="messages_sr.js" t="Include" />
+                  <e p="messages_sr_lat.js" t="Include" />
+                  <e p="messages_sv.js" t="Include" />
+                  <e p="messages_th.js" t="Include" />
+                  <e p="messages_tj.js" t="Include" />
+                  <e p="messages_tr.js" t="Include" />
+                  <e p="messages_uk.js" t="Include" />
+                  <e p="messages_vi.js" t="Include" />
+                  <e p="messages_zh.js" t="Include" />
+                  <e p="messages_zh_TW.js" t="Include" />
+                  <e p="methods_de.js" t="Include" />
+                  <e p="methods_es_CL.js" t="Include" />
+                  <e p="methods_fi.js" t="Include" />
+                  <e p="methods_nl.js" t="Include" />
+                  <e p="methods_pt.js" t="Include" />
+                </e>
+              </e>
+              <e p="validation.jquery.json" t="Include" />
+            </e>
+            <e p="jquery-validation-unobtrusive" t="Include">
+              <e p=".bower.json" t="Include" />
+              <e p="LICENSE.txt" t="Include" />
+              <e p="bower.json" t="Include" />
+              <e p="jquery.validate.unobtrusive.js" t="Include" />
+              <e p="jquery.validate.unobtrusive.min.js" t="Include" />
+            </e>
+            <e p="jt.timepicker" t="Include">
+              <e p="jquery.timepicker.css" t="Include" />
+              <e p="jquery.timepicker.js" t="Include" />
+            </e>
+            <e p="perfect-scrollbar" t="Include">
+              <e p="css" t="Include">
+                <e p="perfect-scrollbar.css" t="Include" />
+              </e>
+              <e p="js" t="Include">
+                <e p="perfect-scrollbar.jquery.js" t="Include" />
+              </e>
+            </e>
+            <e p="popper.js" t="Include">
+              <e p="popper.js" t="Include" />
+            </e>
+            <e p="qrcodejs" t="Include">
+              <e p=".gitignore" t="Include" />
+              <e p="LICENSE" t="Include" />
+              <e p="README.md" t="Include" />
+              <e p="bower.json" t="Include" />
+              <e p="index-svg.html" t="Include" />
+              <e p="index.html" t="Include" />
+              <e p="index.svg" t="Include" />
+              <e p="jquery.min.js" t="Include" />
+              <e p="qrcode.js" t="Include" />
+              <e p="qrcode.min.js" t="Include" />
+            </e>
+            <e p="select2" t="Include">
+              <e p="css" t="Include">
+                <e p="select2.min.css" t="Include" />
+              </e>
+              <e p="js" t="Include">
+                <e p="select2.full.min.js" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="webfonts" t="Include">
+            <e p="fa-brands-400.eot" t="Include" />
+            <e p="fa-brands-400.svg" t="Include" />
+            <e p="fa-brands-400.ttf" t="Include" />
+            <e p="fa-brands-400.woff" t="Include" />
+            <e p="fa-brands-400.woff2" t="Include" />
+            <e p="fa-brands-400d41d.eot" t="Include" />
+            <e p="fa-regular-400.eot" t="Include" />
+            <e p="fa-regular-400.svg" t="Include" />
+            <e p="fa-regular-400.ttf" t="Include" />
+            <e p="fa-regular-400.woff" t="Include" />
+            <e p="fa-regular-400.woff2" t="Include" />
+            <e p="fa-regular-400d41d.eot" t="Include" />
+            <e p="fa-solid-900.eot" t="Include" />
+            <e p="fa-solid-900.svg" t="Include" />
+            <e p="fa-solid-900.ttf" t="Include" />
+            <e p="fa-solid-900.woff" t="Include" />
+            <e p="fa-solid-900.woff2" t="Include" />
+            <e p="fa-solid-900d41d.eot" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="VakaxaIDServer.Commons" t="IncludeRecursive">
+        <e p="Constants" t="Include">
+          <e p="Setting.cs" t="Include" />
+          <e p="Status.cs" t="Include" />
+        </e>
+        <e p="Helpers" t="Include">
+          <e p="AppSettingHelper.cs" t="Include" />
+          <e p="CommonHelper.cs" t="Include" />
+          <e p="JsonHelper.cs" t="Include" />
+          <e p="SqlHelper.cs" t="Include" />
+          <e p="UnixTimeStamp.cs" t="Include" />
+        </e>
+        <e p="VakaxaIDServer.Commons.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="VakaxaIDServer.Commons.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="VakaxaIDServer.Models" t="IncludeRecursive">
+        <e p="Domains" t="Include">
+          <e p="BaseEntity.cs" t="Include" />
+          <e p="MultiThreadUpdateEntity.cs" t="Include" />
+          <e p="ReturnObject.cs" t="Include" />
+        </e>
+        <e p="Entities" t="Include">
+          <e p="EmailQueue.cs" t="Include" />
+          <e p="SmsQueue.cs" t="Include" />
+        </e>
+        <e p="Repositories" t="Include">
+          <e p="Base" t="Include">
+            <e p="IMultiThreadUpdateEntityRepository.cs" t="Include" />
+            <e p="IRepositoryBase.cs" t="Include" />
+          </e>
+          <e p="ISendEmailRepository.cs" t="Include" />
+          <e p="ISendSmsRepository.cs" t="Include" />
+          <e p="IVakaxaIDServerIdRepositoryFactory.cs" t="Include" />
+          <e p="RepositoryConfiguration.cs" t="Include" />
+        </e>
+        <e p="VakaxaIDServer.Models.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="VakaxaIDServer.Models.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="VakaxaIDServer.Repositories" t="IncludeRecursive">
+        <e p="Mysql" t="Include">
+          <e p="Base" t="Include">
+            <e p="MultiThreadUpdateEntityRepository.cs" t="Include" />
+            <e p="MySqlBaseRepository.cs" t="Include" />
+            <e p="MysqlBaseConnection.cs" t="Include" />
+          </e>
+          <e p="Lib" t="Include">
+            <e p="SimpleCRUD.cs" t="Include" />
+          </e>
+          <e p="SendEmailRepository.cs" t="Include" />
+          <e p="SendSmsRepository.cs" t="Include" />
+          <e p="VakaxaIdRepositoryMysqlPersistenceFactory.cs" t="Include" />
+        </e>
+        <e p="VakaxaIDServer.Repositories.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="VakaxaIDServer.Repositories.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="VakaxaIDServer.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

@@ -1,0 +1,27 @@
+﻿@using IdentityServer4.Extensions
+@using Microsoft.AspNetCore.Http
+@{
+    string name = null;
+    if (!true.Equals(ViewData["signed-out"]))
+    {
+        name = Context.User?.GetDisplayName();
+    }
+    var isErrorView = Html.ViewBag.Error;
+}
+@if (isErrorView != null && isErrorView)
+{
+    Layout = "_LayoutError";
+}
+else
+{
+    if (!string.IsNullOrWhiteSpace(name))
+    {
+        {
+            Layout = "_LayoutIsAuthenticate";
+        }
+    }
+    else
+    {
+        Layout = "_Layout";
+    }
+}
