@@ -42,7 +42,7 @@ namespace VakaxaIDServer
                 .CreateLogger();
 
             return WebHost.CreateDefaultBuilder(args)
-                    .UseUrls("https://0.0.0.0:5000")
+                    .UseUrls("http://0.0.0.0:5000")
                     .UseStartup<Startup>()
                     .ConfigureLogging(builder =>
                     {
