@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using VakaxaIDServer.Data;
 using VakaxaIDServer.Models;
 using IdentityServer4.Services;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Rewrite;
 using VakaxaIDServer.Services;
 
@@ -92,6 +93,11 @@ namespace VakaxaIDServer
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
 
             app.UseRewriter(new RewriteOptions()
             .AddRewrite(@"signup.html", "Account/Register", false)
