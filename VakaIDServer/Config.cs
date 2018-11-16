@@ -87,7 +87,7 @@ namespace VakaxaIDServer
                 // OpenID Connect hybrid flow and client credentials client (MVC)
                 new Client
                 {
-                    ClientId = "ebcexchange",
+                    ClientId = "vakaexchange",
                     ClientName = "MVC Client",
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
@@ -99,8 +99,8 @@ namespace VakaxaIDServer
                         new Secret("6CQjEWFRGvjyXjzqsK25MssWUEFmRJ")
                     },
 
-                    RedirectUris = {"https://192.168.1.157:52263/authorized.html"},
-                    PostLogoutRedirectUris = {"https://192.168.1.157:52263/unauthorized.html"},
+                    RedirectUris = {"http://192.168.1.157:52263/authorized.html"},
+                    PostLogoutRedirectUris = {"http://192.168.1.157:52263/unauthorized.html"},
 
                     AllowedScopes = {"openid", "profile", "api1"},
                     AllowOfflineAccess = true
@@ -137,10 +137,10 @@ namespace VakaxaIDServer
 
 
                     //RedirectUris = {"http://vakapay.com/login"},
-                    RedirectUris = {"https://vakapay.vakaxalab.com/login"},
-                    PostLogoutRedirectUris = {"https://vakapay.vakaxalab.com/"},
+                    RedirectUris = {"https://vakapay.io/login"},
+                    PostLogoutRedirectUris = {"https://vakapay.io/"},
                    // PostLogoutRedirectUris = {"http://vakapay.com/"},
-                    FrontChannelLogoutUri = "https://vakapay.vakaxalab.com/logout",
+                    FrontChannelLogoutUri = "https://vakapay.io/logout",
                    // FrontChannelLogoutUri = "http://vakapay.com/logout",
                     AllowedScopes = {"openid", "profile", "api1"}
                 },
