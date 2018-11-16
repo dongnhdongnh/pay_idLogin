@@ -2,15 +2,7 @@
 
 <div class="login-wrapper wd-480 wd-xs-350 pd-25 pd-xs-40 pd-t-20 rounded bd bd-white-2 bg-white p-rl mg-x-auto mw">
 
-    <div class="signin-logo tx-center tx-24 tx-bold tx-grey">Create Your Account</div>
-    <div class="form-group">
-        <div class="width-half mob">
-            <div class="tx-green tx-center mg-t-10 tx-20 tx-up"><i class="icon ion-ios-person"></i> Individual</div>
-        </div>
-        <div class="width-half mob">
-            <div class="tx-grey tx-center mg-t-10 tx-20 tx-up"><i class="icon ion-ios-contact-outline"></i> Business</div>
-        </div>
-    </div>
+    <div class="signin-logo tx-center tx-24 tx-bold tx-grey mg-b-20">Create Your Account</div>
     <form asp-controller="Account" asp-action="Register" id="form-register" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
         <div class="form-group">
             <div class="width-half mob">

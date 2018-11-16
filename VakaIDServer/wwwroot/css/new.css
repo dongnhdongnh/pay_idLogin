@@ -260,12 +260,12 @@ a:active, button:active, a:focus, button:focus {
     transition: all 0.2s ease-in-out;
 }
 .btn-trans:hover {
-    border-color: #10a04a;
+    border-color: #3eb7ba;
     color: #fff;
-    background: #10a04a;
+    background: #3eb7ba;
 }
 .bd-green {
-    border-color: #10a04a !important;
+    border-color: #3eb7ba !important;
 }
 .wd-480 {
     width: 480px;
@@ -274,7 +274,7 @@ a:active, button:active, a:focus, button:focus {
     min-height: 40px;
 }
 .btn-green {
-    background-color: #1ea34a;
+    background-color: #3eb7ba;
     color: #fff;
 }
 .tx-grey {
@@ -1343,7 +1343,7 @@ input:focus {
     transform-origin: left top;
     -webkit-transform-origin: left top;
     margin: 10px auto;
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    /* border: 1px solid rgba(0, 0, 0, 0.15); */
 }
 .col-12 {
     padding-left: 0 !important;
