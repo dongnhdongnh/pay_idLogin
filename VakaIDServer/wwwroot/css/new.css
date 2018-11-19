@@ -1152,10 +1152,6 @@ input:focus {
 .navbar-toggle:hover {
     color: white;
 }
-/* .active a {
-    color: #56d097 !important;
-    font-weight: bold;
-} */
 .icon img.img-big {
     width: 150px;
 }
