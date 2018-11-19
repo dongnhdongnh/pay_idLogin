@@ -22,7 +22,6 @@
             </button>
             @if (!Model.IsGoogleAuthenticator)
             {
-                <hr/>
                 <div class="mg-t-20 tx-center">Didn't receive the verification code? <a href="#" onclick="ResendSMS('@Model.Email', '@Const.TypeSendSmsTwoFactor');"class="tx-info">Re-send SMS!</a></div>
             }
         </div>

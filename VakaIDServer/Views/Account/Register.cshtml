@@ -1,5 +1,5 @@
 ﻿@model VakaxaIDServer.Quickstart.Account.RegisterViewModel
-
+<div class="logo-home">
 <div class="login-wrapper wd-480 wd-xs-350 pd-25 pd-xs-40 pd-t-20 rounded bd bd-white-2 bg-white p-rl mg-x-auto mw">
 
     <div class="signin-logo tx-center tx-24 tx-bold tx-grey mg-b-20">Create Your Account</div>
@@ -44,7 +44,9 @@
     </form>
 
     <div class="mg-t-20 tx-center">Already have account? <a asp-action="Login" class="tx-info">Sign In</a></div>
-</div><!-- login-wrapper -->
+</div>
+</div>
+<!-- login-wrapper -->
 
 @section Scripts {
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }

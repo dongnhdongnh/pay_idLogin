@@ -1,6 +1,6 @@
 ﻿@model VakaxaIDServer.Quickstart.Account.LoginViewModel
 
-
+<div class="logo-home">
 <div class="login-wrapper wd-480 wd-xs-350 pd-25 pd-xs-40 pd-t-20 rounded bd bd-white-2 bg-white p-rl mg-x-auto mw">
     <div class=" tx-center tx-24 tx-bold tx-grey mg-b-20">Sign In</div>
     <form asp-route="Login">
@@ -45,6 +45,7 @@
     {
         <iframe width="0" height="0" class="signout" src="@Model.SignOutIframeUrl"></iframe>
     }
+</div>
 </div>
 
 @section Scripts {
