@@ -99,15 +99,15 @@ namespace VakaxaIDServer
                         new Secret("6CQjEWFRGvjyXjzqsK25MssWUEFmRJ")
                     },
 
-                    RedirectUris = {"http://192.168.1.157:52263/authorized.html"},
-                    PostLogoutRedirectUris = {"http://192.168.1.157:52263/unauthorized.html"},
+                    RedirectUris = {"http://192.168.1.242:52263/authorized.html"},
+                    PostLogoutRedirectUris = {"http://192.168.1.242:52263/unauthorized.html"},
 
                     AllowedScopes = {"openid", "profile", "api1"},
                     AllowOfflineAccess = true
                 },
                 new Client
                 {
-                    ClientId = "ebcexchange1",
+                    ClientId = "vakaexchange1",
                     ClientName = "MVC Client",
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
@@ -118,8 +118,8 @@ namespace VakaxaIDServer
                         new Secret("6CQjEWFRGvjyXjzqsK25MssWUEFmRJ")
                     },
 
-                    RedirectUris = {"https://ex.vakacode.com/authorized.html"},
-                    PostLogoutRedirectUris = {"https://ex.vakacode.com/unauthorized.html"},
+                    RedirectUris = {"https://vakachange.io/authorized.html"},
+                    PostLogoutRedirectUris = {"https://vakachange.io/unauthorized.html"},
 
                     AllowedScopes = {"openid", "profile", "api1"},
                     AllowOfflineAccess = true
