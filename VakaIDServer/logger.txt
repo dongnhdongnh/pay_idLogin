@@ -1,0 +1,460 @@
+2018-11-16 08:00:48.438 +07:00 [ERR] An error occurred using the connection to database '' on server 'localhost'.
+MySql.Data.MySqlClient.MySqlException (0x80004005): Access denied for user 'root'@'localhost' (using password: YES)
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 356
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 416
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 175
+   at MySql.Data.MySqlClient.MySqlConnection.Open() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 161
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+2018-11-16 08:00:48.492 +07:00 [FTL] Application startup exception
+MySql.Data.MySqlClient.MySqlException (0x80004005): Access denied for user 'root'@'localhost' (using password: YES)
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 356
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 405
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 175
+   at MySql.Data.MySqlClient.MySqlConnection.Open() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 161
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlDatabaseCreator.<>c__DisplayClass18_0.<Exists>b__0(DateTime giveUp)
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.<>c__DisplayClass12_0`2.<Execute>b__0(DbContext c, TState s)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.Execute[TState,TResult](IExecutionStrategy strategy, Func`2 operation, Func`2 verifySucceeded, TState state)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlDatabaseCreator.Exists(Boolean retryOnNotExists)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabaseCreator.EnsureCreated()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()
+   at VakaxaIDServer.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env) in /home/huan/project/vakaid/server/server/VakaIDServer/Startup.cs:line 84
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.AutoRequestServicesStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2018-11-16 08:01:17.816 +07:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2018-11-16 08:01:17.840 +07:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-11-16 08:01:17.842 +07:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-11-16 08:01:17.842 +07:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-11-16 08:01:17.842 +07:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-11-16 08:01:17.842 +07:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-11-16 08:58:58.397 +07:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-11-16 08:58:58.402 +07:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-11-16 08:58:58.402 +07:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-11-16 08:58:58.406 +07:00 [DBG] Start authorize request
+2018-11-16 08:58:58.418 +07:00 [DBG] User in authorize request: 4e7a0812-b013-4d37-b023-89e9ff6215be
+2018-11-16 08:58:58.422 +07:00 [DBG] Start authorize request protocol validation
+2018-11-16 08:58:58.460 +07:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-11-16 08:58:58.470 +07:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "ebcexchange",
+  "ClientName": "MVC Client",
+  "RedirectUri": "http://192.168.1.157:52263/authorized.html",
+  "AllowedRedirectUris": [
+    "http://192.168.1.157:52263/authorized.html"
+  ],
+  "SubjectId": "4e7a0812-b013-4d37-b023-89e9ff6215be",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile api1",
+  "State": "15423335379900.10799834242063988",
+  "Nonce": "N0.112706775710355481542333537990",
+  "SessionId": "5aae9e557d029593acac1e1a51194223",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "ebcexchange",
+    "redirect_uri": "http://192.168.1.157:52263/authorized.html",
+    "scope": "openid profile api1",
+    "nonce": "N0.112706775710355481542333537990",
+    "state": "15423335379900.10799834242063988"
+  }
+}
+2018-11-16 08:58:58.482 +07:00 [DBG] Client is configured to not require consent, no consent is required
+2018-11-16 08:58:58.487 +07:00 [DBG] Creating Implicit Flow response.
+2018-11-16 08:58:58.494 +07:00 [DBG] Getting claims for access token for client: ebcexchange
+2018-11-16 08:58:58.494 +07:00 [DBG] Getting claims for access token for subject: 4e7a0812-b013-4d37-b023-89e9ff6215be
+2018-11-16 08:58:58.526 +07:00 [DBG] Getting claims for identity token for subject: 4e7a0812-b013-4d37-b023-89e9ff6215be and client: ebcexchange
+2018-11-16 08:58:58.526 +07:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-11-16 08:58:58.541 +07:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "ebcexchange",
+  "ClientName": "MVC Client",
+  "RedirectUri": "http://192.168.1.157:52263/authorized.html",
+  "Endpoint": "Authorize",
+  "SubjectId": "4e7a0812-b013-4d37-b023-89e9ff6215be",
+  "Scopes": "openid profile api1",
+  "GrantType": "implicit",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****LiQg"
+    },
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****tv5A"
+    }
+  ],
+  "ActivityId": "0HLIBCS94M9U7:00000001",
+  "TimeStamp": "2018-11-16T01:58:58Z",
+  "ProcessId": 5792,
+  "LocalIpAddress": "192.168.1.157:5000",
+  "RemoteIpAddress": "192.168.1.157"
+}
+2018-11-16 08:58:58.544 +07:00 [INF] Authorize endpoint response
+{
+  "SubjectId": "4e7a0812-b013-4d37-b023-89e9ff6215be",
+  "ClientId": "ebcexchange",
+  "RedirectUri": "http://192.168.1.157:52263/authorized.html",
+  "State": "15423335379900.10799834242063988",
+  "Scope": "openid profile api1"
+}
+2018-11-16 08:59:04.356 +07:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-11-16 08:59:04.356 +07:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-11-16 08:59:04.356 +07:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-11-16 08:59:04.356 +07:00 [DBG] Start authorize request
+2018-11-16 08:59:04.357 +07:00 [DBG] User in authorize request: 4e7a0812-b013-4d37-b023-89e9ff6215be
+2018-11-16 08:59:04.357 +07:00 [DBG] Start authorize request protocol validation
+2018-11-16 08:59:04.357 +07:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-11-16 08:59:04.357 +07:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "ebcexchange",
+  "ClientName": "MVC Client",
+  "RedirectUri": "http://192.168.1.157:52263/authorized.html",
+  "AllowedRedirectUris": [
+    "http://192.168.1.157:52263/authorized.html"
+  ],
+  "SubjectId": "4e7a0812-b013-4d37-b023-89e9ff6215be",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile api1",
+  "State": "15423335443260.1898560167536043",
+  "Nonce": "N0.34202520151495521542333544326",
+  "SessionId": "5aae9e557d029593acac1e1a51194223",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "ebcexchange",
+    "redirect_uri": "http://192.168.1.157:52263/authorized.html",
+    "scope": "openid profile api1",
+    "nonce": "N0.34202520151495521542333544326",
+    "state": "15423335443260.1898560167536043"
+  }
+}
+2018-11-16 08:59:04.360 +07:00 [DBG] Client is configured to not require consent, no consent is required
+2018-11-16 08:59:04.360 +07:00 [DBG] Creating Implicit Flow response.
+2018-11-16 08:59:04.360 +07:00 [DBG] Getting claims for access token for client: ebcexchange
+2018-11-16 08:59:04.360 +07:00 [DBG] Getting claims for access token for subject: 4e7a0812-b013-4d37-b023-89e9ff6215be
+2018-11-16 08:59:04.362 +07:00 [DBG] Getting claims for identity token for subject: 4e7a0812-b013-4d37-b023-89e9ff6215be and client: ebcexchange
+2018-11-16 08:59:04.363 +07:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-11-16 08:59:04.365 +07:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "ebcexchange",
+  "ClientName": "MVC Client",
+  "RedirectUri": "http://192.168.1.157:52263/authorized.html",
+  "Endpoint": "Authorize",
+  "SubjectId": "4e7a0812-b013-4d37-b023-89e9ff6215be",
+  "Scopes": "openid profile api1",
+  "GrantType": "implicit",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****Y6cg"
+    },
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****KXuw"
+    }
+  ],
+  "ActivityId": "0HLIBCS94M9U7:00000002",
+  "TimeStamp": "2018-11-16T01:59:04Z",
+  "ProcessId": 5792,
+  "LocalIpAddress": "192.168.1.157:5000",
+  "RemoteIpAddress": "192.168.1.157"
+}
+2018-11-16 08:59:04.365 +07:00 [INF] Authorize endpoint response
+{
+  "SubjectId": "4e7a0812-b013-4d37-b023-89e9ff6215be",
+  "ClientId": "ebcexchange",
+  "RedirectUri": "http://192.168.1.157:52263/authorized.html",
+  "State": "15423335443260.1898560167536043",
+  "Scope": "openid profile api1"
+}
+2018-11-16 08:59:22.134 +07:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-11-16 08:59:22.135 +07:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-11-16 08:59:22.135 +07:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-11-16 08:59:22.137 +07:00 [INF] {
+  "Name": "User Logout Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1002,
+  "SubjectId": "4e7a0812-b013-4d37-b023-89e9ff6215be",
+  "DisplayName": "ngochuan2212@gmail.com",
+  "ActivityId": "0HLIBCS94M9UA:00000007",
+  "TimeStamp": "2018-11-16T01:59:22Z",
+  "ProcessId": 5792,
+  "LocalIpAddress": "192.168.1.157:5000",
+  "RemoteIpAddress": "192.168.1.157"
+}
+2018-11-16 08:59:22.259 +07:00 [DBG] Request path /connect/endsession/callback matched to endpoint type Endsession
+2018-11-16 08:59:22.260 +07:00 [DBG] Endpoint enabled: Endsession, successfully created handler: IdentityServer4.Endpoints.EndSessionCallbackEndpoint
+2018-11-16 08:59:22.261 +07:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.EndSessionCallbackEndpoint for /connect/endsession/callback
+2018-11-16 08:59:22.265 +07:00 [DBG] Processing signout callback request
+2018-11-16 08:59:22.274 +07:00 [DBG] No client front-channel logout URLs
+2018-11-16 08:59:22.274 +07:00 [DBG] No client back-channel logout URLs
+2018-11-16 08:59:22.274 +07:00 [INF] Successful signout callback.
+2018-11-16 08:59:22.274 +07:00 [DBG] No client front-channel iframe urls
+2018-11-16 08:59:22.274 +07:00 [DBG] No client back-channel iframe urls
+2018-11-16 08:59:29.062 +07:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-11-16 08:59:29.062 +07:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-11-16 08:59:29.062 +07:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-11-16 08:59:29.062 +07:00 [DBG] Start authorize request
+2018-11-16 08:59:29.062 +07:00 [DBG] No user present in authorize request
+2018-11-16 08:59:29.063 +07:00 [DBG] Start authorize request protocol validation
+2018-11-16 08:59:29.063 +07:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-11-16 08:59:29.063 +07:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "ebcexchange",
+  "ClientName": "MVC Client",
+  "RedirectUri": "http://192.168.1.157:52263/authorized.html",
+  "AllowedRedirectUris": [
+    "http://192.168.1.157:52263/authorized.html"
+  ],
+  "SubjectId": "anonymous",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile api1",
+  "State": "15423335690320.5976472986686767",
+  "Nonce": "N0.057264295319664041542333569032",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "ebcexchange",
+    "redirect_uri": "http://192.168.1.157:52263/authorized.html",
+    "scope": "openid profile api1",
+    "nonce": "N0.057264295319664041542333569032",
+    "state": "15423335690320.5976472986686767"
+  }
+}
+2018-11-16 08:59:29.063 +07:00 [INF] Showing login: User is not authenticated
+2018-11-16 08:59:29.070 +07:00 [DBG] Start authorize request protocol validation
+2018-11-16 08:59:29.070 +07:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-11-16 08:59:37.474 +07:00 [DBG] CORS request made for path: /account/login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-11-16 08:59:38.370 +07:00 [DBG] Augmenting SignInContext
+2018-11-16 08:59:38.371 +07:00 [DBG] Adding idp claim with value: local
+2018-11-16 08:59:38.371 +07:00 [DBG] Adding amr claim with value: pwd
+2018-11-16 08:59:38.371 +07:00 [DBG] Adding auth_time claim with value: 1542333578
+2018-11-16 08:59:38.374 +07:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-11-16 08:59:38.378 +07:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Username": "ngochuan2212@gmail.com",
+  "SubjectId": "4e7a0812-b013-4d37-b023-89e9ff6215be",
+  "DisplayName": "ngochuan2212@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLIBCS94M9UA:00000011",
+  "TimeStamp": "2018-11-16T01:59:38Z",
+  "ProcessId": 5792,
+  "LocalIpAddress": "192.168.1.157:5000",
+  "RemoteIpAddress": "192.168.1.157"
+}
+2018-11-16 08:59:40.126 +07:00 [DBG] Request path /connect/authorize/callback matched to endpoint type Authorize
+2018-11-16 08:59:40.126 +07:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+2018-11-16 08:59:40.126 +07:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2018-11-16 08:59:40.130 +07:00 [DBG] Start authorize callback request
+2018-11-16 08:59:40.132 +07:00 [DBG] User in authorize request: 4e7a0812-b013-4d37-b023-89e9ff6215be
+2018-11-16 08:59:40.132 +07:00 [DBG] Start authorize request protocol validation
+2018-11-16 08:59:40.132 +07:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-11-16 08:59:40.133 +07:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "ebcexchange",
+  "ClientName": "MVC Client",
+  "RedirectUri": "http://192.168.1.157:52263/authorized.html",
+  "AllowedRedirectUris": [
+    "http://192.168.1.157:52263/authorized.html"
+  ],
+  "SubjectId": "4e7a0812-b013-4d37-b023-89e9ff6215be",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile api1",
+  "State": "15423335690320.5976472986686767",
+  "Nonce": "N0.057264295319664041542333569032",
+  "SessionId": "b9ec87e8ac5f96b95c188712e48bcc37",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "ebcexchange",
+    "redirect_uri": "http://192.168.1.157:52263/authorized.html",
+    "scope": "openid profile api1",
+    "nonce": "N0.057264295319664041542333569032",
+    "state": "15423335690320.5976472986686767"
+  }
+}
+2018-11-16 08:59:40.135 +07:00 [DBG] Client is configured to not require consent, no consent is required
+2018-11-16 08:59:40.135 +07:00 [DBG] Creating Implicit Flow response.
+2018-11-16 08:59:40.135 +07:00 [DBG] Getting claims for access token for client: ebcexchange
+2018-11-16 08:59:40.135 +07:00 [DBG] Getting claims for access token for subject: 4e7a0812-b013-4d37-b023-89e9ff6215be
+2018-11-16 08:59:40.137 +07:00 [DBG] Getting claims for identity token for subject: 4e7a0812-b013-4d37-b023-89e9ff6215be and client: ebcexchange
+2018-11-16 08:59:40.137 +07:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-11-16 08:59:40.138 +07:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "ebcexchange",
+  "ClientName": "MVC Client",
+  "RedirectUri": "http://192.168.1.157:52263/authorized.html",
+  "Endpoint": "Authorize",
+  "SubjectId": "4e7a0812-b013-4d37-b023-89e9ff6215be",
+  "Scopes": "openid profile api1",
+  "GrantType": "implicit",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****DYMg"
+    },
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****JJJA"
+    }
+  ],
+  "ActivityId": "0HLIBCS94M9UA:00000012",
+  "TimeStamp": "2018-11-16T01:59:40Z",
+  "ProcessId": 5792,
+  "LocalIpAddress": "192.168.1.157:5000",
+  "RemoteIpAddress": "192.168.1.157"
+}
+2018-11-16 08:59:40.138 +07:00 [INF] Authorize endpoint response
+{
+  "SubjectId": "4e7a0812-b013-4d37-b023-89e9ff6215be",
+  "ClientId": "ebcexchange",
+  "RedirectUri": "http://192.168.1.157:52263/authorized.html",
+  "State": "15423335690320.5976472986686767",
+  "Scope": "openid profile api1"
+}
+2018-11-16 08:59:40.142 +07:00 [DBG] Augmenting SignInContext
+2018-11-16 08:59:40.143 +07:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-11-16 09:00:52.072 +07:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-11-16 09:00:52.072 +07:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-11-16 09:00:52.072 +07:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-11-16 09:00:52.072 +07:00 [DBG] Start authorize request
+2018-11-16 09:00:52.073 +07:00 [DBG] User in authorize request: 4e7a0812-b013-4d37-b023-89e9ff6215be
+2018-11-16 09:00:52.073 +07:00 [DBG] Start authorize request protocol validation
+2018-11-16 09:00:52.073 +07:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-11-16 09:00:52.073 +07:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "ebcexchange",
+  "ClientName": "MVC Client",
+  "RedirectUri": "http://192.168.1.157:52263/authorized.html",
+  "AllowedRedirectUris": [
+    "http://192.168.1.157:52263/authorized.html"
+  ],
+  "SubjectId": "4e7a0812-b013-4d37-b023-89e9ff6215be",
+  "ResponseType": "id_token token",
+  "ResponseMode": "fragment",
+  "GrantType": "implicit",
+  "RequestedScopes": "openid profile api1",
+  "State": "15423336520470.11908860991048686",
+  "Nonce": "N0.84251250957038451542333652047",
+  "SessionId": "b9ec87e8ac5f96b95c188712e48bcc37",
+  "Raw": {
+    "response_type": "id_token token",
+    "client_id": "ebcexchange",
+    "redirect_uri": "http://192.168.1.157:52263/authorized.html",
+    "scope": "openid profile api1",
+    "nonce": "N0.84251250957038451542333652047",
+    "state": "15423336520470.11908860991048686"
+  }
+}
+2018-11-16 09:00:52.075 +07:00 [DBG] Client is configured to not require consent, no consent is required
+2018-11-16 09:00:52.075 +07:00 [DBG] Creating Implicit Flow response.
+2018-11-16 09:00:52.075 +07:00 [DBG] Getting claims for access token for client: ebcexchange
+2018-11-16 09:00:52.075 +07:00 [DBG] Getting claims for access token for subject: 4e7a0812-b013-4d37-b023-89e9ff6215be
+2018-11-16 09:00:52.076 +07:00 [DBG] Getting claims for identity token for subject: 4e7a0812-b013-4d37-b023-89e9ff6215be and client: ebcexchange
+2018-11-16 09:00:52.076 +07:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-11-16 09:00:52.078 +07:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "ebcexchange",
+  "ClientName": "MVC Client",
+  "RedirectUri": "http://192.168.1.157:52263/authorized.html",
+  "Endpoint": "Authorize",
+  "SubjectId": "4e7a0812-b013-4d37-b023-89e9ff6215be",
+  "Scopes": "openid profile api1",
+  "GrantType": "implicit",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****S1aA"
+    },
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****8fVw"
+    }
+  ],
+  "ActivityId": "0HLIBCS94M9UA:00000013",
+  "TimeStamp": "2018-11-16T02:00:52Z",
+  "ProcessId": 5792,
+  "LocalIpAddress": "192.168.1.157:5000",
+  "RemoteIpAddress": "192.168.1.157"
+}
+2018-11-16 09:00:52.078 +07:00 [INF] Authorize endpoint response
+{
+  "SubjectId": "4e7a0812-b013-4d37-b023-89e9ff6215be",
+  "ClientId": "ebcexchange",
+  "RedirectUri": "http://192.168.1.157:52263/authorized.html",
+  "State": "15423336520470.11908860991048686",
+  "Scope": "openid profile api1"
+}
+2018-11-16 09:00:52.414 +07:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-11-16 09:00:52.416 +07:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-11-16 09:00:52.416 +07:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-11-16 09:00:52.419 +07:00 [DBG] Start discovery request
+2018-11-16 09:00:52.501 +07:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-11-16 09:00:52.502 +07:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-11-16 09:00:52.502 +07:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-11-16 09:00:52.504 +07:00 [DBG] Start key discovery request
+2018-11-16 09:10:25.499 +07:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-11-16 09:10:25.503 +07:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-11-16 09:10:25.504 +07:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-11-16 09:10:25.504 +07:00 [DBG] Start discovery request
+2018-11-16 09:10:25.561 +07:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-11-16 09:10:25.561 +07:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-11-16 09:10:25.561 +07:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-11-16 09:10:25.562 +07:00 [DBG] Start key discovery request
+2018-11-16 09:32:52.987 +07:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-11-16 09:32:52.987 +07:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-11-16 09:32:52.987 +07:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-11-16 09:32:52.987 +07:00 [DBG] Start discovery request
+2018-11-16 09:32:53.042 +07:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-11-16 09:32:53.042 +07:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-11-16 09:32:53.043 +07:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-11-16 09:32:53.043 +07:00 [DBG] Start key discovery request
+2018-11-16 09:33:14.312 +07:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2018-11-16 09:33:14.336 +07:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-11-16 09:33:14.338 +07:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-11-16 09:33:14.338 +07:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-11-16 09:33:14.338 +07:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-11-16 09:33:14.338 +07:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-11-16 09:56:06.465 +07:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-11-16 09:56:06.473 +07:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-11-16 09:56:06.473 +07:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-11-16 09:56:06.476 +07:00 [DBG] Start discovery request
+2018-11-16 09:56:06.578 +07:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-11-16 09:56:06.579 +07:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-11-16 09:56:06.579 +07:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-11-16 09:56:06.582 +07:00 [DBG] Start key discovery request
+2018-11-16 09:57:18.801 +07:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-11-16 09:57:18.801 +07:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-11-16 09:57:18.801 +07:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-11-16 09:57:18.801 +07:00 [DBG] Start discovery request
+2018-11-16 09:57:18.888 +07:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-11-16 09:57:18.889 +07:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-11-16 09:57:18.889 +07:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-11-16 09:57:18.889 +07:00 [DBG] Start key discovery request
