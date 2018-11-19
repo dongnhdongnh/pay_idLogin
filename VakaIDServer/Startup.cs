@@ -50,6 +50,7 @@ namespace VakaxaIDServer
                     options.Events.RaiseInformationEvents = true;
                     options.Events.RaiseFailureEvents = true;
                     options.Events.RaiseSuccessEvents = true;
+                    options.PublicOrigin = "https://vakaid.com";
                     //options.Authentication.CookieLifetime = TimeSpan.FromMinutes(1);
                 })
                 .AddInMemoryIdentityResources(Config.GetIdentityResources())
