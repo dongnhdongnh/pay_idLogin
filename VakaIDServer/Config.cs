@@ -87,7 +87,7 @@ namespace VakaxaIDServer
                 // OpenID Connect hybrid flow and client credentials client (MVC)
                 new Client
                 {
-                    ClientId = "vakaexchange",
+                    ClientId = "vakaexchange1",
                     ClientName = "MVC Client",
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
@@ -107,7 +107,7 @@ namespace VakaxaIDServer
                 },
                 new Client
                 {
-                    ClientId = "vakaexchange1",
+                    ClientId = "vakaexchange",
                     ClientName = "MVC Client",
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
@@ -118,8 +118,8 @@ namespace VakaxaIDServer
                         new Secret("6CQjEWFRGvjyXjzqsK25MssWUEFmRJ")
                     },
 
-                    RedirectUris = {"https://vakachange.io/authorized.html"},
-                    PostLogoutRedirectUris = {"https://vakachange.io/unauthorized.html"},
+                    RedirectUris = {"https://vakachain.io/authorized.html"},
+                    PostLogoutRedirectUris = {"https://vakachain.io/unauthorized.html"},
 
                     AllowedScopes = {"openid", "profile", "api1"},
                     AllowOfflineAccess = true
