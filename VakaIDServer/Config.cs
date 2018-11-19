@@ -99,8 +99,8 @@ namespace VakaxaIDServer
                         new Secret("6CQjEWFRGvjyXjzqsK25MssWUEFmRJ")
                     },
 
-                    RedirectUris = {"http://192.168.1.242:52263/authorized.html"},
-                    PostLogoutRedirectUris = {"http://192.168.1.242:52263/unauthorized.html"},
+                    RedirectUris = {"https://192.168.1.242:52263/authorized.html"},
+                    PostLogoutRedirectUris = {"https://192.168.1.242:52263/unauthorized.html"},
 
                     AllowedScopes = {"openid", "profile", "api1"},
                     AllowOfflineAccess = true
