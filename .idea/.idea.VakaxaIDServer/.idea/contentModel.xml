@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$APPLICATION_CONFIG_DIR$/consoles/db" t="IncludeRecursive" />
-    <e p="$APPLICATION_CONFIG_DIR$/extensions" t="IncludeRecursive" />
+    <e p="/8e41161d" t="IncludeRecursive" />
+    <e p="/app" t="IncludeRecursive" />
     <e p="$USER_HOME$/.Rider2018.2/system/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/.Rider2018.2/system/resharper-host/local/Transient/ReSharperHost/v182/SolutionCaches/_VakaxaIDServer.-275997301.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/.Rider2018.2/system/resharper-host/local/Transient/ReSharperHost/v182/SolutionCaches/_VakaxaIDServer.-1424594988.00" t="ExcludeRecursive" />
     <e p="$USER_HOME$/.nuget/packages/nlog.config/4.5.10/contentFiles/any/any/NLog.config" t="Include" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="BussinessProject" t="Include" />
@@ -151,7 +151,11 @@
             <e p="SocialNetwork.cs" t="Include" />
           </e>
           <e p="Security" t="Include">
+            <e p="ChangePassModel.cs" t="Include" />
+            <e p="DeactiveModel.cs" t="Include" />
             <e p="EnableAuthenticatorViewModel.cs" t="Include" />
+            <e p="LockScreenModel.cs" t="Include" />
+            <e p="MobileModel.cs" t="Include" />
             <e p="SecurityController.cs" t="Include" />
             <e p="SecurityViewModel.cs" t="Include" />
           </e>
@@ -252,7 +256,6 @@
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="logger.txt" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.1" t="Include">
@@ -260,7 +263,6 @@
             </e>
           </e>
         </e>
-        <e p="tempkey.rsa" t="Include" />
         <e p="vakaxa.pgsql" t="Include" />
         <e p="wwwroot" t="Include">
           <e p="Template" t="Include">
