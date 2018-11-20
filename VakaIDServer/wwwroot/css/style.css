@@ -6,6 +6,12 @@ body{
     color:#5b626b;
     font-size:14px
 }
+.info td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 0px;
+}
 .modal.show {
     overflow: auto !important;
 }
