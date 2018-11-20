@@ -6,12 +6,6 @@ body{
     color:#5b626b;
     font-size:14px
 }
-.info td {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 0px;
-}
 .modal.show {
     overflow: auto !important;
 }
@@ -3118,5 +3112,13 @@ table.focus-on tbody tr.focused td{
 @media (max-width:1200px){
     .on-off {
         display: inline-block;
+    }
+}
+@media (min-width:991px){
+    .info td {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 0px;
     }
 }
