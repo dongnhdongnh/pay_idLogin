@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Cache;
 using System.Text;
@@ -12,20 +10,14 @@ using IdentityServer4.Stores;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using VakaxaIDServer.Commons.Helpers;
 using VakaxaIDServer.Data;
 using VakaxaIDServer.Models;
-using VakaxaIDServer.Quickstart.Setting;
-using VakaxaIDServer.Services;
-using JsonHelper = Microsoft.AspNetCore.Mvc.ViewFeatures.JsonHelper;
-using SettingActivity = VakaxaIDServer.Services.SettingActivity;
 
 namespace VakaxaIDServer.Quickstart.Profile
 {

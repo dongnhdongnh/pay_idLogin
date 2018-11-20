@@ -9,6 +9,7 @@ namespace VakaxaIDServer.Constants
         public const string TypeGenerateChangePassword = "ChangePassword";
         public const string TypeGenerateChangeOldPhoneNumber = "ChangePhoneOldPhone";
         public const string TypeGenerateChangeNewPhoneNumber = "ChangePhoneNewPhone";
+        public const string TypeGenerateChangeConfirmPhoneNumber = "ChangePhoneConfirmPhone";
         public const string TypeGenerateVerifyPhoneNumberAgain = "VerifyPhoneAgain";
         public const string TypeGenerateChangeTwoFactor = "ChangeTwoFactor";
         public const string TypeGenerateLockAccount = "LockAccount";

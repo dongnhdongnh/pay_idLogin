@@ -8,7 +8,28 @@ function clearNewPhone() {
     countryIndex = "";
 }
 
-function GenerateSMSCode(email, phoneNumber, typeGenerate) {
+function  GenerateSMSCode(email,typeGenerate){
+    var obj = {
+        Email: email,
+        TypeGenerate: typeGenerate
+    };
+    $.ajax({
+        url: '/Security/GenerateSms',
+        data: JSON.stringify(obj),
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+
+        },
+        error: function (errorMessage) {
+        }
+    });
+}
+
+
+
+function GenerateSMSCode1(email, phoneNumber, typeGenerate) {
     if (typeGenerate === "ChangeTwoFactor") {
         $('#twoFa').modal('show');
     } else if (typeGenerate === "ChangePhoneOldPhone") {
@@ -192,7 +213,7 @@ function AddNewPhone(email, isGoogleAuthenticator) {
         $('#addNewPhone').modal('hide');
         $('#verifyNewPhone').modal('show');
     } else {
-        GenerateSMSCode(email, phoneNumber, "ChangePhoneNewPhone");
+        GenerateSMSCode1(email, phoneNumber, "ChangePhoneNewPhone");
     }
 }
 
@@ -267,7 +288,7 @@ function ChangePassword(email, phoneNumber, typeGenerate, isGoogleAuthenticator)
                     $('#changePassword').modal('hide');
                     $('#verifyChangePassword').modal('show');
                 } else {
-                    GenerateSMSCode(email, phoneNumber, typeGenerate);
+                    GenerateSMSCode1(email, phoneNumber, typeGenerate);
                 }
             } else {
                 $('#oldPasswordError').text(result.responseText);
@@ -330,7 +351,7 @@ function SetLockScreen(email, typeGenerate, isGoogleAuthenticator) {
         $('#verifyLockScreen').modal('show');
     } else {
         //GenerateSMSCode
-        GenerateSMSCode(email, "", typeGenerate);
+        GenerateSMSCode1(email, "", typeGenerate);
     }
 }
 
