@@ -3114,3 +3114,11 @@ table.focus-on tbody tr.focused td{
         display: inline-block;
     }
 }
+@media (min-width:991px){
+    .info td {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 0px;
+    }
+}

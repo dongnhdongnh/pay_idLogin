@@ -24054,3 +24054,32 @@ Parameter name: value
   "LocalIpAddress": "127.0.0.1:5000",
   "RemoteIpAddress": "172.68.146.103"
 }
+2018-11-20 10:28:19.132 +00:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-11-20 10:28:19.132 +00:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-11-20 10:28:19.132 +00:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-11-20 10:28:19.132 +00:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2018-11-20 10:28:19.132 +00:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2018-11-20 10:28:19.133 +00:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-11-20 10:28:50.367 +00:00 [DBG] CORS request made for path: /account/login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-11-20 10:28:50.521 +00:00 [DBG] Augmenting SignInContext
+2018-11-20 10:28:50.521 +00:00 [DBG] Adding idp claim with value: local
+2018-11-20 10:28:50.521 +00:00 [DBG] Adding amr claim with value: pwd
+2018-11-20 10:28:50.521 +00:00 [DBG] Adding auth_time claim with value: 1542709730
+2018-11-20 10:28:50.522 +00:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-11-20 10:28:50.522 +00:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Username": "bongbongmuahe4195+20@gmail.com",
+  "SubjectId": "3fb4fa0d-1768-4378-9236-26ab232c1836",
+  "DisplayName": "bongbongmuahe4195+20@gmail.com",
+  "Endpoint": "UI",
+  "ActivityId": "0HLIEI19JAO7B:00000001",
+  "TimeStamp": "2018-11-20T10:28:50Z",
+  "ProcessId": 11769,
+  "LocalIpAddress": "127.0.0.1:5000",
+  "RemoteIpAddress": "162.158.166.4"
+}
+2018-11-20 10:29:19.765 +00:00 [ERR] SecurityController ==>> VerifyCode: Value cannot be null.
+Parameter name: value

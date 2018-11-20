@@ -126,6 +126,25 @@ namespace VakaxaIDServer
                 },
                 new Client
                 {
+                    ClientId = "vakaexchangev2",
+                    ClientName = "MVC Client 2",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
+                    RequireConsent = false,
+
+                    ClientSecrets =
+                    {
+                        new Secret("6CQjEWFRGvjyXjzqsK25MssWUEFmRJ")
+                    },
+
+                    RedirectUris = {"https://vakaex.io/authorized.html"},
+                    PostLogoutRedirectUris = {"https://vakaex.io/unauthorized.html"},
+
+                    AllowedScopes = {"openid", "profile", "api1"},
+                    AllowOfflineAccess = true
+                },
+                new Client
+                {
                     ClientId = "implicit",
                     ClientName = "Vakapay",
                     AllowedGrantTypes = GrantTypes.Implicit,
