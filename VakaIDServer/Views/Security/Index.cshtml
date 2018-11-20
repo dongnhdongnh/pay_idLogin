@@ -1,266 +1,369 @@
 @using VakaxaIDServer.Constants
+@using VakaxaIDServer.Quickstart.Security
 @model VakaxaIDServer.Quickstart.Security.SecurityViewModel
 @{
     var strTwoFa = Model.IsGoogleAuthenticator ? "Disable" : "Enable";
-    var email = Model.Email;
+    var textBtnPhone = string.IsNullOrEmpty(Model.PhoneNumber) ? "Add PhoneNumber" : @Model.MobileModel.Confirmed ? "Change PhoneNumber" : "Confirm PhoneNumber";
 }
-<section class="page--header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-6">
-                <h2 class="page--title h5"><i class="fa fa-lock"></i> Security</h2>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="main--content">
-    <div class="row gutter-20">
-        <div class="col-lg-12">
-            <div class="panel">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Phone Number</h3>
-                </div>
-                <div class="panel-content">
-                    <div class="form-group row">
-                        <span class="label-text col-lg-4 col-form-label">Enable TWO-FACTOR AUTHENTICATION:</span>
-                        <div class="col-lg-8">
-                            @{
-                                if (Model.IsGoogleAuthenticator)
-                                {
-                                    <a href="#twoFa" class="btn btn-rounded btn-info btn-large" data-toggle="modal">
-                                        <i
-                                            class="fas mr-1 fa-mobile-alt">
-                                        </i>
-                                        @strTwoFa 2FA
-                                    </a>
-                                    <span class="form-text text-muted">Your two-factor method is: Authenticator</span>
-                                }
-                                else
-
-                                {
-                                    <button class="btn btn-rounded btn-info btn-large" data-toggle="modal" onclick="GenerateSMSCode('@Model.Email', '@Model.PhoneNumber', '@Const.TypeGenerateChangeTwoFactor');">
-                                        <i
-                                            class="fas mr-1 fa-mobile-alt">
-                                        </i>
-                                        @strTwoFa 2FA
-                                    </button>
-                                    <span class="form-text text-muted">Your two-factor method is: SMS</span>
-                                }
-                            }
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <span class="label-text col-lg-4 col-form-label">Your Phone Number:</span>
-                        <div class="col-lg-8">
-                            <h4 class="form-control-plaintext bold">@Model.PhoneHide</h4>
-                            <button class="btn-mini btn-rounded btn-primary">Verified</button>
-                            <button class="btn-mini btn-rounded btn-primary">Primary Phone</button>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-lg-8 offset-lg-4">
-                            @{
-                                if (Model.IsGoogleAuthenticator)
-                                {
-                                    <a href="#verifyOldPhone" class="btn btn-rounded btn-info btn-large" data-toggle="modal">
-                                        <i class="fa mr-1 fa-phone">
-                                        </i>
-                                        Change Number
-                                    </a>
-                                }
-                                else
-                                {
-                                    <button class="btn btn-rounded btn-info btn-large" data-toggle="modal" onclick="GenerateSMSCode('@Model.Email', '@Model.PhoneNumber', '@Const.TypeGenerateChangeOldPhoneNumber');">
-                                        <i class="fa mr-1 fa-phone">
-                                        </i>
-                                        Change Number
-                                    </button>
-                                }
-                            }
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-12">
-            <div class="panel">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Your Password</h3>
-                </div>
-                <div class="panel-content">
-                    <div class="form-group row">
-                        <span class="label-text col-lg-4 col-form-label">Change Password:</span>
-                        <div class="col-lg-8">
-                            <a href="#changePassword" class="btn btn-rounded btn-info btn-large" data-toggle="modal">
-                                <i
-                                    class="fa mr-1 fa-lock">
-                                </i>
-                                Change Password
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-12">
-            <div class="panel">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Set Lock Screen</h3>
-                </div>
-                <div class="panel-content">
-                    <div class="form-group row">
-                        <span class="label-text col-lg-4 col-form-label">Set Lock Screen's Password:</span>
-                        <div class="col-lg-8">
-                            <a href="#lockScreen" class="btn btn-rounded btn-info btn-large" data-toggle="modal">
-                                <i class="fa mr-1 fa-lock"></i>
-                                Set Lock Screen
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-12">
-            <div class="panel">
-                <div class="panel-heading">
-                    <h3 class="panel-title">DeActive Account</h3>
-                </div>
-                <div class="panel-content">
-                    <div class="form-group row">
-                        <span class="label-text col-lg-4 col-form-label">Lock your account:</span>
-                        <div class="col-lg-8">
-                            @{
-                                if (Model.IsGoogleAuthenticator)
-                                {
-                                    <a href="#lockAccount" class="btn btn-rounded btn-danger btn-large" data-toggle="modal">
-                                        <i
-                                            class="far mr-1 fa-times-circle">
-                                        </i>
-                                        Lock Account
-                                    </a>
-                                }
-                                else
-                                {
-                                    <a onclick="GenerateSMSCode('@Model.Email', '@Model.PhoneNumber', '@Const.TypeGenerateLockAccount');" class="btn btn-rounded btn-danger btn-large" data-toggle="modal">
-                                        <i
-                                            class="far mr-1 fa-times-circle">
-                                        </i>
-                                        Lock Account
-                                    </a>
-                                }
-                            }
-                            <span class="form-text text-muted">This cannot be undone!</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-@*-------------change Two-Factor AUTHENTICATION-----------------*@
-
-<div id="twoFa" class="modal fade" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">@strTwoFa Two-Factor AUTHENTICATION</h5> <button type="button" class="close" data-dismiss="modal" onclick="ReloadPage();">×</button>
-            </div>
-            <div class="modal-body">
-                <p>Enter the 2-step verification code provided by SMS to your phone:</p>
-                <div class="input-group phone-check">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <i class="fa fa-phone"></i>
-                        </span>
-                    </div>
-                    <input id="changeTwoFactorCode" type="text" name="text" class="form-control" maxlength="6" placeholder="000000">
-                </div>
-                <span id="verifyTwoFaError" class="text-danger text-center"></span>
-                @if (!Model.IsGoogleAuthenticator)
-                {
-                    <span class="resend">
-                        Didn't receive the verification code?
-                        <br>
-                        <a href="#" onclick="ResendSMS('@Model.Email', '', '@Const.TypeGenerateChangeTwoFactor');">Re-send SMS</a>
-                    </span>
-                }
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal" onclick="ReloadPage();">Close</button>
-                @{
-                    if (Model.IsGoogleAuthenticator)
-                    {
-                        <button onclick="DisableTwoFactor('@email')" class="btn btn-success btn-rounded" data-toggle="modal">@strTwoFa</button>
-                    }
-                    else
-                    {
-                        <button class="btn btn-success btn-rounded" data-toggle="modal" onclick="return VerifySmsEnableTwoFactor('@email');"> @strTwoFa</button>
-                    }
-                }
-            </div>
-        </div>
-    </div>
-</div>
-<div id="twoFaSuccess" class="modal fade hide" style="display: none;"aria-hidden="true" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body tx-center">
-                <i class="fas fa-check-circle big-icon mg-b-20"></i>
-                <h4 class="tx-success">Your Two-Factor Authentication is @strTwoFa!</h4>
-                <p class="mg-b-20">Now you will receive SMS when you do any Activity</p>
-                <button class="btn btn-success btn-rounded" data-dismiss="modal" data-toggle="modal" onclick="return ReloadPage();"> Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-@*--------------Change Phone Number---------------*@
-
-<div id="verifyOldPhone" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Change your phone number</h5>
-                <button type="button" class="close"data-dismiss="modal" onclick="ReloadPage();">×</button>
-            </div>
-            <div class="modal-body">
-                <p>Enter the 2-step verification code provided by SMS to your phone:</p>
-                <div class="input-group phone-check">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <i class="fa fa-phone"></i>
-                        </span>
-                    </div>
-                    <input id="inputVerifyOldPhone" type="text" name="text" class="form-control" maxlength="7" placeholder="0000000">
-                </div>
-                <span id="verifyOldPhoneError" class="text-danger tx-center"></span>
-                <span class="resend">Didn't receive the verification code? <br> <a href="#" onclick="ResendSMS('@Model.Email', '@Model.PhoneNumber', '@Const.TypeGenerateChangeOldPhoneNumber');">Re-send SMS</a></span>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal" onclick="ReloadPage();">Close</button>
-                <button class="btn btn-success btn-rounded" data-toggle="modal" onclick="VerifyOldPhone('@email', '@Model.PhoneNumber');">Next</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div id="addNewPhone" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Change your phone number</h5>
-                <button type="button" class="close"data-dismiss="modal" onclick="ReloadPage();">×</button>
-            </div>
-            <div class="modal-body">
+<div class="container-fluid">
+<div class="row">
+<div class="col-12">
+<div class="card m-b-20">
+<div class="card-body">
+<h4 class="mt-0 m-b-10 header-title color1 tx20">
+    <i class="mdi mdi-security m-r-5"></i>Update
+    your security
+</h4>
+<p class="text-muted m-b-20 ">Manage and update your personal security settings</p>
+<!-- Nav tabs -->
+<ul class="nav nav-tabs nav-tabs-custom" role="tablist">
+    <li class="nav-item tab-security">
+        <a class="nav-link @Model.ChangePassModel.TabShow" data-toggle="tab" href="#tab1" role="tab"
+           aria-selected="@Model.ChangePassModel.IsTabSelected">
+            <i class="mdi mdi-security-network"></i> Password
+        </a>
+    </li>
+    <li class="nav-item tab-security">
+        <a class="nav-link @Model.MobileModel.TabShow" data-toggle="tab" href="#tab2" role="tab" aria-selected="@Model.MobileModel.IsTabSelected">
+            <i
+                class="ti-mobile">
+            </i> Mobile
+        </a>
+    </li>
+    <li class="nav-item tab-security">
+        <a class="nav-link @Model.LockScreenModel.TabShow" data-toggle="tab" href="#tab3" role="tab" aria-selected="@Model.LockScreenModel.IsTabSelected">
+            <i
+                class="mdi mdi-lock-open-outline">
+            </i> Lockscreen
+        </a>
+    </li>
+    <li class="nav-item tab-security">
+        <a class="nav-link error @Model.DeactiveModel.TabShow" data-toggle="tab" href="#tab4" role="tab" aria-selected="@Model.DeactiveModel.IsTabSelected">
+            <i
+                class="mdi mdi-account-off">
+            </i> Deactive
+        </a>
+    </li>
+</ul>
+<div class="m-t-10">
+<!-- Tab panes -->
+<div class="tab-content">
+<div class="tab-pane @Model.ChangePassModel.TabShow" id="tab1" role="tabpanel">
+    <form asp-controller="Security" asp-action="Index" method="post" id="form-ChangePassword">
+        <div class="col-lg-8 col-sm-12 m-t-10 fl">
+            <div>
+                <h4 class="mt-0 header-title">VakaID Password</h4>
+                <p class="text-muted m-b-20">Change your current password.</p>
                 <div class="form-group row">
-                    <span class="label-text col-md-4 col-form-label text-md-right">Country:</span>
-                    <div class="col-md-8">
-                        <select id="selectCountryCode" class="form-control" data-placeholder="Choose country" tabindex="-1" aria-hidden="true">
+                    <label for="example-text-input" class="col-sm-3 col-form-label">
+                        Old
+                        Password:
+                    </label>
+                    <div class="col-sm-9">
+                        <input id="inputOldPass" class="form-control" asp-for="ChangePassModel.OldPassword" type="password">
+                        <span asp-validation-for="ChangePassModel.OldPassword" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-text-input" class="col-sm-3 col-form-label">
+                        New Password:
+                    </label>
+                    <div class="col-sm-9">
+                        <input id="inputNewPass" class="form-control" asp-for="ChangePassModel.NewPassword" type="password">
+                        <span asp-validation-for="ChangePassModel.NewPassword" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-text-input" class="col-sm-3 col-form-label">
+                        Confirm New Password:
+                    </label>
+                    <div class="col-sm-9">
+                        <input id="inputConfirmPass" class="form-control" asp-for="ChangePassModel.ConfirmPassword" type="password">
+                        <span asp-validation-for="ChangePassModel.ConfirmPassword" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-9 offset-sm-3">
+                        <button type="submit" class="btn btn-primary waves-effect waves-light" id="btnChangePassword" disabled="disabled" data-toggle="modal">
+                            Submit
+                        </button>
+                        <button type="reset" class="btn btn-secondary waves-effect m-l-5">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-12 m-t-10 fl">
+            <div>
+                <div class="directory-bg text-center">
+                    <div class="directory-overlay">
+                        <img class="img-thumbnail img-security nb" src="assets/background/p1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="tab-pane @Model.MobileModel.TabShow" id="tab2" role="tabpanel">
+    <div class="col-lg-8 col-sm-12 m-t-10 fl">
+        <h4 class="mt-0 header-title">Phone Security</h4>
+        <p class="text-muted m-b-20">Update your phone security to more secure.</p>
+        <div class="col-sm-6 fl mobile-tab mobile-tab-1">
+            <i class="ti-mobile icon-security"></i>
+            <div class="row">
+                <label for="example-text-input" class="col-sm-12 col-form-label">
+                    Phone
+                    Number:
+                </label>
+                @if (!string.IsNullOrEmpty(Model.MobileModel.PhoneHide))
+                {
+                    <div class="col-sm-12 input-group">
+                        <label class="col-form-label phone-number">
+                            @Model.MobileModel.PhoneHide
+                        </label>
+                    </div>
+                }
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <span class="badge badge-success">Primary</span>
+                    @if (Model.MobileModel.Confirmed)
+                    {
+                        <span class="badge badge-success">Verified</span>
+                    }
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <button type="submit" class="btn btn-primary waves-effect waves-light" data-toggle="modal" id="btnPhoneNumber">
+                        @textBtnPhone
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 fl mobile-tab">
+            <i class="ti-bell icon-security"></i>
+            <div class="row">
+                <label for="example-text-input" class="col-sm-12 col-form-label">
+                    Enable Notifications:
+                </label>
+                <div class="input-group">
+                    <div class="col-sm-12 m-t-10 m-b-5">
+                        @{
+                            var twoFaSms = "";
+                            var twoFaGoogle = "";
+                            var twoFaSmsDisable = "";
+                            if (Model.TwoFactorEnable)
+                            {
+                                if (Model.MobileModel.IsTwoFaGoogle)
+                                {
+                                    twoFaGoogle = "checked";
+                                }
+                                else
+                                {
+                                    twoFaSms = "checked";
+                                }
+                            }
+                            if (string.IsNullOrEmpty(Model.PhoneNumber))
+                            {
+                                twoFaSmsDisable = "disabled";
+                                twoFaSms = "";
+                            }
+                        }
+                        <input type="checkbox" id="swichTwoFaSms" switch="none" @twoFaSms @twoFaSmsDisable>
+                        <label for="swichTwoFaSms" data-on-label="On" data-off-label="Off" class="fl">
+                        </label>
+                        <span class="on-off">SMS <span class="hidden-mob">Notifications</span></span>
+                    </div>
+                    <div class="col-sm-12 m-b-10">
+                        <input type="checkbox" id="swichTwoFaGoogle" switch="none" @twoFaGoogle>
+                        <label for="swichTwoFaGoogle" data-on-label="On" data-off-label="Off" class="fl">
+                        </label>
+                        <span class="on-off">Google <span class="hidden-mob">Authen</span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <button type="submit" class="btn btn-primary waves-effect waves-light"
+                            data-toggle="modal" id="btnChangeTwoFa" disabled="disabled">
+                        Change Two FA 
+                    </button>
+                    @*<button type="submit" class="btn btn-danger waves-effect waves-light"
+                            data-toggle="modal" id="btnDisableTwoFa">
+                        Disable
+                    </button>*@
+                    <label class="col-form-label mini db">
+                        You can only select one of the notifications
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-12 m-t-10 fl">
+        <div>
+            <div class="directory-bg text-center">
+                <div class="directory-overlay">
+                    <img class="img-thumbnail img-security nb" src="assets/background/p2.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="tab-pane @Model.LockScreenModel.TabShow" id="tab3" role="tabpanel">
+    <div class="col-lg-8 col-sm-12 m-t-10 fl">
+        <div>
+            <h4 class="mt-0 header-title">Lockscreen Password</h4>
+            <p class="text-muted m-b-20">
+                Set your Lockscrren password to more
+                secure.
+            </p>
+            <div class="form-group row">
+                <label for="example-text-input" class="col-sm-3 col-form-label">
+                    Lockscreen
+                    Password:
+                </label>
+                <div class="col-sm-9">
+                    <input class="form-control" type="password">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="example-text-input" class="col-sm-3 col-form-label">
+                    Confirm
+                    Password:
+                </label>
+                <div class="col-sm-9">
+                    <input class="form-control" type="password">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-9 offset-sm-3">
+                    <button type="submit" class="btn btn-primary waves-effect waves-light" data-toggle="modal">Submit</button>
+                    <button type="reset" class="btn btn-secondary waves-effect m-l-5">Reset</button>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="example-text-input" class="col-sm-3 col-form-label">
+                    You
+                    have set Lockscreen:
+                </label>
+                <div class="col-sm-9">
+                    <button type="submit" class="btn btn-danger waves-effect waves-light" data-toggle="modal" data-target=".modal2d">Remove</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-12 m-t-10 fl">
+        <div>
+            <div class="directory-bg text-center">
+                <div class="directory-overlay">
+                    <img class="img-thumbnail img-security nb" src="assets/background/p3.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="tab-pane @Model.DeactiveModel.TabShow" id="tab4" role="tabpanel">
+    <div class="col-lg-8 col-sm-12 m-t-10 fl mobile-tab">
+        <div>
+            <i class="mdi mdi-account-off icon-security"></i>
+            <h4 class="mt-0 header-title">Deactive Account</h4>
+            <p class="text-muted m-b-10">
+                Temporarily lock your account, you can
+                reopen it at any time.
+            </p>
+            <div class="form-group row m10">
+                <div class="col-sm-12">
+                    <button type="submit" class="btn btn-danger waves-effect waves-light" data-toggle="modal" data-target=".modal2d">
+                        Deactive
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-12 m-t-10 fl">
+        <div>
+            <div class="directory-bg text-center">
+                <div class="directory-overlay">
+                    <img class="img-thumbnail img-security nb" src="assets/background/p4.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div><!-- end col -->
+</div>
+</div>
+
+@*********************************** Moda Change password **********************************************@
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="modalChangePass">
+    <form asp-controller="Security" asp-action="Index" method="post" id="form-ChangePassword-Continue">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title mt-0">Confirm by phone</h5>
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        ×
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Enter the 2-step verification code provided by SMS to your phone:</p>
+                    <div class="input-group verify">
+                        <div class="input-group-append">
+                            <span class="input-group-text">
+                                <i class="mdi mdi-message-processing"></i>
+                            </span>
+                        </div>
+                        <input class="form-control" type="text" maxlength="6" placeholder="000000">
+                    </div>
+                    <input id="inputhiddenOldPass" class="form-control" asp-for="ChangePassModel.OldPassword" type="hidden">
+                    <input id="inputhiddenNewPass" class="form-control" asp-for="ChangePassModel.NewPassword" type="hidden">
+                    <input id="inputhiddenConfirmPass" class="form-control" asp-for="ChangePassModel.ConfirmPassword" type="hidden">
+                    @if (!Model.IsGoogleAuthenticator)
+                    {
+                        <p class="resend">Didn't receive the verification code?</p>
+                        <a class="resend2" onclick="GenerateSMSCode('@Model.Email', '@Const.TypeGenerateChangePassword')">Re-send SMS</a>
+                    }
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" data-dismiss="modal" id="btnChangePasswordContinue" disabled="disabled"
+                            data-toggle="modal">
+                        Continue
+                        <i id="loadingChangePasswordContinue" class='fa fa-spinner fa-spin' style="display: none"></i>
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </form>
+</div>
+
+@*********************************** Moda Change password **********************************************@
+<div class="modal fade modal2a" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="modaAddPhone">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0">Change Number</h5>
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">
+                    ×
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="mobile-tab">
+                    <i class="icon-security">
+                        <img src="assets/icon/smartphone.svg" class="m-t-30 m-l-15"
+                             alt="">
+                    </i>
+                    <div class="form-group">
+                        <label class="control-label">Choose your country</label>
+                        <select id="selectCountryCode" class="form-control select2">
                             @foreach (var item in Const.ListCountryModels)
                             {
-                                if (item.Code.Equals(Model.CountryCode))
+                                if (item.Code.Equals(Model.MobileModel.CountryCode))
                                 {
                                     <option value="@item.CallingCode" selected="selected">@item.Name</option>
                                 }
@@ -271,346 +374,633 @@
                             }
                         </select>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <span class="label-text col-md-4 col-form-label text-md-right">
-                        Your
-                        Number:
-                    </span>
-                    <div class="col-md-8">
-                        <div class="input-group">
-                            <div class="input-group-prepend" align="center">
-                                <span id="inputNewPhoneCode" class="input-group-text big-text">
-                                    @foreach (var item in Const.ListCountryModels)
-                                    {
-                                        if (item.Code.Equals(Model.CountryCode))
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-sm-12 col-form-label">
+                            Your
+                            Number:
+                        </label>
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span id="inputNewPhoneCode" class="input-group-text">
+                                        @foreach (var item in Const.ListCountryModels)
                                         {
-                                            @item.CallingCode
+                                            if (item.Code.Equals(Model.MobileModel.CountryCode))
+                                            {
+                                                @item.CallingCode
+                                            }
                                         }
-                                    }
-                                </span>
+                                    </span>
+                                </div>
+                                <input id="inputPhone" class="form-control" type="number" asp-for="MobileModel.PhoneNational" maxlength="6" aria-valuemax="6">
                             </div>
-                            <input id="inputPhone" type="text" name="text" class="form-control">
                         </div>
                     </div>
+                    <div class="form-group row">
+                    </div>
                 </div>
-                <input id="countryIndex" type="hidden"/>
-                <span id="addNewPhoneError" class="text-danger tx-center">
-                </span>
-            </div>
+            </div><!-- /.modal-content -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal" onclick="ReloadPage();">Close</button>
-                <button class="btn btn-success btn-rounded" data-toggle="modal" onclick="return AddNewPhone('@email', '@Model.IsGoogleAuthenticator');">Next</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div id="verifyNewPhone" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Change your phone number</h5>
-                <button type="button" class="close" data-dismiss="modal" onclick="ReloadPage();">×</button>
-            </div>
-            <div class="modal-body tx-center">
-                <i class="fas fa-check-circle big-icon mg-b-20"></i>
-                <h4 class="tx-success">Last step to change your number!</h4>
-                <p id="verifyPhoneHide" class="mg-b-20">
-                    We just sent an SMS with your verification code. It may take several seconds to arrive.
-                </p>
-                <hr>
-                <p>Enter the 2-step verification code provided by SMS to your phone:</p>
-                <div class="input-group phone-check">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <i class="fa fa-phone"></i>
-                        </span>
-                    </div>
-                    <input id="inputVerifyNewPhone" type="text" name="text" class="form-control" maxlength="6" placeholder="000000">
-                </div>
-                <span id="verifyNewPhoneError" class="text-danger tx-center"></span>
-                <span class="resend">Didn't receive the verification code? <br> <a href="#" onclick="ResendSMS('@Model.Email', '', '@Const.TypeGenerateChangeNewPhoneNumber');">Re-send SMS</a></span>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal" onclick="ReloadPage();">Close</button>
-                <button class="btn btn-success btn-rounded" data-toggle="modal" onclick="VerifyNewPhone('@email');">Verify</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div id="changePhoneSuccess" class="modal fade" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body tx-center">
-                <i class="fas fa-check-circle big-icon mg-b-20"></i>
-                <h4 class="tx-success">Your Phone Number Changed!</h4>
-                <p class="mg-b-20">Now you will receive SMS from your new phone number</p>
-                <button class="btn btn-success btn-rounded" data-dismiss="modal" data-toggle="modal" onclick="return ReloadPage();"> Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-@*------------------------ Change PassWord -------------------------------*@
-
-<div id="changePassword" class="modal fade hide" style="display: none; padding-right: 15px;">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Change Password</h5> <button type="button" class="close" data-dismiss="modal" onclick="ReloadPage();">×</button>
-            </div>
-            <span id="changePasswordError" class="text-danger"></span>
-            <div class="modal-body">
-                <div class="form-group row">
-                    <span class="label-text col-md-4 col-form-label text-md-right">
-                        Old
-                        Password:
-                    </span>
-                    <div class="col-md-8">
-                        <input id="oldPassword" type="password" class="form-control" placeholder="**********">
-                        <span id="oldPasswordError" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <span class="label-text col-md-4 col-form-label text-md-right">
-                        New
-                        Password:
-                    </span>
-                    <div class="col-md-8">
-                        <input id="newPassword" type="password" class="form-control">
-                        <span id="newPasswordError" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <span class="label-text col-md-4 col-form-label text-md-right">
-                        Confirm
-                        New
-                        Password:
-                    </span>
-                    <div class="col-md-8">
-                        <input id="confirmPassword" type="password" class="form-control">
-                        <span id="confirmPassWordError" class="text-danger"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal" onclick="ReloadPage();">Close</button>
-                <button class="btn btn-success btn-rounded" data-toggle="modal" onclick="ChangePassword('@Model.Email', '@Model.PhoneNumber', 'ChangePassword', '@Model.IsGoogleAuthenticator')">Change</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="verifyChangePassword" class="modal fade hide" style="display: none; padding-right: 15px;">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Change Password</h5> <button type="button" class="close" data-dismiss="modal" onclick="ReloadPage();">×</button>
-            </div>
-            <span id="verifyChangePasswordError" class="text-danger"></span>
-            <div class="modal-body">
-                <p>Enter the 2-step verification code provided by SMS to your phone:</p>
-                <div class="input-group phone-check">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <i class="fa fa-phone"></i>
-                        </span>
-                    </div>
-                    <input id="changePasswordCode" type="text" name="text" class="form-control" maxlength="6" placeholder="000000">
-                    <span id="changePasswordCodeError" class="text-danger"></span>
-                </div>
-                <span class="resend">Didn't receive the verification code? <br> <a href="#" onclick="'@Model.Email', '', '@Const.TypeGenerateChangePassword'">Re-send SMS</a></span>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal" onclick="ReloadPage();">Close</button>
-                <button class="btn btn-success btn-rounded" data-toggle="modal" onclick="VerifyChangePassword('@Model.Email');">Change</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="changePasswordSuccess" class="modal fade" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body tx-center">
-                <i class="fas fa-check-circle big-icon mg-b-20"></i>
-                <h4 class="tx-success">Your Password Changed!</h4>
-                <p class="mg-b-20">Now you will use new password to login VaKaID</p>
-                <a href="#" class="btn btn-success btn-rounded" data-dismiss="modal" onclick="ReloadPage();"> Close</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-@*------------------------ Lock Screen Account -------------------------------*@
-<div id="lockScreen" class="modal fade" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Set Lock Screen</h5> <button type="button" class="close" data-dismiss="modal" onclick="ReloadPage();">×</button>
-            </div>
-            <div class="modal-body">
-
-                <div class="form-group row">
-                    <span class="label-text col-md-4 col-form-label text-md-right"></span>
-                    <div class="col-md-8">
-                        <span id="lockScreenError" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <span class="label-text col-md-4 col-form-label text-md-right">Set password:</span>
-                    <div class="col-md-8">
-                        <input id="lockScreenPassword" type="password" name="text" class="form-control" placeholder="">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <span class="label-text col-md-4 col-form-label text-md-right">
-                        Confirm
-                        Password:
-                    </span>
-                    <div class="col-md-8">
-                        <input id="lockScreenPasswordConfirm" type="password" name="text" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal" onclick="ReloadPage()">Close</button>
-                <button class="btn btn-success btn-rounded" data-toggle="modal" onclick="SetLockScreen('@email', '@Const.TypeGenerateAddLockScreen', '@Model.IsGoogleAuthenticator')">Set</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="verifyLockScreen" class="modal fade" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Set Lock screen</h5> <button type="button" class="close" data-dismiss="modal" onclick="ReloadPage();">×</button>
-            </div>
-            <div class="modal-body">
-                <p>Enter the 2-step verification code provided by SMS to your phone:</p>
-                <div class="input-group phone-check">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <i class="fa fa-phone"></i>
-                        </span>
-                    </div>
-                    <input id="inputVerifyLockScreen"type="text" name="text" class="form-control" maxlength="7" placeholder="0000000">
-                </div>
-                <span id="verifyLockScreenError" class="text-danger input-group phone-check"></span>
-                <span class="resend">Didn't receive the verification code? <br> <a href="#">Re-send SMS</a></span>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal" onclick="ReloadPage()">Close</button>
-                <button class="btn btn-success btn-rounded" data-toggle="modal" onclick="SetLockScreen('@email', '@Const.TypeGenerateAddLockScreen')">Set</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="lockScreenSuccess" class="modal fade" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body tx-center">
-                <i class="fas fa-check-circle big-icon mg-b-20"></i>
-                <h4 class="tx-success">Your Lock screen's password updated!</h4>
-                <p class="mg-b-20">Now you will use new password to login on Lock screen's VaKaID</p>
-                <a href="#" class="btn btn-success btn-rounded" data-dismiss="modal" onclick="ReloadPage();"> Close</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-@*------------------------ DeActive Account -------------------------------*@
-
-<div id="lockAccount" class="modal fade" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body tx-center">
-                <i class="fas fa-times-circle big-icon mg-b-20 delete"></i>
-                <h4 class="delete">Are You Sure?</h4>
-                <p class="mg-b-20">This permanently delete your account, and cannot be undone.</p>
-                <hr>
-                <p>Enter the 2-step verification code provided by SMS to your phone:</p>
-                <div class="input-group phone-check">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <i class="fa fa-phone"></i>
-                        </span>
-                    </div>
-                    <input id="inputLockAccount" type="text" name="text" class="form-control" maxlength="6" placeholder="0000000">
-                </div>
-                <span id="lockAccountError" class="text-danger"></span>
-                <span class="resend">Didn't receive the verification code? <br> <a href="#" onclick="ResendSMS('@Model.Email', '', '@Const.TypeGenerateLockAccount');">Re-send SMS</a></span>
-                <br>
-                <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal" onclick="ReloadPage()">Close</button>
-                <button class="btn btn-danger btn-rounded" data-toggle="modal" onclick="LockAccount('@email');">
-                    <i class="fa fa-times-circle"></i>
-                    Lock
+                @{
+                    var btnValue = string.IsNullOrEmpty(Model.PhoneNumber) ? MobileModel.TypeAddPhoneNumber : MobileModel.TypeChangePhoneNumber;
+                }
+                <button type="submit" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target=".modal1" value="@btnValue" id="btnModaPhoneNumber">
+                    Countinue
+                    <i id="loadingModaPhoneNumber" class='fa fa-spinner fa-spin' style="display: none"></i>
                 </button>
             </div>
-        </div>
+        </div><!-- /.modal-dialog -->
     </div>
 </div>
 
-@*------------------------ Google authenticator -------------------------------*@
-<div id="twoFaEnableAuthenticator" class="modal fade show" style="display: none; padding-right: 15px;">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Enable Two-Factor AUTHENTICATION</h5> <button type="button" class="close" data-dismiss="modal">×</button>
-            </div>
-            <div class="modal-body">
-                <div class="ion-qr-scanner" id="qrCode"></div>
-                <div id="qrCodeData" data-url="@Model.Authenticator.AuthenticatorUri"></div>
-                <div class="row mg-b-20">
-                    <div class="col-sm-12 mg-t-10 mg-sm-t-0">
-                        <label class="form-control-label tx-center"> Authenticator Secret Code:<i class="tx-danger">*</i></label>
-                        <div class="input-group">
-                            <input id="inputShareKey" type="text" class="form-control tx-center" value="@Model.Authenticator.SharedKey" readonly="">
-                            <span class="input-group-addon tx-size-sm lh-2 bg-text-copy tx-white" onclick="copyTextSecret();">Copy</span>
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="modaQrCode">
+    <form asp-controller="Security" asp-action="Index" method="post" id="form-enable-twoFa-Google">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title mt-0">Enable Google Authenticator</h5>
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <div id="qrCode"></div>
+                    <div id="qrCodeData" data-url="@Model.Authenticator.AuthenticatorUri"></div>
+                    <p class="resend">Authenticator Secret Code:*</p>
+                    <div class="col-sm-12 input-group m-b-20">
+                        <div class="input-group-append"><span class="input-group-text" onclick="copyTextSecret()">Copy</span></div>
+                        <input class="form-control qr-code" type="text" placeholder="@Model.Authenticator.SharedKey" disabled id="inputShareKey">
+                    </div>
+                    <div class="col-sm-12 authen-content">
+                        <p><i class="mdi mdi-numeric-1-box-multiple-outline"></i> Install an authenticator app on
+                            your
+                            mobile device if you don't already have one.</p>
+                        <p><i class="mdi mdi-numeric-2-box-multiple-outline"></i> Scan QR code with the authenticator (or tap it in mobile bgit rowser)</p>
+                        <p><i class="mdi mdi-numeric-3-box-multiple-outline"></i> Please write down or print a copy of the 16-digit secret code and put it in a safe
+                            place</p>
+                        <p><i class="mdi mdi-numeric-4-box-multiple-outline"></i> If your phone gets lost, stolen or erased, you will need this code to link VakaID to
+                            a new authenticator app install once again</p>
+                        <p><i class="mdi mdi-numeric-5-box-multiple-outline"></i> Do not share it with anyone. Be aware of phishing scams. We will never ask you for
+                            this key</p>
+                        <hr>
+                        <p class="authen-code">Enter the 2-step verification code provided by your authen app:</p>
+                        <div class="input-group verify">
+                            <div class="input-group-append"><span class="input-group-text"><i class="ti-mobile"></i></span></div>
+                            <input id="codeEnableTwoFaGoogle" class="form-control" type="text" asp-for="MobileModel.Code" maxlength="6" placeholder="000000">
                         </div>
+                        <input id="inputMobileTypeEnableTwoFaGoogle" asp-for="MobileModel.Type" type="hidden" value="@MobileModel.TypeEnableTwoFaGoogle"/>
                     </div>
-                </div><!-- row -->
-                <div class="intro">
-                    <p><b>1.</b> Install an authenticator app on your mobile device if you don't already have one.</p>
-                    <p><b>2.</b> Scan QR code with the authenticator (or tap it in mobile bgit rowser)</p>
-                    <p>
-                        <b>3.</b> Please write down or print a copy of the 16-digit secret code and put it in a safe
-                        place
-                    </p>
-                    <p>
-                        <b>4.</b> If your phone gets lost, stolen or erased, you will need this code to link
-                        VaKaID to a new authenticator app install once again
-                    </p>
-                    <p>
-                        <b>5.</b> Do not share it with anyone. Be aware of phishing scams. We will never ask you for this key
-                    </p>
                 </div>
-                <hr>
-                <h6>Enter the 2-step verification code provided by your authenticator app:</h6>
-                <div class="input-group phone-check">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <i class="fa fa-mobile-alt"></i>
-                        </span>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target=".modalfinal" id="btnModaEnableTwoFaGoogle">
+                        Countinue <i id="loadingModaEnableTwoFaGoogle" class='fa fa-spinner fa-spin' style="display: none"></i>
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </form>
+</div>
+
+<div class="modal fade modal2b" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="modaVerifyEnableTwoFaSms">
+    <form asp-controller="Security" asp-action="Index" method="post" id="form-enable-twoFa-sms">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title mt-0">Confirm by phone</h5>
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <p id="modaTitleEnableTwoFa">Enter the 2-step verification code provided by SMS to your phone:</p>
+                    <div class="input-group verify">
+                        <div class="input-group-append"><span class="input-group-text"><i class="mdi mdi-message-processing"></i></span></div>
+                        <input class="form-control" id="codeEnablesms" asp-for="MobileModel.Code" type="text" maxlength="6" placeholder="000000">
+                        <input id="inputMobileTypeEnableTwoFaSms" asp-for="MobileModel.Type" type="hidden" value="@MobileModel.TypeEnableTwoFaSms"/>
                     </div>
-                    <input id="inputTwoAuthenticator"type="text" name="text" class="form-control" maxlength="6" placeholder="000000">
+                    @if (!Model.IsGoogleAuthenticator)
+                    {
+                        <p class="resend">Didn't receive the verification code?</p>
+                        <a class="resend2" onclick="GenerateSMSCode('@Model.Email', '@Const.TypeGenerateChangeTwoFactor')">Re-send SMS</a>
+                    }
                 </div>
-                <span id="twoFaEnableAuthenticatorError" class="text-danger text-center"></span>
-            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" id="btnModaEnableTwoFaSms">
+                        Countinue <i id="loadingModaEnableSms" class='fa fa-spinner fa-spin' style="display: none"></i>
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </form>
+</div>
+<div class="modal fade modal2e" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="modaVerifyDisableTwoFa">
+    <form asp-controller="Security" asp-action="Index" method="post" id="form-disable-twoFa">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    @{
+                        var modaDisableTwoFaMessage = "Enter the 2-step verification code provided by SMS to your phone:";
+                        if (Model.MobileModel.IsTwoFaGoogle)
+                        {
+                            modaDisableTwoFaMessage = "Enter the 2-step verification code provided by Google Authen to your phone:";
+                        }
+                    }
+                    <p class="text-center" id="modaTitleDisableTwoFa">@modaDisableTwoFaMessage</p>
+                    <div class="input-group verify">
+                        <div class="input-group-append"><span class="input-group-text"><i class="mdi mdi-message-processing"></i></span></div>
+                        <input class="form-control" id="codeDisableTwoFa" asp-for="MobileModel.Code" type="text" maxlength="6" placeholder="000000">
+                        <input id="inputMobileTypeDisableTwoFa" asp-for="MobileModel.Type" type="hidden" value="@MobileModel.TypeDisableTwoFa"/>
+                    </div>
+                    @if (Model.MobileModel.IsTwoFaGoogle)
+                    {
+                        <p class="resend">Didn't receive the verification code?</p>
+                        <a class="resend2" onclick="GenerateSMSCode('@Model.Email', '@Const.TypeGenerateChangeTwoFactor')">Re-send SMS</a>
+                    }
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnModaDisableTwoFa"><i class="mdi mdi-close-circle"></i> Disable
+                        <i id="loadingModaDisableTwoFa" class='fa fa-spinner fa-spin' style="display: none"></i></button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </form>
+</div>
+
+
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="modaVerifyPhoneNumber">
+    <form asp-controller="Security" asp-action="Index" method="post" id="form-VerifyPhoneNumber">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title mt-0">Confirm by phone</h5>
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        ×
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Enter the 2-step verification code provided by SMS to your phone:</p>
+                    <div class="input-group verify">
+                        <div class="input-group-append">
+                            <span class="input-group-text">
+                                <i class="mdi mdi-message-processing"></i>
+                            </span>
+                        </div>
+                        <input class="form-control" id="CodePhoneNumber" asp-for="MobileModel.Code" type="text" maxlength="6" placeholder="000000">
+                        <input asp-for="PhoneNumber" type="hidden"/>
+                        <input id="typeSubmitPhone" asp-for="MobileModel.Type" type="hidden" value="@textBtnPhone"/>
+                        <input id="callingCode" asp-for="MobileModel.CallingCode" type="hidden"/>
+                        <input id="phoneNational" asp-for="MobileModel.PhoneNational" type="hidden"/>
+                    </div>
+                    @if (Model.MobileModel.IsTwoFaGoogle)
+                    {
+                        <p class="resend">Didn't receive the verification code?</p>
+                        <a class="resend2" onclick="GenerateSMSCode('@Model.Email', '@Const.TypeGenerateChangeTwoFactor')">Re-send SMS</a>
+                    }
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" id="btnVerifyPhoneNumber" value="@textBtnPhone">
+                        Countinue
+                        <i id="loadingVerifyPhoneNumber" class='fa fa-spinner fa-spin' style="display: none"></i>
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </form>
+</div>
+
+<div class="modal fade modal2d" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="modaQuestionDiactive">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <i class="mdi mdi-close-circle-outline icon-danger"></i>
+            <p class="header-danger">Are You Sure?</p>
+            <p class="content-danger m-b-10">This will Deactive account!</p>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Close</button>
-                <button class="btn btn-success btn-rounded" data-toggle="modal" onclick="EnableTwoFactor('@Model.Email')">Enable</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
+                        data-target=".modalDeactive">Countinue</button>
             </div>
-        </div>
-    </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+<div class="modal fade modalDeactive" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="modalDeactive">
+    <form asp-controller="Security" asp-action="Index" method="post" id="form-deactive">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    @{
+                        var modaDeactiveMessage = "Enter the 2-step verification code provided by SMS to your phone:";
+                        if (Model.MobileModel.IsTwoFaGoogle)
+                        {
+                            modaDeactiveMessage = "Enter the 2-step verification code provided by Google Authen to your phone:";
+                        }
+                    }
+                    <p class="text-center">@modaDeactiveMessage</p>
+                    <div class="input-group verify">
+                        <div class="input-group-append"><span class="input-group-text"><i class="mdi mdi-message-processing"></i></span></div>
+                        <input class="form-control" asp-for="DeactiveModel.Code" type="text" maxlength="6" placeholder="000000">
+                    </div>
+                    <p class="resend">Didn't receive the verification code?</p>
+                    <a href="" class="resend2">Re-send SMS</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnDeactive"><i class="mdi mdi-close-circle"></i> Disable
+                        <i id="loadingModalDeactive" class='fa fa-spinner fa-spin' style="display: none"></i></button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </form>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="modaSuccess">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <i class="icon-success">
+                <img src="assets/icon/success.svg" alt="">
+            </i>
+            <p class="header-success">You Done!</p>
+            <p class="content-success"id="txtModaSuccess">You successfully {name of this action}!</p>
+            <button type="button" class="btn btn-primary close-button" data-dismiss="modal">Close</button>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="modaError">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <i class="mdi mdi-close-circle-outline icon-danger"></i>
+            <p class="header-success">You Error!</p>
+            <p class="content-success" id="txtModaError">You Error {name of this action}!</p>
+            <button type="button" class="btn btn-primary close-button" data-dismiss="modal">Close</button>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<!-- end container-fluid -->
 </div>
 
 @section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    <script src="~/js/security.js"></script>
+    <script>
+        //Ready pager
+        $(document).ready(function() {
+            if (location.hash) {
+                $("a[href='" + location.hash + "']").tab("show");
+            }
+            $(document.body).on("click", "a[data-toggle]", function(event) {
+                location.hash = this.getAttribute("href");
+            });
+            if ('@Model.ChangePassModel.IsTabSelected' === 'True') {
+                if ('@Model.ChangePassModel.Status' === '@SecurityViewModel.StatusError') {
+                    $('#modaError').modal('show');
+                    $('#txtModaError').text('You change password error. Please input code and try again.');
+                } else if ('@Model.ChangePassModel.Status' === '@SecurityViewModel.StatusSuccess') {
+                    $('#modalChangePass').modal('hide');
+                    $('#modaSuccess').modal('show');
+                    $('#txtModaSuccess').text('You change password success.');
+                } else {
+                    $('#modalChangePass').modal('hide');
+                    $('#modaSuccess').modal('hide');
+                }
+            } else if ('@Model.MobileModel.IsTabSelected' === 'True') {
+                if ('@Model.MobileModel.Status' === '@SecurityViewModel.StatusError') {
+                    if ('@Model.MobileModel.Type' === '@MobileModel.TypeAddPhoneNumber') {
+                        $('#txtModaError').text('Add Phone number error. Please try again.');
+                    } else if ('@Model.MobileModel.Type' === '@MobileModel.TypeChangePhoneNumber') {
+                        $('#txtModaError').text('Change Phone Number error. Please try again.');
+                    } else if ('@Model.MobileModel.Type' === '@MobileModel.TypeConfirmPhoneNumber') {
+                        $('#txtModaError').text('Confirm Phone Number error. Please try again.');
+                    } else if ('@Model.MobileModel.Type' === '@MobileModel.TypeEnableTwoFaSms') {
+                        $('#txtModaError').text('Enable Sms Two FA error. Please try again.');
+                    } else if ('@Model.MobileModel.Type' === '@MobileModel.TypeEnableTwoFaGoogle') {
+                        $('#txtModaError').text('Enable Google Two FA error. Please try again.');
+                    } else if ('@Model.MobileModel.Type' === '@MobileModel.TypeDisableTwoFa') {
+                        $('#txtModaError').text('Disable Two FA error. Please try again.');
+                    }
+
+                    $('#modaError').modal('show');
+                } else if ('@Model.MobileModel.Status' === '@SecurityViewModel.StatusSuccess') {
+                    if ('@Model.MobileModel.Type' === '@MobileModel.TypeAddPhoneNumber') {
+                        $('#txtModaSuccess').text('Add Phone number success.');
+                        $('#modaSuccess').modal('show');
+                    } else if ('@Model.MobileModel.Type' === '@MobileModel.TypeChangePhoneNumber') {
+                        $('#txtModaSuccess').text('Change Phone Number success.');
+                        $('#modaSuccess').modal('show');
+                    } else if ('@Model.MobileModel.Type' === '@MobileModel.TypeConfirmPhoneNumber') {
+                        $('#txtModaError').text('Confirm Phone Number success.');
+                        $('#modaSuccess').modal('show');
+                    } else if ('@Model.MobileModel.Type' === '@MobileModel.TypeEnableTwoFaSms') {
+                        $('#txtModaSuccess').text('Enable Sms Two FA success.');
+                        $('#modaSuccess').modal('show');
+                    } else if ('@Model.MobileModel.Type' === '@MobileModel.TypeEnableTwoFaGoogle') {
+                        $('#txtModaSuccess').text('Enable Google Two FA success.');
+                        $('#modaSuccess').modal('show');
+                    } else if ('@Model.MobileModel.Type' === '@MobileModel.TypeDisableTwoFa') {
+                        $('#txtModaSuccess').text('Disable Two FA success.');
+                        $('#modaSuccess').modal('show');
+                    }
+                    else if ('@Model.MobileModel.Type' === '@MobileModel.TypeChangeTwoFaSmsToGoogle') {
+                        $('#codeEnableTwoFaGoogle').val("");
+                        $('#modaQrCode').modal('show');
+                    }
+                    else if ('@Model.MobileModel.Type' === '@MobileModel.TypeChangeTwoFaGoogleToSms') {
+                        $('#txtModaSuccess').text('Enable Sms Two FA success.');
+                        $('#modaSuccess').modal('show');
+                    }
+                } else {
+                    $('#modalChangePass').modal('hide');
+                    $('#modaSuccess').modal('hide');
+                }
+
+            } else if ('@Model.LockScreenModel.IsTabSelected' === 'True') {
+
+
+            } else if ("@Model.DeactiveModel.IsTabSelected" === 'True') {
+                if ('@Model.ChangePassModel.Status' === '@SecurityViewModel.StatusError') {
+                    $('#modaError').modal('show');
+                    $('#txtModaError').text('Deactive account error. Please input code and try again.');
+                } else if ('@Model.ChangePassModel.Status' === '@SecurityViewModel.StatusSuccess') {
+                    $('#modalChangePass').modal('hide');
+                    $('#modaSuccess').modal('show');
+                    $('#txtModaSuccess').text('Deactive account success.');
+                } else {
+                    $('#modalChangePass').modal('hide');
+                    $('#modaSuccess').modal('hide');
+                }
+            }
+        });
+        
+        $(window).on("popstate", function() {
+            var anchor = location.hash || $("a[data-toggle='tab']").first().attr("href");
+            $("a[href='" + anchor + "']").tab("show");
+        });
+
+        // Change Password
+        var $formChangePass = $("#form-ChangePassword");
+        var $btnChangePassword = $("#btnChangePassword");
+
+        $formChangePass.on('keyup change paste',
+            'input, select, textarea',
+            function() {
+                if ($formChangePass.valid()) {
+                    console.log("formChangePass valid");
+                    $btnChangePassword.prop('disabled', false);
+                } else {
+                    console.log("formChangePass InValid");
+                    $btnChangePassword.prop('disabled', true);
+                }
+
+            });
+        $btnChangePassword.click(function() {
+//            $(this).prop('disabled', true);
+//            var x = document.getElementById("loadingChangePassword");
+//            x.style.display = "inline-block";
+            if ('@Model.TwoFactorEnable' === 'True') {
+                $('#modalChangePass').modal('show');
+                if ('@Model.IsGoogleAuthenticator' === 'False') {
+                    GenerateSMSCode('@Model.Email', '@Const.TypeGenerateChangePassword');
+                }
+                $('#inputhiddenOldPass').val($('#inputOldPass').val());
+                $('#inputhiddenNewPass').val($('#inputNewPass').val());
+                $('#inputhiddenConfirmPass').val($('#inputConfirmPass').val());
+            } else {
+                $(this).closest("form").submit();
+            }
+        });
+        //Continue change pass
+        var $formChangePassContinue = $("#form-ChangePassword-Continue");
+        var $btnChangePasswordContinue = $("#btnChangePasswordContinue");
+
+        $formChangePassContinue.on('keyup change paste',
+            'input, select, textarea',
+            function() {
+                if ($formChangePassContinue.valid()) {
+                    $btnChangePasswordContinue.prop('disabled', false);
+                } else {
+                    $btnChangePasswordContinue.prop('disabled', true);
+                }
+            });
+        $btnChangePasswordContinue.click(function() {
+            $(this).prop('disabled', true);
+            var x = document.getElementById("loadingChangePasswordContinue");
+            x.style.display = "inline-block";
+            $(this).closest("form").submit();
+        });
+
+        //Add Phone Number:
+        var $btnPhoneNumber = $("#btnPhoneNumber");
+        $btnPhoneNumber.click(function() {
+//            $(this).prop('disabled', true);
+//            var x = document.getElementById("loadingPhoneNumber");
+//            x.style.display = "inline-block";
+            if ('@string.IsNullOrEmpty(Model.PhoneNumber)' === 'True') {
+                $('#modaAddPhone').modal('show');
+            } else if ('@Model.MobileModel.Confirmed' === 'True') {
+                $('#modaAddPhone').modal('show');
+            } else {
+                $('#verifyPhoneNumber').modal('show');
+                GenerateSMSCode('@Model.Email', '@Const.TypeGenerateChangeConfirmPhoneNumber');
+            }
+        });
+        // Selected phone number
+        $('#selectCountryCode').change(function() {
+            $("#inputNewPhoneCode").text(this.value);
+//            $("#countryIndex").val($('#selectCountryCode option:selected').index());
+        });
+
+        //Show verify new phone number
+        var $btnModaPhoneNumber = $("#btnModaPhoneNumber");
+        $btnModaPhoneNumber.click(function() {
+            $(this).prop('disabled', true);
+            var x = document.getElementById("loadingModaPhoneNumber");
+            x.style.display = "inline-block";
+            $("#phoneNational").val($("#inputPhone").val());
+            $("#callingCode").val($('#selectCountryCode option:selected').val());
+            $('#modaVerifyPhoneNumber').modal('show');
+            $('#modaAddPhone').modal('hide');
+            if ('@string.IsNullOrEmpty(Model.PhoneNumber)' === 'True') {
+                GenerateSMSCode('@Model.Email', '@Const.TypeGenerateAddPhoneNumber');
+            } else if ('@Model.MobileModel.Confirmed' === 'True') {
+                GenerateSMSCode('@Model.Email', '@Const.TypeGenerateChangeNewPhoneNumber');
+            }
+        });
+
+        //Resend Phone number
+        var $btnResendVerifyPhone = $("#btnResendVerifyPhonenumber");
+        $btnResendVerifyPhone.click(function() {
+            if ('@string.IsNullOrEmpty(Model.PhoneNumber)' === 'True') {
+                GenerateSMSCode('@Model.Email', '@Const.TypeGenerateAddPhoneNumber');
+            } else if ('@Model.MobileModel.Confirmed' === 'False') {
+                GenerateSMSCode('@Model.Email', '@Const.TypeGenerateChangeNewPhoneNumber');
+            } else {
+                GenerateSMSCode('@Model.Email', '@Const.TypeGenerateChangeConfirmPhoneNumber');
+            }
+        });
+
+        //Verify Phone Number
+        var $btnVerifyPhoneNumber = $("#btnVerifyPhoneNumber");
+        $btnVerifyPhoneNumber.click(function() {
+            $(this).prop('disabled', true);
+            var x = document.getElementById("loadingVerifyPhoneNumber");
+            x.style.display = "inline-block";
+//            $("#typeSubmitPhone").val($('@textBtnPhone'));
+            $(this).closest("form").submit();
+        });
+
+
+        //TwoFa
+        $('#swichTwoFaSms').on('change.bootstrapSwitch',
+            function(e) {
+                var isOnTwoFaSms = 'False';
+                var isOnTwoFaGoogle = 'False';
+
+                if ($(this).prop("checked") === true) {
+                    isOnTwoFaSms = 'True';
+                    console.log('bootstrapSwitch: ON');
+                    $("#swichTwoFaGoogle").prop("checked", false);
+                }
+                if ($("#swichTwoFaGoogle").prop("checked") === true) {
+                    isOnTwoFaGoogle = 'True';
+                }
+                if (isOnTwoFaGoogle === '@Model.MobileModel.IsTwoFaGoogle' &&
+                    isOnTwoFaSms === '@Model.MobileModel.IsTwoFaSms') {
+                    $("#btnChangeTwoFa").prop('disabled', true);
+                } else {
+                    $("#btnChangeTwoFa").prop('disabled', false);
+                }
+            });
+        $('#swichTwoFaGoogle').on('change.bootstrapSwitch',
+            function(e) {
+                var isOnTwoFaSms = 'False';
+                var isOnTwoFaGoogle = 'False';
+                if ($(this).prop("checked") === true) {
+                    isOnTwoFaGoogle = 'True';
+                    console.log('bootstrapSwitch: ON');
+                    $("#swichTwoFaSms").prop("checked", false);
+                }
+                if ($("#swichTwoFaSms").prop("checked") === true) {
+                    isOnTwoFaSms = 'True';
+                }
+                console.log('bootstrapSwitch ==>> swichTwoFaGoogle ==>> isOnTwoFaGoogle: ' +
+                    isOnTwoFaGoogle +
+                    ' ==>> isOnTwoFaSms:  ' +
+                    isOnTwoFaSms +
+                    ' ==>> Model.MobileModel.IsTwoFaGoogle: @Model.MobileModel.IsTwoFaGoogle ==>> Model.MobileModel.IsTwoFaSms:  @Model.MobileModel.IsTwoFaSms');
+                if (isOnTwoFaGoogle === '@Model.MobileModel.IsTwoFaGoogle' &&
+                    isOnTwoFaSms === '@Model.MobileModel.IsTwoFaSms') {
+
+                    $("#btnChangeTwoFa").prop('disabled', true);
+                } else {
+                    $("#btnChangeTwoFa").prop('disabled', false);
+                }
+            });
+
+        var $btnChangeTwoFa = $("#btnChangeTwoFa");
+        $btnChangeTwoFa.click(function() {
+//            $(this).prop('disabled', true);
+//            var x = document.getElementById("loadingChangeTwoFa");
+//            x.style.display = "inline-block";
+            if ('@string.IsNullOrEmpty(Model.PhoneNumber)' === 'False') {
+                if ('@Model.TwoFactorEnable' === 'True') {
+                    if ($('#swichTwoFaSms').prop("checked") === true) {
+                        $('#modaTitleEnableTwoFa')
+                            .text('Enter the 2-step verification code provided by Google Authen to your phone:');
+                        $('#codeEnablesms').val('');
+                        $('#inputMobileTypeEnableTwoFaSms').val('@MobileModel.TypeChangeTwoFaGoogleToSms');
+                        $('#modaVerifyEnableTwoFaSms').modal('show');
+                    }else if ($('#swichTwoFaGoogle').prop("checked") === true) {
+                        GenerateSMSCode('@Model.Email', '@Const.TypeGenerateChangeTwoFactor');
+                        $('#modaTitleEnableTwoFa')
+                            .text('Enter the 2-step verification code provided by Sms to your phone:');
+                        $('#inputMobileTypeEnableTwoFaSms').val('@MobileModel.TypeChangeTwoFaSmsToGoogle');
+                        $('#codeEnablesms').val('');
+                        $('#modaVerifyEnableTwoFaSms').modal('show');
+                    } else {
+                        if ('@Model.IsGoogleAuthenticator' === 'True') {
+                            $('#modaTitleDisableTwoFa')
+                                .text('Enter the 2-step verification code provided by Google Authen to your phone:');
+                        } else {
+                            $('#modaTitleDisableTwoFa')
+                                .text('Enter the 2-step verification code provided by SMS to your phone:');
+                        }
+                        $('#modaVerifyDisableTwoFa').modal('show');
+                    }
+                } else {
+                    if ($('#swichTwoFaSms').prop("checked") === true) {
+                        GenerateSMSCode('@Model.Email', '@Const.TypeGenerateChangeTwoFactor');
+                        $('#codeEnablesms').val('');
+                        $('#modaTitleEnableTwoFa')
+                            .text('Enter the 2-step verification code provided by Sms to your phone:');
+                        $('#modaVerifyEnableTwoFaSms').modal('show');
+                    } else if ($('#swichTwoFaGoogle').prop("checked") === true) {
+                        $('#modaQrCode').modal('show');
+                    } else {
+                        if ('@Model.IsGoogleAuthenticator' === 'True') {
+                            $('#modaTitleDisableTwoFa')
+                                .text('Enter the 2-step verification code provided by Google Authen to your phone:');
+                        } else {
+                            $('#modaTitleDisableTwoFa')
+                                .text('Enter the 2-step verification code provided by SMS to your phone:');
+                        }
+                        $('#codeDisableTwoFa').val('');
+                        $('#modaVerifyDisableTwoFa').modal('show');
+                    }
+                }
+            } else {
+                if ($('#swichTwoFaGoogle').prop("checked") === true) {
+                    $('#modaQrCode').modal('show');
+                } else {
+                    $('#modaTitleDisableTwoFa')
+                        .text('Enter the 2-step verification code provided by Google Authen to your phone:');
+                    $('#modaVerifyDisableTwoFa').modal('show');
+                }
+            }
+        });
+
+        $("#btnModaEnableTwoFaSms").click(function() {
+            $(this).prop('disabled', true);
+            var x = document.getElementById("loadingModaEnableSms");
+            x.style.display = "inline-block";
+            $(this).closest("form").submit();
+        });
+        $("#btnModaEnableTwoFaGoogle").click(function() {
+            $(this).prop('disabled', true);
+            var x = document.getElementById("loadingModaEnableTwoFaGoogle");
+            x.style.display = "inline-block";
+            $(this).closest("form").submit();
+        });
+        $("#btnModaDisableTwoFa").click(function() {
+            $(this).prop('disabled', true);
+            var x = document.getElementById("loadingModaDisableTwoFa");
+            x.style.display = "inline-block";
+            $(this).closest("form").submit();
+        });
+
+        $("#btnDeactive").click(function() {
+            $(this).prop('disabled', true);
+            var x = document.getElementById("loadingModalDeactive");
+            x.style.display = "inline-block";
+            $(this).closest("form").submit();
+        });
+
+    </script>
+    <script src="~/lib/qrcodejs/qrcode.js"></script>
+    <script type="text/javascript">
+        new QRCode(document.getElementById("qrCode"),
+            {
+                text: "@Html.Raw(Model.Authenticator.AuthenticatorUri)",
+                width: 150,
+                height: 150
+            });
+    </script>
+}
+
+@*@section Scripts {
     <script src="~/js/security.js">
     </script>
     <script src="~/lib/qrcodejs/qrcode.js"></script>
@@ -666,4 +1056,4 @@
                 $("#lockAccountError").text('');
             });
     </script>
-}
+}*@

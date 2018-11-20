@@ -7,6 +7,7 @@ namespace VakaxaIDServer.Models
         public string ChangePassword { get; set; }
         public string ChangePhoneOldPhone { get; set; }
         public string ChangePhoneNewPhone { get; set; }
+        public string ChangePhoneConfirmPhone { get; set; }
         public string ChangeTwoFactor { get; set; }
         public string LockAccount { get; set; }
         public string UnlockAccount { get; set; }

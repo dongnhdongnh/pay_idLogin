@@ -2,16 +2,20 @@
 using System.Collections.Specialized;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting.Internal;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Serilog;
 using VakaxaIDServer.Constants;
+using VakaxaIDServer.Data;
 using VakaxaIDServer.Helpers;
 using VakaxaIDServer.Models;
 using VakaxaIDServer.Quickstart.Account;
 using VakaxaIDServer.Quickstart.Home;
 using VakaxaIDServer.Quickstart.Security;
+using VakaxaIDServer.Services;
 
 namespace VakaxaIDServer.Quickstart.SendSMS
 {
@@ -22,13 +26,20 @@ namespace VakaxaIDServer.Quickstart.SendSMS
         private const int TypeVerifyEmailConfirmed = 3;
         private readonly UserManager<ApplicationUser> _userManager;
         private IConfiguration Config { get; }
+        private ILogger<SendSmsController> Logger;
+        private ApplicationDbContext Context { get; }
 
         public SendSmsController(
             UserManager<ApplicationUser> userManager,
-            IConfiguration config)
+            IConfiguration config,
+            ILogger<SendSmsController> logger,
+            ApplicationDbContext context)
+
         {
             _userManager = userManager;
             Config = config;
+            Logger = logger;
+            Context = context;
         }
 
 
@@ -44,7 +55,8 @@ namespace VakaxaIDServer.Quickstart.SendSMS
                 {
                     return RedirectToAction(nameof(HomeController.Error), "Home");
                 }
-                if ( user.EmailConfirmed)
+
+                if (user.EmailConfirmed)
                 {
                     typeVerify = user.PhoneNumberConfirmed ? TypeVerifyEmailConfirmed : TypeVerifyEmailSuccess;
                 }
@@ -55,11 +67,11 @@ namespace VakaxaIDServer.Quickstart.SendSMS
                     {
                         typeVerify = TypeVerifyEmailSuccess;
                     }
+
                     if (!user.TwoFactorEnabled)
                     {
                         return RedirectToAction(nameof(AccountController.Login), "Account");
                     }
-
                 }
             }
             catch (Exception e)
@@ -67,6 +79,7 @@ namespace VakaxaIDServer.Quickstart.SendSMS
                 Log.Logger.Error("HttpGet SendSms: " + e.Message);
                 return RedirectToAction(nameof(HomeController.Error), "Home");
             }
+
             switch (typeVerify)
             {
                 case TypeVerifyEmailConfirmed:
@@ -193,9 +206,13 @@ namespace VakaxaIDServer.Quickstart.SendSMS
         [HttpPost]
         public async Task<IActionResult> AddNewPhoneNumber(AddPhoneViewModel viewModel)
         {
-            var value = await SendSms(viewModel.Username, viewModel.CallingCode + viewModel.PhoneNational);
+            var user = await _userManager.FindByEmailAsync(viewModel.Username);
+            if (user == null) RedirectToAction("AddNewPhoneNumber");
+            var message = await SecurityController.GenerateCode(_userManager, user, Const.TypeGenerateAddPhoneNumber);
+            if (message == null) RedirectToAction("AddNewPhoneNumber");
+            var value = await SaveSms(message, viewModel.CallingCode + viewModel.PhoneNational);
 
-            return value ? RedirectToAction("ConfirmNewPhoneNumber", viewModel) : RedirectToAction("SendSms");
+            return value ? RedirectToAction("ConfirmNewPhoneNumber", viewModel) : RedirectToAction("AddNewPhoneNumber");
         }
 
         [HttpPost]
@@ -205,7 +222,7 @@ namespace VakaxaIDServer.Quickstart.SendSMS
             {
                 var user = await _userManager.FindByEmailAsync(viewModel.Username);
                 var checkConfirm =
-                    SecurityController.VerifyCode(user, viewModel.Code, Const.TypeGenerateAddPhoneNumber);
+                    SecurityController.VerifyCodeSms(user, viewModel.Code, Const.TypeGenerateAddPhoneNumber);
 
                 if (checkConfirm)
                 {
@@ -238,59 +255,23 @@ namespace VakaxaIDServer.Quickstart.SendSMS
         }
 
 
-        public async Task<bool> SendSms(string email, string phoneNumber, string body = "")
-        {
-            using (var client = new System.Net.WebClient())
-            {
-                try
-                {
-                    body = !string.IsNullOrEmpty(body) ? body : await GenBodyMessage(email);
-                    if (body == "Email not exist")
-                    {
-                        return false;
-                    }
-
-                    Console.WriteLine(body);
-                    var values = new NameValueCollection
-                    {
-                        {"apikey", Config.GetSection("Elastic:api").Value},
-                        {"fromName", "VakaxaId"},
-                        {"to", phoneNumber},
-                        {"body", body},
-                        {"isTransactional", "true"}
-                    };
-                    var result = client.UploadValues(Config.GetSection("Elastic:address").Value, values);
-
-                    Console.WriteLine(Encoding.UTF8.GetString(result));
-
-                    return Encoding.UTF8.GetString(result).Contains("true");
-                }
-                catch (Exception e)
-                {
-                    Log.Logger.Error("SendSms: " + e.Message);
-                    return false;
-                }
-            }
-        }
-
-        public async Task<string> GenBodyMessage(string email)
+        private async Task<bool> SaveSms(string message, string phoneNumber)
         {
             try
             {
-                var user = await _userManager.FindByEmailAsync(email);
-                if (user == null)
+                var smsModel = new SmsQueueModel
                 {
-                    return "Email not exist";
-                }
-
-                var message =
-                    await SecurityController.GenerateCode(_userManager, user, Const.TypeGenerateAddPhoneNumber);
-                return message;
+                    To = phoneNumber,
+                    TextSend = message
+                };
+                var smsContext = new SmsContext(Config, Context, Logger);
+                var result = smsContext.SaveSms(smsModel);
+                return result;
             }
             catch (Exception e)
             {
-                Log.Logger.Error("GenBodyMessage: " + e.Message);
-                throw;
+                Logger.LogError("AccountController ==>> SaveSms error: " + e.Message);
+                return false;
             }
         }
     }

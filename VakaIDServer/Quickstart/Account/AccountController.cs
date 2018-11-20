@@ -523,7 +523,7 @@ namespace VakaxaIDServer.Quickstart.Account
 
                 if (user != null)
                 {
-                    var resultVerify = SecurityController.VerifyCode(user, model.Code, Const.TypeGenerateUnlockAccount);
+                    var resultVerify = SecurityController.VerifyCodeSms(user, model.Code, Const.TypeGenerateUnlockAccount);
                     if (resultVerify)
                     {
                         user.LockoutEnabled = false;
@@ -603,7 +603,7 @@ namespace VakaxaIDServer.Quickstart.Account
                     }
                     else
                     {
-                        var verifyCode = SecurityController.VerifyCode(user, model.Code, Const.TypeGenerateLogin);
+                        var verifyCode = SecurityController.VerifyCodeSms(user, model.Code, Const.TypeGenerateLogin);
                         if (verifyCode)
                         {
                             await _signInManager.SignInAsync(user, model.RememberMe, string.Empty);

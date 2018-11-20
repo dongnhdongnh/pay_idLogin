@@ -20,6 +20,7 @@ using VakaxaIDServer.Helpers;
 using VakaxaIDServer.Models;
 using VakaxaIDServer.Quickstart.Account;
 using VakaxaIDServer.Quickstart.SendSMS;
+using VakaxaIDServer.Services;
 
 namespace VakaxaIDServer.Quickstart.Security
 {
@@ -62,17 +63,10 @@ namespace VakaxaIDServer.Quickstart.Security
 
                 if (user != null)
                 {
-                    var authenticator = new EnableAuthenticatorViewModel();
-                    await LoadSharedKeyAndQrCodeUriAsync(user, authenticator);
-
-                    securityViewModel.Email = user.Email;
-                    securityViewModel.PhoneNumber = user.PhoneNumber;
-                    securityViewModel.PhoneNumberConfirmed = user.PhoneNumberConfirmed;
-                    securityViewModel.TwoFactorEnable = user.TwoFactorEnabled;
-                    securityViewModel.IsGoogleAuthenticator = user.IsGoogleAuthenticator;
-                    securityViewModel.Authenticator = authenticator;
-                    securityViewModel.PhoneHide = SendSmsController.GetPhoneHide(user.CountryCode, user.PhoneNational);
-                    securityViewModel.CountryCode = await GetCurrentCountryCode();
+                    securityViewModel = await CreateNewData(user);
+                    securityViewModel.ChangePassModel.IsTabSelected = true;
+                    securityViewModel.ChangePassModel.TabShow = "active show";
+                    securityViewModel.ChangePassModel.Status = SecurityViewModel.StatusDefault;
                 }
                 else
                 {
@@ -89,13 +83,370 @@ namespace VakaxaIDServer.Quickstart.Security
             return View(securityViewModel);
         }
 
+        private async Task<SecurityViewModel> CreateNewData(ApplicationUser user)
+        {
+            try
+            {
+                var securityViewModel = new SecurityViewModel
+                {
+                    Email = user.Email,
+                    PhoneNumber = user.PhoneNumber,
+                    TwoFactorEnable = user.TwoFactorEnabled,
+                    IsGoogleAuthenticator = user.IsGoogleAuthenticator,
+                    ChangePassModel = new ChangePassModel(),
+                    MobileModel = new MobileModel(),
+                    LockScreenModel = new LockScreenModel(),
+                    DeactiveModel = new DeactiveModel()
+                };
+                var authenticator = new EnableAuthenticatorViewModel();
+                await LoadSharedKeyAndQrCodeUriAsync(user, authenticator);
+                securityViewModel.Authenticator = authenticator;
+
+                var countryCode = await GetCurrentCountryCode();
+                securityViewModel.MobileModel.CountryCode = countryCode;
+                securityViewModel.MobileModel.Confirmed = user.PhoneNumberConfirmed;
+                securityViewModel.MobileModel.IsTwoFaSms = user.TwoFactorEnabled && !user.IsGoogleAuthenticator;
+                securityViewModel.MobileModel.IsTwoFaGoogle = user.TwoFactorEnabled && user.IsGoogleAuthenticator;
+                if (user.CountryCode != null)
+                {
+                    securityViewModel.MobileModel.CallingCode = user.CountryCode;
+                }
+                else
+                {
+                    foreach (var item in Const.ListCountryModels)
+                    {
+                        if (string.Equals(item.Code, countryCode))
+                        {
+                            securityViewModel.MobileModel.CallingCode = item.CallingCode;
+                        }
+                    }
+                }
+
+                securityViewModel.MobileModel.PhoneHide =
+                    SendSmsController.GetPhoneHide(user.CountryCode, user.PhoneNational);
+                securityViewModel.MobileModel.Confirmed = user.PhoneNumberConfirmed;
+                return securityViewModel;
+            }
+            catch (Exception)
+            {
+                return new SecurityViewModel();
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Index(SecurityViewModel model)
+        {
+            var securityTempModel = new SecurityViewModel();
+            try
+            {
+                var user = await UserManager.GetUserAsync(HttpContext.User);
+                if (user == null) return RedirectToAction(nameof(AccountController.Login), "Account");
+
+                securityTempModel = await CreateNewData(user);
+                if (model.ChangePassModel != null)
+                {
+                    securityTempModel.ChangePassModel = await HandleChangePassword(model.ChangePassModel, user);
+                }
+                else if (model.MobileModel != null)
+                {
+                    securityTempModel.MobileModel = await HandleMobile(model.MobileModel, user);
+                    securityTempModel.MobileModel.Code = "";
+                    if (securityTempModel.MobileModel.Status == SecurityViewModel.StatusSuccess)
+                    {
+                        if (securityTempModel.MobileModel.Type.Equals(MobileModel.TypeAddPhoneNumber) ||
+                            securityTempModel.MobileModel.Type.Equals(MobileModel.TypeChangePhoneNumber) ||
+                            securityTempModel.MobileModel.Type.Equals(MobileModel.TypeConfirmPhoneNumber))
+                        {
+                            securityTempModel.PhoneNumber = securityTempModel.MobileModel.CallingCode +
+                                                            securityTempModel.MobileModel.PhoneNational;
+                            securityTempModel.MobileModel.Confirmed = true;
+                            securityTempModel.MobileModel.PhoneHide =
+                                SendSmsController.GetPhoneHide(user.CountryCode, user.PhoneNational);
+                            securityTempModel.MobileModel.IsTwoFaSms =
+                                user.TwoFactorEnabled && !user.IsGoogleAuthenticator;
+                            securityTempModel.MobileModel.IsTwoFaGoogle =
+                                user.TwoFactorEnabled && user.IsGoogleAuthenticator;
+                        }
+                        else if (securityTempModel.MobileModel.Type.Equals(MobileModel.TypeEnableTwoFaSms) ||
+                                 securityTempModel.MobileModel.Type.Equals(MobileModel.TypeChangeTwoFaGoogleToSms) )
+                        {
+                            securityTempModel.TwoFactorEnable = true;
+                            securityTempModel.MobileModel.IsTwoFaSms = true;
+                            securityTempModel.MobileModel.IsTwoFaGoogle = false;
+                            securityTempModel.MobileModel.Confirmed = true;
+                            securityTempModel.MobileModel.PhoneHide = SendSmsController.GetPhoneHide(user.CountryCode, user.PhoneNational);
+                        }
+                        else if (securityTempModel.MobileModel.Type.Equals(MobileModel.TypeEnableTwoFaGoogle))
+                        {
+                            securityTempModel.TwoFactorEnable = true;
+                            securityTempModel.IsGoogleAuthenticator = true;
+                            securityTempModel.MobileModel.IsTwoFaSms = false;
+                            securityTempModel.MobileModel.IsTwoFaGoogle = true;
+                            securityTempModel.MobileModel.Confirmed = true;
+                            securityTempModel.MobileModel.PhoneHide = SendSmsController.GetPhoneHide(user.CountryCode, user.PhoneNational);
+                        }
+                        else if (securityTempModel.MobileModel.Type.Equals(MobileModel.TypeDisableTwoFa))
+                        {
+                            securityTempModel.TwoFactorEnable = false;
+                            securityTempModel.IsGoogleAuthenticator = false;
+                            securityTempModel.MobileModel.IsTwoFaSms = false;
+                            securityTempModel.MobileModel.IsTwoFaGoogle = false;
+                            securityTempModel.MobileModel.Confirmed = true;
+                            securityTempModel.MobileModel.PhoneHide = SendSmsController.GetPhoneHide(user.CountryCode, user.PhoneNational);
+                        }
+                    }
+                    else
+                    {
+                        securityTempModel.MobileModel.Confirmed = true;
+                        securityTempModel.MobileModel.PhoneHide = SendSmsController.GetPhoneHide(user.CountryCode, user.PhoneNational);
+                    }
+                }
+                else if (model.LockScreenModel != null)
+                {
+                    securityTempModel.LockScreenModel = await HandleLockScreen(model.LockScreenModel, user);
+                }
+                else if (model.DeactiveModel != null)
+                {
+                    securityTempModel.DeactiveModel = await HandleDeActiveAccount(model.DeactiveModel, user);
+                    if (securityTempModel.DeactiveModel.Status == SecurityViewModel.StatusSuccess)
+                    {
+                        return RedirectToAction(nameof(AccountController.Login), "Account");
+                    }
+                }
+                else
+                {
+                    return View(securityTempModel);
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.LogError("Security Error: " + e.Message);
+            }
+
+
+            return View(securityTempModel);
+        }
+
+        private async Task<ChangePassModel> HandleChangePassword(ChangePassModel changePassModel, ApplicationUser user)
+        {
+            try
+            {
+                changePassModel.Status = SecurityViewModel.StatusDefault;
+                changePassModel.IsTabSelected = true;
+                changePassModel.TabShow = "active show";
+                var verifyResult = true;
+                if (user.TwoFactorEnabled)
+                {
+                    if (changePassModel.Code != null)
+                    {
+                        if (user.IsGoogleAuthenticator)
+                        {
+                            verifyResult = await VerifyTokenAuthenticator(user, changePassModel.Code);
+                        }
+                        else
+                        {
+                            verifyResult = VerifyCodeSms(user, changePassModel.Code,
+                                Const.TypeGenerateChangePassword);
+                        }
+                    }
+                }
+
+                IdentityResult changePassResult = null;
+                if (verifyResult)
+                {
+                    changePassResult = await UserManager.ChangePasswordAsync(user,
+                        changePassModel.OldPassword, changePassModel.NewPassword);
+                }
+
+                if (changePassResult != null && changePassResult.Succeeded)
+                {
+                    Logger.LogDebug("Change Password Success.");
+                    changePassModel.Status = SecurityViewModel.StatusSuccess;
+                }
+                else
+                {
+                    changePassModel.Status = SecurityViewModel.StatusError;
+                }
+            }
+            catch (Exception e)
+            {
+                changePassModel.Status = SecurityViewModel.StatusError;
+                Console.WriteLine(e);
+            }
+
+            return changePassModel;
+        }
+
+        private async Task<MobileModel> HandleMobile(MobileModel mobileModel, ApplicationUser user)
+        {
+            try
+            {
+                mobileModel.IsTabSelected = true;
+                mobileModel.TabShow = "active show";
+                Logger.LogDebug("SecurityController ==>> HandleMobileAddPhoneNumber ==>> " + mobileModel.Type);
+                var verifyResult = false;
+                if (string.Equals(mobileModel.Type, MobileModel.TypeAddPhoneNumber))
+                {
+                    verifyResult = VerifyCodeSms(user, mobileModel.Code, Const.TypeGenerateAddPhoneNumber);
+                    if (verifyResult)
+                    {
+                        user.PhoneNational = mobileModel.PhoneNational;
+                        user.PhoneNumber = mobileModel.CallingCode + mobileModel.PhoneNational;
+                        user.CountryCode = mobileModel.CallingCode.Replace(" ", "");
+                        user.PhoneNumberConfirmed = true;
+                    }
+                }
+                else if (string.Equals(mobileModel.Type, MobileModel.TypeConfirmPhoneNumber))
+                {
+                    verifyResult = VerifyCodeSms(user, mobileModel.Code,
+                        Const.TypeGenerateChangeConfirmPhoneNumber);
+                    if (verifyResult)
+                    {
+                        user.PhoneNumberConfirmed = true;
+                    }
+                }
+                else if (string.Equals(mobileModel.Type, MobileModel.TypeChangePhoneNumber))
+                {
+                    verifyResult = VerifyCodeSms(user, mobileModel.Code,
+                        Const.TypeGenerateChangeNewPhoneNumber);
+                    if (verifyResult)
+                    {
+                        user.PhoneNational = mobileModel.PhoneNational;
+                        user.PhoneNumber = mobileModel.CallingCode + mobileModel.PhoneNational;
+                        user.CountryCode = mobileModel.CallingCode.Replace(" ", "");
+                        user.PhoneNumberConfirmed = true;
+                    }
+                }
+                else if (string.Equals(mobileModel.Type, MobileModel.TypeEnableTwoFaSms))
+                {
+                    verifyResult = VerifyCodeSms(user, mobileModel.Code, Const.TypeGenerateChangeTwoFactor);
+                    if (verifyResult)
+                    {
+                        user.TwoFactorEnabled = true;
+                        user.IsGoogleAuthenticator = false;
+                    }
+                }
+                else if (string.Equals(mobileModel.Type, MobileModel.TypeEnableTwoFaGoogle))
+                {
+                    verifyResult = await VerifyTokenAuthenticator(user, mobileModel.Code);
+                    if (verifyResult)
+                    {
+                        user.TwoFactorEnabled = true;
+                        user.IsGoogleAuthenticator = true;
+                    }
+                }
+                else if (string.Equals(mobileModel.Type, MobileModel.TypeChangeTwoFaSmsToGoogle))
+                {
+                    verifyResult = VerifyCodeSms(user, mobileModel.Code,Const.TypeGenerateChangeTwoFactor);
+                    mobileModel.Status = verifyResult ? SecurityViewModel.StatusSuccess : SecurityViewModel.StatusError;
+
+                    return mobileModel;
+                }
+                else if (string.Equals(mobileModel.Type, MobileModel.TypeChangeTwoFaGoogleToSms))
+                {
+                    verifyResult = await VerifyTokenAuthenticator(user, mobileModel.Code);
+                    if (verifyResult)
+                    {
+                        user.TwoFactorEnabled = true;
+                        user.IsGoogleAuthenticator = false;
+                    }
+                }
+                else if (string.Equals(mobileModel.Type, MobileModel.TypeDisableTwoFa))
+                {
+                    if (user.IsGoogleAuthenticator)
+                    {
+                        verifyResult = await VerifyTokenAuthenticator(user, mobileModel.Code);
+                    }
+                    else
+                    {
+                        verifyResult = VerifyCodeSms(user, mobileModel.Code,
+                            Const.TypeGenerateChangeNewPhoneNumber);
+                    }
+
+                    if (verifyResult)
+                    {
+                        user.TwoFactorEnabled = false;
+                        user.IsGoogleAuthenticator = false;
+                    }
+                }
+
+                if (!verifyResult)
+                {
+                    mobileModel.Status = SecurityViewModel.StatusError;
+                }
+                else
+                {
+                    var identityResult = await UserManager.UpdateAsync(user);
+                    mobileModel.Status = identityResult.Succeeded
+                        ? SecurityViewModel.StatusSuccess
+                        : SecurityViewModel.StatusError;
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.LogError("SecurityController ==>> HandleMobile: " + e.Message);
+                mobileModel.Status = SecurityViewModel.StatusError;
+            }
+
+            return mobileModel;
+        }
+
+        private async Task<LockScreenModel> HandleLockScreen(LockScreenModel lockScreenModel, ApplicationUser user)
+        {
+            return new LockScreenModel();
+        }
+
+        private async Task<DeactiveModel> HandleDeActiveAccount(DeactiveModel deactiveModel, ApplicationUser user)
+        {
+            try
+            {
+                deactiveModel.IsTabSelected = true;
+                deactiveModel.TabShow = "active show";
+                var verifyResult = false;
+                if (!user.IsGoogleAuthenticator)
+                {
+                    verifyResult = VerifyCodeSms(user, deactiveModel.Code, Const.TypeGenerateLockAccount);
+                }
+                else
+                {
+                    verifyResult = await VerifyTokenAuthenticator(user, deactiveModel.Code);
+                }
+
+                if (verifyResult)
+                {
+                    var result = await UserManager.SetLockoutEnabledAsync(user, true);
+                    if (result.Succeeded)
+                    {
+                        // delete local authentication cookie
+                        await _signInManager.SignOutAsync();
+
+                        // raise the logout event
+                        await _events.RaiseAsync(new UserLogoutSuccessEvent(User.GetSubjectId(),
+                            User.GetDisplayName()));
+                        deactiveModel.Status = SecurityViewModel.StatusSuccess;
+                    }
+                }
+                else
+                {
+                    deactiveModel.Status = SecurityViewModel.StatusError;
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.LogError("SecurityController ==>> HandleDeActiveAccount: " + e.Message);
+                deactiveModel.Status = SecurityViewModel.StatusError;
+            }
+            return new DeactiveModel();
+        }
+
+
         private async Task<string> GetCurrentCountryCode()
         {
             try
             {
                 var ip = CommonHelper.GetIp(Request);
                 Console.WriteLine(ip);
-//            ip = "27.72.89.106";
+                ip = "27.72.89.106";
                 if (string.IsNullOrEmpty(ip)) return null;
                 var location = await IPGeographicalLocation.QueryGeographicalLocationAsync(ip);
                 return location?.CountryCode;
@@ -103,7 +454,7 @@ namespace VakaxaIDServer.Quickstart.Security
             catch (Exception e)
             {
                 Logger.LogError("SecurityController ==>> GetCurrentCountryCode: " + e.Message);
-                return null;
+                return "VI";
             }
         }
 
@@ -112,11 +463,10 @@ namespace VakaxaIDServer.Quickstart.Security
         {
             Console.WriteLine(@"Generate SMS: " + data);
             var status = false;
-            string message;
+            var message = "Generate SMS fail";
             try
             {
                 var email = (string) data["Email"];
-                var phoneNumber = (string) data["PhoneNumber"];
                 var typeGenerate = (string) data["TypeGenerate"];
 
                 var user = await UserManager.FindByEmailAsync(email);
@@ -129,16 +479,16 @@ namespace VakaxaIDServer.Quickstart.Security
                     }
                     else
                     {
-                        var sendSmsController = new SendSmsController(UserManager, Configuration);
-                        var resultSend = await sendSmsController.SendSms(user.Email, user.PhoneNumber, body);
+                        var resultSend = SaveSms(body, user.PhoneNumber);
                         if (resultSend)
                         {
                             status = true;
                             message = "Success";
+                            Logger.LogError("Send sms to phone " + user.PhoneNumber + " Success.");
                         }
                         else
                         {
-                            message = "Send sms to phone " + phoneNumber + " not fail.";
+                            Logger.LogError("Send sms to phone " + user.PhoneNumber + " fail.");
                         }
                     }
                 }
@@ -153,7 +503,32 @@ namespace VakaxaIDServer.Quickstart.Security
                 message = e.Message;
             }
 
+            if (!message.Equals("Success"))
+            {
+                Logger.LogError(message);
+            }
+
             return Json(new {success = status, responseText = message});
+        }
+
+        public bool SaveSms(string message, string phoneNumber)
+        {
+            try
+            {
+                var smsModel = new SmsQueueModel
+                {
+                    To = phoneNumber,
+                    TextSend = message
+                };
+                var smsContext = new SmsContext(Configuration, Context, Logger);
+                var result = smsContext.SaveSms(smsModel);
+                return result;
+            }
+            catch (Exception e)
+            {
+                Logger.LogError("AccountController ==>> SaveSms error: " + e.Message);
+                return false;
+            }
         }
 
         /// <summary>
@@ -174,7 +549,7 @@ namespace VakaxaIDServer.Quickstart.Security
                 if (user != null)
                 {
                     Console.WriteLine(code);
-                    var result = VerifyCode(user, code, Const.TypeGenerateChangeTwoFactor);
+                    var result = VerifyCodeSms(user, code, Const.TypeGenerateChangeTwoFactor);
                     if (result)
                     {
                         status = true;
@@ -306,7 +681,7 @@ namespace VakaxaIDServer.Quickstart.Security
                     }
                     else
                     {
-                        result = VerifyCode(user, code, typeGenerate);
+                        result = VerifyCodeSms(user, code, typeGenerate);
                     }
 
                     if (result)
@@ -401,7 +776,7 @@ namespace VakaxaIDServer.Quickstart.Security
                     }
                     else
                     {
-                        verifyResult = VerifyCode(user, code, Const.TypeGenerateChangePassword);
+                        verifyResult = VerifyCodeSms(user, code, Const.TypeGenerateChangePassword);
                     }
 
                     if (verifyResult)
@@ -446,7 +821,7 @@ namespace VakaxaIDServer.Quickstart.Security
                     }
                     else
                     {
-                        verifyResult = VerifyCode(user, code, Const.TypeGenerateAddLockScreen);
+                        verifyResult = VerifyCodeSms(user, code, Const.TypeGenerateAddLockScreen);
                     }
 
                     if (verifyResult)
@@ -490,7 +865,7 @@ namespace VakaxaIDServer.Quickstart.Security
                     }
                     else
                     {
-                        verifyResult = VerifyCode(user, code, Const.TypeGenerateLockAccount);
+                        verifyResult = VerifyCodeSms(user, code, Const.TypeGenerateLockAccount);
                     }
 
                     if (verifyResult)
@@ -528,7 +903,7 @@ namespace VakaxaIDServer.Quickstart.Security
         /// <param name="code"></param>
         /// <param name="typeGenerate"></param>
         /// <returns></returns>
-        public static bool VerifyCode(ApplicationUser user, string code, string typeGenerate)
+        public static bool VerifyCodeSms(ApplicationUser user, string code, string typeGenerate)
         {
             try
             {
@@ -544,6 +919,9 @@ namespace VakaxaIDServer.Quickstart.Security
                         break;
                     case Const.TypeGenerateChangeNewPhoneNumber:
                         secret = secretSmsKey.ChangePhoneNewPhone;
+                        break;
+                    case Const.TypeGenerateChangeConfirmPhoneNumber:
+                        secret = secretSmsKey.ChangePhoneConfirmPhone;
                         break;
                     case Const.TypeGenerateChangeTwoFactor:
                         secret = secretSmsKey.ChangeTwoFactor;
@@ -607,6 +985,9 @@ namespace VakaxaIDServer.Quickstart.Security
                         break;
                     case Const.TypeGenerateChangeNewPhoneNumber:
                         secretSmsKey.ChangePhoneNewPhone = secret;
+                        break;
+                    case Const.TypeGenerateChangeConfirmPhoneNumber:
+                        secretSmsKey.ChangePhoneConfirmPhone = secret;
                         break;
                     case Const.TypeGenerateChangeTwoFactor:
                         secretSmsKey.ChangeTwoFactor = secret;
