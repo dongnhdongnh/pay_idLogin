@@ -107,8 +107,8 @@ namespace VakaxaIDServer
                 },
                 new Client
                 {
-                    ClientId = "vakaexchange",
-                    ClientName = "MVC Client",
+                    ClientId = "vakaexchange123",
+                    ClientName = "MVC Client 123",
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
                     RequireConsent = false,
@@ -126,8 +126,8 @@ namespace VakaxaIDServer
                 },
                 new Client
                 {
-                    ClientId = "vakaexchangev2",
-                    ClientName = "MVC Client 2",
+                    ClientId = "vakaexchange",
+                    ClientName = "MVC Client",
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
                     RequireConsent = false,
