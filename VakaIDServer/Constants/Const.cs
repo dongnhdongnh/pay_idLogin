@@ -26,6 +26,7 @@ namespace VakaxaIDServer.Constants
         //Type Verify email
         public const int TypeVerifyEmailRegister = 1;
         public const int TypeVerifyEmailUnlockAccount = 2;
+        public const int TypeVerifyEmailForgotPassword = 3;
 
         //Type Send SMS
         public const int TypeSendSmsRegister = 1;

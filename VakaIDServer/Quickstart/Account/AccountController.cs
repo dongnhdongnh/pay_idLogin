@@ -277,7 +277,9 @@ namespace VakaxaIDServer.Quickstart.Account
                             return RedirectToAction("VerifyCode",
                                 new
                                 {
-                                    user.Email, model.ReturnUrl, RememberMe = model.RememberLogin,
+                                    user.Email,
+                                    model.ReturnUrl,
+                                    RememberMe = model.RememberLogin,
                                     user.IsGoogleAuthenticator
                                 });
                         }
@@ -289,7 +291,9 @@ namespace VakaxaIDServer.Quickstart.Account
                             return RedirectToAction("VerifyCode",
                                 new
                                 {
-                                    user.Email, model.ReturnUrl, RememberMe = model.RememberLogin,
+                                    user.Email,
+                                    model.ReturnUrl,
+                                    RememberMe = model.RememberLogin,
                                     user.IsGoogleAuthenticator
                                 });
                         }
@@ -375,6 +379,20 @@ namespace VakaxaIDServer.Quickstart.Account
                             HttpContext.Request.Scheme);
                         model.Subject = "Unlock Account";
                         model.Template = Const.TypeVerifyEmailUnlockAccount;
+                    }
+                    else if (type == Const.TypeVerifyEmailForgotPassword)
+                    {
+                        var confirmationCode = await _userManager.GeneratePasswordResetTokenAsync(user);
+
+                        //reset password
+                        model.LinkEmail = Url.Action(
+                            controller: "Account",
+                            action: "ResetPassword",
+                            values: new {email = user.Email, code = confirmationCode},
+                            protocol: Request.Scheme);
+
+                        model.Subject = "VakaId Forgot Password";
+                        model.Template = Const.TypeVerifyEmailForgotPassword;
                     }
                     else
                     {
@@ -523,7 +541,8 @@ namespace VakaxaIDServer.Quickstart.Account
 
                 if (user != null)
                 {
-                    var resultVerify = SecurityController.VerifyCodeSms(user, model.Code, Const.TypeGenerateUnlockAccount);
+                    var resultVerify =
+                        SecurityController.VerifyCodeSms(user, model.Code, Const.TypeGenerateUnlockAccount);
                     if (resultVerify)
                     {
                         user.LockoutEnabled = false;
@@ -566,7 +585,9 @@ namespace VakaxaIDServer.Quickstart.Account
                     ? View("Error")
                     : View(new VerifyCodeViewModel
                     {
-                        Email = email, RememberMe = rememberMe, ReturnUrl = returnUrl,
+                        Email = email,
+                        RememberMe = rememberMe,
+                        ReturnUrl = returnUrl,
                         IsGoogleAuthenticator = isGoogleAuthenticator
                     });
             }
@@ -785,44 +806,30 @@ namespace VakaxaIDServer.Quickstart.Account
                 var user = await _userManager.FindByEmailAsync(model.Email);
                 if (user == null)
                 {
-                    ModelState.AddModelError("Error",
-                        "Email don't exist yet!");
+                    ModelState.AddModelError("Error", "Email don't exist yet!");
                     return View(model);
                 }
 
                 if (!await _userManager.IsEmailConfirmedAsync(user))
                 {
-                    ModelState.AddModelError("Error",
-                        "Email not confirm");
+                    ModelState.AddModelError("Error", "Email not confirm");
                     return View(model);
                 }
 
-                var confirmationCode =
-                    await _userManager.GeneratePasswordResetTokenAsync(user);
-
-                //reset password
-                var callbackUrl = Url.Action(
-                    controller: "Account",
-                    action: "ResetPassword",
-                    values: new {userId = user.Id, code = confirmationCode},
-                    protocol: Request.Scheme);
-
-                //send email
-                var dataSend = new EmailViewModel
+                var emailViewModel = await CreateDataEmail(user, Const.TypeVerifyEmailForgotPassword);
+                //var resultSendEmail = SendEmail(emailViewModel);
+                if (emailViewModel != null)
                 {
-                    Email = user.Email,
-                    Body = callbackUrl,
-                    Subject = "Forgot Password"
-                };
-                var sendEmail = new SendEmail(Configuration);
-                sendEmail.Send(dataSend);
-                return RedirectToAction("ForgotPasswordEmailSent");
+                    return RedirectToAction(nameof(VerifyEmail), "Account", emailViewModel);
+                }
+
+                ModelState.AddModelError("Error", "Send email to " + user.Email + " fail!");
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                return View(model);
             }
+            return View(model);
         }
 
         //success forgot
@@ -864,12 +871,11 @@ namespace VakaxaIDServer.Quickstart.Account
 
         // reset password
         [HttpGet]
-        public IActionResult ResetPassword(string userId, string code)
+        public IActionResult ResetPassword(string email, string code)
         {
-            if (userId == null) throw new ArgumentNullException(nameof(userId));
-            if (userId == null || code == null)
+            if (email == null || code == null)
                 throw new ApplicationException("Code must be supplied for password reset.");
-            var model = new ResetPasswordViewModel {Code = code};
+            var model = new ResetPasswordViewModel {Code = code,Email = email};
             return View(model);
         }
 
