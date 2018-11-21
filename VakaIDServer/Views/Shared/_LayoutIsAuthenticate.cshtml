@@ -251,10 +251,35 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="page-title-box">
-                <h4 class="page-title"><i class="ti-bell m-r-5"></i>Activities</h4>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item active">You can control your activities</li>
-                </ol>
+                @{
+                   if (string.Equals(ViewBag.Title,"Security"))
+                    {
+                        <h4 class="page-title"><i class="mdi mdi-security m-r-5"></i>Security</h4>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active">Control your security settings</li>
+                        </ol>
+                    }else if (string.Equals(ViewBag.Title,"Activities"))
+                    {
+                        <h4 class="page-title"><i class="ti-bell m-r-5"></i>Activities</h4>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active">You can control your activities</li>
+                        </ol>
+                    }else if (string.Equals(ViewBag.Title,"Profile"))
+                    {
+                        <h4 class="page-title"><i class="ti-user m-r-5"></i>Activities</h4>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active">Update your profile information</li>
+                        </ol>
+                    }
+                    else
+                    {
+                        <h4 class="page-title"><i class="mdi mdi-home m-r-5"></i>Dashboard</h4>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active">Welcome to VakaID Dashboard</li>
+                        </ol>
+                    }
+                }
+                
             </div>
         </div>
     </div>
@@ -271,21 +296,21 @@
                     </a>
                 </li>
                 <li class="has-submenu">
-                    <a href="security.html"><i class="mdi mdi-security"></i>Security</a>
+                    <a asp-controller="Security" asp-action="Index"><i class="mdi mdi-security"></i>Security</a>
                 </li>
                 <li class="has-submenu">
                     <a ><i class="ti-bell"></i>Activities</a>
                     <ul class="submenu">
                         <li>
-                            <a href="activity.html"><i class="mdi mdi-account-box"></i> Account Activity</a>
+                            <a asp-controller="Activity" asp-action="Index"><i class="mdi mdi-account-box"></i> Account Activity</a>
                         </li>
                         <li>
-                            <a href="websession.html" ><i class="mdi mdi-web"></i> Web Sessions</a>
+                            <a asp-controller="WebSession" asp-action="Index"><i class="mdi mdi-web"></i> Web Sessions</a>
                         </li>
                     </ul>
                 </li>
                 <li class="has-submenu">
-                    <a href="profile.html"><i class="ti-user"></i>Profile</a>
+                    <a asp-controller="Profile" asp-action="Index"><i class="ti-user"></i>Profile</a>
                 </li>
             </ul>
             <!-- End navigation menu -->

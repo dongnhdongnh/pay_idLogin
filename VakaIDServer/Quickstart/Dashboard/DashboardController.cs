@@ -59,6 +59,7 @@ namespace VakaxaIDServer.Quickstart.Activity
             var dataPage = new DashboardModel();
             try
             {
+                ViewBag.Title = "Dashboard";
                 var user = await UserManager.GetUserAsync(HttpContext.User);
                 var logAction = new LogUserAction(Configuration, Context);
                 var webSession = new WebSession(Configuration, Context, Logger);

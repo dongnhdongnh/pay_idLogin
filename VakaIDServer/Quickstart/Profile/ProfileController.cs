@@ -55,6 +55,7 @@ namespace VakaxaIDServer.Quickstart.Profile
         [HttpGet]
         public async Task<IActionResult> Index(ProfileModel dataPage)
         {
+            ViewBag.Title = "Profile";
             try
             {
                 var user = await UserManager.GetUserAsync(HttpContext.User);

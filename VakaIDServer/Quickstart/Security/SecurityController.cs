@@ -56,6 +56,7 @@ namespace VakaxaIDServer.Quickstart.Security
         [HttpGet]
         public async Task<IActionResult> Index()
         {
+            ViewBag.Title = "Security";
             var securityViewModel = new SecurityViewModel();
             try
             {
@@ -223,7 +224,7 @@ namespace VakaxaIDServer.Quickstart.Security
                 Logger.LogError("Security Error: " + e.Message);
             }
 
-
+            ViewBag.Title = "Security";
             return View(securityTempModel);
         }
 

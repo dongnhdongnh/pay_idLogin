@@ -51,6 +51,7 @@ namespace VakaxaIDServer.Quickstart.Activity
         [HttpGet]
         public async Task<IActionResult> Index(int page = 1)
         {
+            ViewBag.Title = "Activities";
             var dataPage = new WebsessionPage();
             try
             {
