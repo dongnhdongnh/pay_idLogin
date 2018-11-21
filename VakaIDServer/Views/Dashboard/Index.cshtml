@@ -51,15 +51,15 @@
                     <table>
                         <tbody>
                         <tr>
-                            <th><i class="fas fa-user"></i>Name</th>
+                            <th>Name</th>
                             <td>@Model.UserInfo.FullName</td>
                         </tr>
                         <tr>
-                            <th><i class="fas fa-envelope"></i>Email</th>
+                            <th>Email</th>
                             <td>@Model.UserInfo.Email</td>
                         </tr>
                         <tr>
-                            <th><i class="fas fa-mobile-alt"></i>Mobile No.</th>
+                            <th>Mobile No.</th>
                             <td>
                                 <a href="tel:@Model.UserInfo.PhoneNumber" class="btn-link">@Model.UserInfo.PhoneNumber</a>
                             </td>
@@ -71,15 +71,15 @@
                     <table>
                         <tbody>
                         <tr>
-                            <th><i class="fas fa-briefcase"></i>Occupation</th>
+                            <th>Occupation</th>
                             <td>@Model.UserInfo.Occupation</td>
                         </tr>
                         <tr>
-                            <th><i class="fas fa-birthday-cake"></i>Date of Birth</th>
+                            <th>Date of Birth</th>
                             <td>@UnixTimestamp.DateFromUnixTimestamp(@UnixTimestamp.ToUnixTimestamp(@Model.UserInfo.Birthday))</td>
                         </tr>
                         <tr>
-                            <th><i class="fas fa-map-marker-alt"></i>Locatoin</th>
+                            <th>Locatoin</th>
                             <td>@Model.UserInfo.Country</td>
                         </tr>
                         </tbody>

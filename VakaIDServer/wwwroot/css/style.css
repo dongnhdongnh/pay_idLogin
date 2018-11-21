@@ -1446,7 +1446,7 @@ button:focus{
     font-size:15.6px
 }
 .btn-blue-grey,.btn-brown,.btn-danger,.btn-dark,.btn-indigo,.btn-info,.btn-lime,.btn-orange,.btn-pink,.btn-primary,.btn-purple,.btn-success,.btn-teal,.btn-warning{
-    color:#fff
+    color:#fff !important;
 }
 .btn-primary{
     background-color:#3eb7ba;
@@ -3041,6 +3041,9 @@ table.focus-on tbody tr.focused td{
     }
 }
 @media (max-width:620px){
+    .list-inline-item:not(:last-child) {
+        margin-right: 0;
+    }
     .np {
         padding-left: 0;
         padding-right: 0;

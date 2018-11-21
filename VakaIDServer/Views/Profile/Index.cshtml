@@ -29,7 +29,7 @@
     <i class="ti-user m-r-5"></i>Update your
     profile
 </h4>
-<p class="text-muted m-b-20 ">Manage and update your personal information</p>
+<p class="text-muted">Manage and update your personal information</p>
 <!-- Nav tabs -->
 <ul class="nav nav-tabs nav-tabs-custom" role="tablist">
      <li class="nav-item">
@@ -130,7 +130,7 @@
                                     </i>
                                 </span>
                             </div>
-                            <input asp-for="SocialNetwork.Website" type="text" class="form-control form-control-sm">
+                            <input asp-for="SocialNetwork.Website" type="text" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -143,7 +143,7 @@
                                     </i>
                                 </span>
                             </div>
-                            <input asp-for="SocialNetwork.Facebook" type="text" class="form-control form-control-sm">
+                            <input asp-for="SocialNetwork.Facebook" type="text" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -156,7 +156,7 @@
                                     </i>
                                 </span>
                             </div>
-                            <input asp-for="SocialNetwork.Twitter" type="text" class="form-control form-control-sm">
+                            <input asp-for="SocialNetwork.Twitter" type="text" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -169,7 +169,7 @@
                                     </i>
                                 </span>
                             </div>
-                            <input asp-for="SocialNetwork.Telegram" type="text" class="form-control form-control-sm">
+                            <input asp-for="SocialNetwork.Telegram" type="text" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -182,7 +182,7 @@
                                     </i>
                                 </span>
                             </div>
-                            <input asp-for="SocialNetwork.Skype" type="text" class="form-control form-control-sm">
+                            <input asp-for="SocialNetwork.Skype" type="text" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -195,7 +195,7 @@
                                     </i>
                                 </span>
                             </div>
-                            <input asp-for="SocialNetwork.LinkedIn" type="text" class="form-control form-control-sm">
+                            <input asp-for="SocialNetwork.LinkedIn" type="text" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row m-t-20">
@@ -218,7 +218,7 @@
     <div>
         <div class="directory-bg text-center">
             <div class="directory-overlay">
-                <div style="width: 300px; margin: 0 auto; position: relative"  onclick="document.getElementById('txtUploadFile').click();" >
+                <div onclick="document.getElementById('txtUploadFile').click();" >
                     <img class="img-thumbnail img-profile" src="@Model.ProfileUser.Avatar" id="imgFileUpload" alt="avatar">
                     <span id="spnFilePath">Change Avatar</span>
                     <input type="file" name="UploadFile" id="txtUploadFile" style="display: none">
