@@ -202,10 +202,6 @@ namespace VakaxaIDServer.Quickstart.Security
                         securityTempModel.MobileModel.PhoneHide = SendSmsController.GetPhoneHide(user.CountryCode, user.PhoneNational);
                     }
                 }
-                else if (model.LockScreenModel != null)
-                {
-                    securityTempModel.LockScreenModel = await HandleLockScreen(model.LockScreenModel, user);
-                }
                 else if (model.DeactiveModel != null)
                 {
                     securityTempModel.DeactiveModel = await HandleDeActiveAccount(model.DeactiveModel, user);
@@ -391,19 +387,13 @@ namespace VakaxaIDServer.Quickstart.Security
 
             return mobileModel;
         }
-
-        private async Task<LockScreenModel> HandleLockScreen(LockScreenModel lockScreenModel, ApplicationUser user)
-        {
-            return new LockScreenModel();
-        }
-
         private async Task<DeactiveModel> HandleDeActiveAccount(DeactiveModel deactiveModel, ApplicationUser user)
         {
             try
             {
                 deactiveModel.IsTabSelected = true;
                 deactiveModel.TabShow = "active show";
-                var verifyResult = false;
+                bool verifyResult;
                 if (!user.IsGoogleAuthenticator)
                 {
                     verifyResult = VerifyCodeSms(user, deactiveModel.Code, Const.TypeGenerateLockAccount);
