@@ -6,6 +6,10 @@ body{
     color:#5b626b;
     font-size:14px
 }
+.btn-primary.disabled, .btn-primary:disabled {
+    background-color: #3eb7ba !important;
+    border-color: #3eb7ba !important;
+}
 .modal.show {
     overflow: auto !important;
 }
