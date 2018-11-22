@@ -1098,13 +1098,19 @@ namespace VakaxaIDServer.Quickstart.Account
                     return SignOut(new AuthenticationProperties {RedirectUri = url}, vm.ExternalAuthenticationScheme);
                 }
 
-                return RedirectToAction("Login", "Account",
-                    new
-                    {
-                        returnUrl = "",
-                        vm.SignOutIframeUrl,
-                        vm.AutomaticRedirectAfterSignOut
-                    });
+                if (vm.PostLogoutRedirectUri != null)
+                {
+                    return new RedirectResult(vm.PostLogoutRedirectUri);
+                }
+
+//                return RedirectToAction("Login", "Account",
+//                    new
+//                    {
+//                        returnUrl = "",
+//                        vm.SignOutIframeUrl,
+//                        vm.AutomaticRedirectAfterSignOut
+//                    });
+                return Redirect("Login");
             }
             catch (Exception e)
             {
