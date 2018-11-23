@@ -15,7 +15,7 @@ namespace VakaxaIDServer.Models
         public string Country { get; set; }
         public string StreetAddress { get; set; }
         public string PostalCode { get; set; }
-        public DateTime Birthday { get; set; }
+        public DateTime? Birthday { get; set; }
         public string Occupation { get; set; }
         public string About { get; set; }
         public string SocialNetwork { get; set; }

@@ -11,7 +11,7 @@ namespace VakaxaIDServer.Quickstart.Profile
         public string StreetAddress { get; set; }
         [Required]
         [DataType(DataType.Date)]
-        public DateTime Birthday { get; set; }
+        public DateTime? Birthday { get; set; }
         [Required]
         [MaxLength(255)]
         public string Occupation { get; set; }

@@ -6,18 +6,12 @@
             <div>
                 <div class="directory-bg text-center">
                     <div class="directory-overlay">
-                        <img class="rounded-circle thumb-lg img-thumbnail" src="assets/avatars/user.jpg"
+                        <img class="rounded-circle thumb-lg img-thumbnail" src="@Model.UserInfo.Avatar"
                              alt="Generic placeholder image">
                     </div>
                 </div>
                 <div class="directory-content text-center p-4">
-                    <p class="mt-4 mb-0">Nice to see you again,</p>
                     <h5 class="font-16 mt-0">@Model.UserInfo.FullName</h5>
-                    <p class="text-muted oneline">
-                        Sed ut perspiciatis unde omnis iste natus error sit
-                        voluptatem
-                        accusantium doloremque laudantium totam rem aperiam
-                    </p>
                     <ul class="social-links list-inline mb-0 mt-4">
                         <li class="list-inline-item">
                             <a title="" data-placement="top" class="btn-primary"
@@ -76,7 +70,15 @@
                         </tr>
                         <tr>
                             <th>Date of Birth</th>
-                            <td>@UnixTimestamp.DateFromUnixTimestamp(@UnixTimestamp.ToUnixTimestamp(@Model.UserInfo.Birthday))</td>
+                            @if (Model.UserInfo.Birthday == null)
+                            {
+                                <td>00/00/0000</td>
+                            }
+                            else
+                            {
+                                <td>@UnixTimestamp.DateFromUnixTimestamp(@UnixTimestamp.ToUnixTimestamp(@Model.UserInfo.Birthday))</td>
+                            }
+                           
                         </tr>
                         <tr>
                             <th>Locatoin</th>

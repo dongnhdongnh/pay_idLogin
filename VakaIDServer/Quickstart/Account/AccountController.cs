@@ -229,6 +229,7 @@ namespace VakaxaIDServer.Quickstart.Account
                         //log action login
 
                         var ip = CommonHelper.GetIp(Request);
+                        ip = "27.72.89.106";
                         Console.WriteLine(ip);
 
                         if (!string.IsNullOrEmpty(ip))

@@ -24,7 +24,6 @@ namespace VakaxaIDServer.Quickstart.Activity
 {
     [SecurityHeaders]
     [Authorize]
-    
     public class DashboardController : CustomController
     {
         public DashboardController(IConfiguration configuration, ApplicationDbContext context,
@@ -78,12 +77,20 @@ namespace VakaxaIDServer.Quickstart.Activity
                 dataPage.WebSessionModels = dataWeb;
                 dataPage.LogActionModels = dataLog;
                 dataPage.SocialNetwork = new SocialNetwork();
-                
+
                 if (!string.IsNullOrEmpty(user.SocialNetwork))
                 {
                     dataPage.SocialNetwork = SocialNetwork.FromJson(user.SocialNetwork);
                 }
-                
+
+                if (user.Birthday.ToString().Contains("1/1/00"))
+                    user.Birthday = null;
+
+
+                user.PhoneNumber = !string.IsNullOrEmpty(user.PhoneNumber)
+                    ? "*********" + user.PhoneNumber.Remove(0, 9)
+                    : null;
+
                 dataPage.UserInfo = user;
             }
             catch (Exception e)
