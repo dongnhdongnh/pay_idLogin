@@ -207,8 +207,8 @@ namespace VakaxaIDServer.Quickstart.Profile
             }
             catch (Exception)
             {
-                Response.StatusCode = (int) HttpStatusCode.BadRequest;
-                return Json("Upload failed");
+                return Json(new {success = false, responseText = "You upload file has .jpg,png... format, please!"});
+                
             }
         }
     }

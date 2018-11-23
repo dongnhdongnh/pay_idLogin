@@ -28,6 +28,9 @@ body{
 .form-radio-label:after, .form-radio-label:before, .user--list>li>a>.avatar>img {
     border-radius: 50%;
 }
+#show-error-avatar{
+    color: red;
+}
 .form-check-label:before, .form-radio-label:before {
     content: " ";
     position: absolute;

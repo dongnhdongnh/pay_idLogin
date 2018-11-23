@@ -242,8 +242,8 @@
     <div>
         <div class="directory-bg text-center">
             <div class="directory-overlay">
-                <div onclick="document.getElementById('txtUploadFile').click();">
-                    <img class="img-thumbnail img-profile" src="@Model.ProfileUser.Avatar" id="imgFileUpload" alt="avatar">
+                <div>
+                    <img  onclick="document.getElementById('txtUploadFile').click();" class="img-thumbnail img-profile" src="@Model.ProfileUser.Avatar" id="imgFileUpload" alt="avatar">
                     <span id="spnFilePath">Change Avatar</span>
                     <input type="file" name="UploadFile" id="txtUploadFile" style="display: none">
                 </div>
