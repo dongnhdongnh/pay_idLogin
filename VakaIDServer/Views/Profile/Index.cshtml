@@ -13,12 +13,12 @@
     string ProfileShow = "";
     bool ProfileBool = false;
     if (!Model.Tab)
-     {
-         DetailShow = "";
-         DetailBool = false;
-         ProfileShow = "active show";
-         ProfileBool = true;
-     }
+    {
+        DetailShow = "";
+        DetailBool = false;
+        ProfileShow = "active show";
+        ProfileBool = true;
+    }
 }
 <div class="container-fluid">
 <div class="row">
@@ -32,22 +32,22 @@
 <p class="text-muted">Manage and update your personal information</p>
 <!-- Nav tabs -->
 <ul class="nav nav-tabs nav-tabs-custom" role="tablist">
-     <li class="nav-item">
-            <a class="nav-link @DetailShow" data-toggle="tab" href="#home2" role="tab"
-               aria-selected="@DetailBool">
-                <i class="mdi mdi-comment-account-outline"></i> Personal
-                Details
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link @ProfileShow" data-toggle="tab" href="#profile2" role="tab" aria-selected="@ProfileBool">
-                <i
-                    class="mdi mdi-account-location">
-                </i> User
-                Profile
-            </a>
-        </li>
-    
+    <li class="nav-item">
+        <a class="nav-link @DetailShow" data-toggle="tab" href="#home2" role="tab"
+           aria-selected="@DetailBool">
+            <i class="mdi mdi-comment-account-outline"></i> Personal
+            Details
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link @ProfileShow" data-toggle="tab" href="#profile2" role="tab" aria-selected="@ProfileBool">
+            <i
+                class="mdi mdi-account-location">
+            </i> User
+            Profile
+        </a>
+    </li>
+
 
 </ul>
 <div class="col-lg-6 col-sm-12 m-t-10 fl">
@@ -69,12 +69,14 @@
                         <label for="example-text-input" class="col-xl-2 col-lg-3 col-form-label">Address:</label>
                         <div class="col-xl-10 col-lg-9">
                             <input asp-for="PersonalDetails.StreetAddress" type="text" class="form-control">
+                            <span asp-validation-for="PersonalDetails.StreetAddress" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="example-text-input" class="col-xl-2 col-lg-3 col-form-label">Occupation:</label>
                         <div class="col-xl-10 col-lg-9">
                             <input asp-for="PersonalDetails.Occupation" type="text" class="form-control">
+                            <span asp-validation-for="PersonalDetails.Occupation" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -102,6 +104,7 @@
                         </label>
                         <div class="col-xl-10 col-lg-9">
                             <textarea asp-for="PersonalDetails.About" required="" class="form-control" rows="5"></textarea>
+                            <span asp-validation-for="PersonalDetails.About" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -131,6 +134,7 @@
                                 </span>
                             </div>
                             <input asp-for="SocialNetwork.Website" type="text" class="form-control">
+                            <span asp-validation-for="SocialNetwork.Website" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -144,6 +148,10 @@
                                 </span>
                             </div>
                             <input asp-for="SocialNetwork.Facebook" type="text" class="form-control">
+                           
+                        </div>
+                        <div class="col-xl-10 col-lg-8 offset-xl-2 offset-lg-4">
+                            <span asp-validation-for="SocialNetwork.Facebook" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -157,6 +165,10 @@
                                 </span>
                             </div>
                             <input asp-for="SocialNetwork.Twitter" type="text" class="form-control">
+                            
+                        </div>
+                        <div class="col-xl-10 col-lg-8 offset-xl-2 offset-lg-4">
+                            <span asp-validation-for="SocialNetwork.Twitter" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -170,6 +182,10 @@
                                 </span>
                             </div>
                             <input asp-for="SocialNetwork.Telegram" type="text" class="form-control">
+
+                        </div>
+                        <div class="col-xl-10 col-lg-8 offset-xl-2 offset-lg-4">
+                            <span asp-validation-for="SocialNetwork.Telegram" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -183,6 +199,10 @@
                                 </span>
                             </div>
                             <input asp-for="SocialNetwork.Skype" type="text" class="form-control">
+                           
+                        </div>
+                        <div class="col-xl-10 col-lg-8 offset-xl-2 offset-lg-4">
+                            <span asp-validation-for="SocialNetwork.Skype" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -196,6 +216,10 @@
                                 </span>
                             </div>
                             <input asp-for="SocialNetwork.LinkedIn" type="text" class="form-control">
+                            
+                        </div>
+                        <div class="col-xl-10 col-lg-8 offset-xl-2 offset-lg-4">
+                            <span asp-validation-for="SocialNetwork.LinkedIn" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="form-group row m-t-20">
@@ -218,7 +242,7 @@
     <div>
         <div class="directory-bg text-center">
             <div class="directory-overlay">
-                <div onclick="document.getElementById('txtUploadFile').click();" >
+                <div onclick="document.getElementById('txtUploadFile').click();">
                     <img class="img-thumbnail img-profile" src="@Model.ProfileUser.Avatar" id="imgFileUpload" alt="avatar">
                     <span id="spnFilePath">Change Avatar</span>
                     <input type="file" name="UploadFile" id="txtUploadFile" style="display: none">
@@ -292,61 +316,94 @@
 
 
 @section Scripts {
-   
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
     <script>
-        $('#txtUploadFile').on('change', function (e) {
-            var files = e.target.files;
-            //var myID = 3; //uncomment this to make sure the ajax URL works
-            if (files.length > 0) {
-                if (window.FormData !== undefined) {
-                    var data = new FormData();
-                    for (var x = 0; x < files.length; x++){
-                        data.append("file" + x, files[x]);
-                    }
-
-                    $.ajax({
-                        type: "POST",
-                        url: '/Profile/Avatar',
-                        contentType: false,
-                        processData: false,
-                        data: data,
-                        dataType: "json",
-                        success: function(result) {
-                            if (result && result.success) {
-                                $('.img-profile').attr('src', result.data);
-                                $('#show-error-avatar').text("").hide();
-                            } else {
-                                $('#show-error-avatar').text(result.responseText).show();
-                            }
-                        },
-                        error: function (xhr){
-                            $('#show-error-avatar')
-                                .text(xhr.responseText).show();
+        $('#txtUploadFile').on('change',
+            function(e) {
+                var files = e.target.files;
+                //var myID = 3; //uncomment this to make sure the ajax URL works
+                if (files.length > 0) {
+                    if (window.FormData !== undefined) {
+                        var data = new FormData();
+                        for (var x = 0; x < files.length; x++) {
+                            data.append("file" + x, files[x]);
                         }
-                    });
-                } else {
-                    alert("This browser doesn't support HTML5 file uploads!");
-                }
-            }
-        });
-        
 
-        $("#submitPersonalDetail").click(function() {
-            $(this).prop('disabled', true);
-            var x = document.getElementById("loadingPersonalDetail");
-            if (x.style.display === "none") {
-                x.style.display = "inline-block";
+                        $.ajax({
+                            type: "POST",
+                            url: '/Profile/Avatar',
+                            contentType: false,
+                            processData: false,
+                            data: data,
+                            dataType: "json",
+                            success: function(result) {
+                                if (result && result.success) {
+                                    $('.img-profile').attr('src', result.data);
+                                    $('#show-error-avatar').text("").hide();
+                                } else {
+                                    $('#show-error-avatar').text(result.responseText).show();
+                                }
+                            },
+                            error: function(xhr) {
+                                $('#show-error-avatar')
+                                    .text(xhr.responseText).show();
+                            }
+                        });
+                    } else {
+                        alert("This browser doesn't support HTML5 file uploads!");
+                    }
+                }
+            });
+
+        var $formDetails = $("form.personalDetail");
+        var $formProfile = $("form.userProfile");
+        var $submitDetails = $("#submitPersonalDetail");
+        var $submitProfile = $("#submitUserProfile");
+
+        $formDetails.on("blur",
+            "input, textarea",
+            () => {
+                if ($formDetails.valid()) {
+                    $submitDetails.removeAttr("disabled");
+                } else {
+                    $submitDetails.attr("disabled", "disabled");
+                }
+            });
+        $formProfile.on("blur",
+            "input, textarea",
+            () => {
+                if ($formProfile.valid()) {
+                    $submitProfile.removeAttr("disabled");
+                } else {
+                    $submitProfile.attr("disabled", "disabled");
+                }
+            });
+        $submitDetails.click(function() {
+            if ($formDetails.valid()) {
+                $(this).prop('disabled', true);
+                var x = document.getElementById("loadingPersonalDetail");
+                if (x.style.display === "none") {
+                    x.style.display = "inline-block";
+                }
+                $formDetails.submit();
+            } else {
+                $submitDetails.attr("disabled", "disabled");
             }
-            $(this).closest("form.personalDetail").submit();
+
             return;
         });
-        $("#submitUserProfile").click(function() {
-            $(this).prop('disabled', true);
-            var y = document.getElementById("loadingUserProfile");
-            if (y.style.display === "none") {
-                y.style.display = "inline-block";
+        $submitProfile.click(function() {
+            if ($formProfile.valid()) {
+                $(this).prop('disabled', true);
+                var y = document.getElementById("loadingUserProfile");
+                if (y.style.display === "none") {
+                    y.style.display = "inline-block";
+                }
+                $formProfile.submit();
+
+            } else {
+                $submitProfile.attr("disabled", "disabled");
             }
-            $(this).closest("form.userProfile").submit();
             return;
         });
     </script>
