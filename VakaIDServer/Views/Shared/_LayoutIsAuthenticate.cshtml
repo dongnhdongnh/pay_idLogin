@@ -157,13 +157,6 @@
                             </div>
                             <p class="notify-details">Change security setting</p>
                         </a>
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <div class="notify-icon bg-danger">
-                                <i class="mdi mdi-login"></i>
-                            </div>
-                            <p class="notify-details">Set lock-screen password</p>
-                        </a>
                     </div>
                     <!-- All-->
                     <a href="javascript:void(0);" class="dropdown-item text-center text-primary">
@@ -354,7 +347,7 @@
 <script src="~/js/main.js"></script>
 <script>
     var example = flatpickr('#flatpickr');
-    $("li#@(ViewContext.RouteData.Values["Controller"])").addClass("active");
+   
 </script>
 
 @RenderSection("scripts", required: false)

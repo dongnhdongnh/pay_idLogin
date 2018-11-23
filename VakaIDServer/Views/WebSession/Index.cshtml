@@ -71,21 +71,25 @@
                                 start = Model.Pagination.CurrentPage - 2;
                                 end = Model.Pagination.CurrentPage + 2;
                             }
-                            @for (var p = start; p <= end; p++)
+                            @if (Model.Pagination.PageCount > 1)
                             {
-                                if (p == Model.Pagination.CurrentPage)
-                                {
-                                    <li class="page-item active">
-                                        <a href="@Url.Action("Index", new {page = p})" class="page-link">@p</a>
-                                    </li>
-                                }
-                                else
-                                {
-                                    <li class="page-item">
-                                        <a href="@Url.Action("Index", new {page = p})" class="page-link">@p</a>
-                                    </li>
-                                }
+                                for (var p = start; p <= end; p++)
+                                 {
+                                     if (p == Model.Pagination.CurrentPage)
+                                     {
+                                         <li class="page-item active">
+                                             <a href="@Url.Action("Index", new {page = p})" class="page-link">@p</a>
+                                         </li>
+                                     }
+                                     else
+                                     {
+                                         <li class="page-item">
+                                             <a href="@Url.Action("Index", new {page = p})" class="page-link">@p</a>
+                                         </li>
+                                     }
+                                 }
                             }
+                           
                             @if (Model.Pagination.CurrentPage < Model.Pagination.PageCount)
                             {
                                 <li class="page-item">
